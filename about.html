@@ -62,6 +62,7 @@ justify-content:center;
 text-align:center;
 padding:0 20px;
 overflow:hidden;
+animation:floatIn 0.8s ease forwards;
 }
 
 .hero::before{
@@ -84,9 +85,6 @@ z-index:-1;
 
 .hero h1{
 font-size:48px;
-animation:floatIn 0.8s ease forwards;
-opacity:0;
-transform:translateY(20px);
 }
 
 .hero p{
@@ -94,14 +92,12 @@ font-size:16px;
 color:#cbd5e1;
 max-width:750px;
 margin:12px auto 0;
-animation:floatIn 1s ease forwards;
-opacity:0;
-transform:translateY(20px);
 }
 
 /* SECTIONS */
 .section{
 padding:100px 60px;
+animation:floatIn 0.8s ease forwards;
 }
 
 .container{
@@ -114,21 +110,28 @@ font-size:34px;
 margin:55px 0 18px;
 }
 
-/* BOX + CARD (SERVICES STYLE MATCH) */
+/* 🔥 UNIFIED CARD SYSTEM (ALL SECTIONS) */
 .box,
-.card{
+.card,
+.cta{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:28px;
 border-radius:14px;
 transition:0.35s ease;
+
 opacity:0;
 transform:translateY(40px);
 }
 
-/* ⭐ SERVICES-STYLE HOVER ANIMATION */
+/* spacing consistency */
+.box{padding:28px;margin-top:20px;}
+.card{padding:25px;}
+.cta{padding:70px;text-align:center;margin-top:60px;}
+
+/* ⭐ SAME SERVICES HOVER FOR ALL */
 .box:hover,
-.card:hover{
+.card:hover,
+.cta:hover{
 transform:translateY(-6px);
 background:rgba(255,255,255,0.08);
 border:1px solid rgba(59,130,246,0.35);
@@ -141,25 +144,6 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:25px;
 margin-top:35px;
-}
-
-/* CTA */
-.cta{
-background:rgba(255,255,255,0.06);
-padding:70px;
-border-radius:16px;
-text-align:center;
-margin-top:60px;
-
-opacity:0;
-transform:translateY(40px);
-transition:0.35s ease;
-}
-
-.cta:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 40px rgba(0,0,0,0.35);
-border:1px solid rgba(59,130,246,0.3);
 }
 
 /* BUTTON */
@@ -187,14 +171,18 @@ border-top:1px solid rgba(255,255,255,0.08);
 margin-top:60px;
 }
 
-/* ⭐ SERVICES STYLE ANIMATION SYSTEM */
+/* ⭐ SERVICES STYLE ANIMATION */
 .show{
 opacity:1 !important;
 transform:translateY(0) !important;
 }
 
-/* ⭐ FLOAT IN PAGE LOAD ANIMATION */
+/* ⭐ FLOAT IN (PAGE LOAD) */
 @keyframes floatIn{
+from{
+opacity:0;
+transform:translateY(25px);
+}
 to{
 opacity:1;
 transform:translateY(0);
@@ -237,13 +225,11 @@ transform:translateY(0);
 <div class="container">
 
 <h2>👨‍💼 Who We Are</h2>
-
 <div class="box reveal">
 SWISA Associates is a trusted overseas consultancy dedicated to providing structured guidance and reliable support for international career opportunities. We focus on transparency, professionalism, and smooth processing for every candidate.
 </div>
 
 <h2>🤝 Our Commitment</h2>
-
 <div class="box reveal">
 We ensure a clear and professional journey for every client, maintaining honesty, structured workflow, and proper documentation support throughout the process.
 </div>
@@ -275,7 +261,7 @@ SWISA Associates • New Delhi • 📞 9811084530
 </footer>
 
 <script>
-// SERVICES STYLE ANIMATION SYSTEM
+// SERVICES-STYLE SCROLL ANIMATION
 const items=document.querySelectorAll('.reveal');
 
 const observer=new IntersectionObserver(entries=>{
