@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SEO -->
+<!-- SEO (THIS FIXES GOOGLE TITLE) -->
 <title>SWISA Associates | Overseas Jobs, Visa & Manpower Services</title>
 <meta name="description" content="SWISA Associates provides visa stamping, manpower services, overseas jobs and documentation support in New Delhi.">
 <meta name="keywords" content="SWISA Associates, visa services, manpower services, overseas jobs, visa stamping India">
 <meta name="robots" content="index, follow">
 
-<!-- ✅ LOGO (FAVICON) -->
-<link rel="icon" type="image/png" href="logo.png">
+<!-- FAVICON (YOU UPLOADED THIS) -->
+<link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#020617;
-color:#fff;
-animation: pageLoad 0.8s ease-out;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+html{scroll-behavior:smooth;}
+body{background:#020617;color:#fff;animation:pageLoad .8s ease-out;}
 
 @keyframes pageLoad{
 0%{opacity:0;transform:translateY(25px);filter:blur(6px);}
@@ -47,7 +35,6 @@ overflow:hidden;
 display:flex;
 flex-direction:column;
 }
-
 .bg-img{
 position:absolute;
 inset:0;
@@ -58,7 +45,6 @@ z-index:-2;
 filter:brightness(1.12) contrast(1.08) saturate(1.15);
 transform:scale(1.03);
 }
-
 .hero::after{
 content:"";
 position:absolute;
@@ -83,12 +69,10 @@ left:0;
 z-index:999;
 transition:0.4s ease;
 }
-
 .navbar.sticky{
 background:rgba(10,10,20,0.95);
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
-
 .navbar a{
 margin:0 10px;
 color:#fff;
@@ -98,7 +82,6 @@ padding:8px 12px;
 border-radius:8px;
 transition:.25s;
 }
-
 .navbar a:hover{
 background:rgba(59,130,246,0.3);
 }
@@ -112,20 +95,9 @@ justify-content:space-between;
 padding:0 80px;
 margin-top:80px;
 }
-
 .text{max-width:650px;}
-
-.text h1{
-font-size:56px;
-line-height:1.2;
-margin-bottom:18px;
-}
-
-.text p{
-font-size:18px;
-opacity:.95;
-margin-bottom:25px;
-}
+.text h1{font-size:56px;margin-bottom:18px;}
+.text p{font-size:18px;margin-bottom:25px;}
 
 /* BUTTON */
 .btn{
@@ -140,7 +112,6 @@ box-shadow:0 10px 25px rgba(59,130,246,0.25);
 position:relative;
 overflow:hidden;
 }
-
 .btn::before{
 content:"";
 position:absolute;
@@ -151,9 +122,7 @@ height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
 transition:0.5s;
 }
-
 .btn:hover::before{left:100%;}
-
 .btn:hover{
 transform:translateY(-4px);
 box-shadow:0 20px 40px rgba(59,130,246,0.4);
@@ -171,11 +140,8 @@ width:340px;
 
 /* SECTIONS */
 section{padding:90px 60px;}
-
 .container{max-width:1100px;margin:auto;}
-
 h2{font-size:34px;margin-bottom:10px;}
-
 .sub{color:#94a3b8;margin-bottom:25px;}
 
 /* GRID */
@@ -195,9 +161,7 @@ transition:0.6s ease;
 opacity:0;
 transform:translateY(40px);
 }
-
 .card.show{opacity:1;transform:translateY(0);}
-
 .card:hover{transform:translateY(-6px);}
 
 /* STATS */
@@ -206,7 +170,6 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 }
-
 .stat-card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.12);
@@ -217,14 +180,8 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s ease;
 }
-
 .stat-card.show{opacity:1;transform:translateY(0);}
-
-.counter{
-font-size:42px;
-color:#3b82f6;
-font-weight:700;
-}
+.counter{font-size:42px;color:#3b82f6;font-weight:700;}
 
 /* CTA */
 .cta{
@@ -236,7 +193,6 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s ease;
 }
-
 .cta.show{opacity:1;transform:translateY(0);}
 
 /* FOOTER */
@@ -259,7 +215,7 @@ color:#94a3b8;
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
-<div style="display:flex; align-items:center; gap:10px;">
+<div style="display:flex;align-items:center;gap:10px;">
 <img src="logo.png" alt="SWISA Logo" style="height:40px;">
 <b>SWISA Associates</b>
 </div>
@@ -354,7 +310,7 @@ color:#94a3b8;
 </footer>
 
 <script>
-// navbar
+// navbar sticky
 window.addEventListener("scroll",()=>{
 document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 });
