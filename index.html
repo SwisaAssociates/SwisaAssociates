@@ -5,12 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SEO (ONLY ADDITION) -->
-<title>SWISA Associates - Visa, Manpower & Overseas Jobs</title>
+<!-- ✅ SEO -->
+<title>SWISA Associates | Overseas Jobs, Visa & Manpower Services</title>
 <meta name="description" content="SWISA Associates provides visa stamping, manpower services, overseas jobs and documentation support in New Delhi.">
 <meta name="keywords" content="SWISA Associates, visa services, manpower services, overseas jobs, visa stamping India">
 <meta name="robots" content="index, follow">
-<meta name="author" content="SWISA Associates">
+
+<!-- ✅ LOGO (FAVICON) -->
+<link rel="icon" type="image/png" href="logo.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -33,16 +35,8 @@ animation: pageLoad 0.8s ease-out;
 }
 
 @keyframes pageLoad{
-0%{
-opacity:0;
-transform:translateY(25px);
-filter:blur(6px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-filter:blur(0);
-}
+0%{opacity:0;transform:translateY(25px);filter:blur(6px);}
+100%{opacity:1;transform:translateY(0);filter:blur(0);}
 }
 
 /* HERO */
@@ -119,9 +113,7 @@ padding:0 80px;
 margin-top:80px;
 }
 
-.text{
-max-width:650px;
-}
+.text{max-width:650px;}
 
 .text h1{
 font-size:56px;
@@ -160,9 +152,7 @@ background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent
 transition:0.5s;
 }
 
-.btn:hover::before{
-left:100%;
-}
+.btn:hover::before{left:100%;}
 
 .btn:hover{
 transform:translateY(-4px);
@@ -180,24 +170,13 @@ width:340px;
 }
 
 /* SECTIONS */
-section{
-padding:90px 60px;
-}
+section{padding:90px 60px;}
 
-.container{
-max-width:1100px;
-margin:auto;
-}
+.container{max-width:1100px;margin:auto;}
 
-h2{
-font-size:34px;
-margin-bottom:10px;
-}
+h2{font-size:34px;margin-bottom:10px;}
 
-.sub{
-color:#94a3b8;
-margin-bottom:25px;
-}
+.sub{color:#94a3b8;margin-bottom:25px;}
 
 /* GRID */
 .grid{
@@ -217,14 +196,9 @@ opacity:0;
 transform:translateY(40px);
 }
 
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
+.card.show{opacity:1;transform:translateY(0);}
 
-.card:hover{
-transform:translateY(-6px);
-}
+.card:hover{transform:translateY(-6px);}
 
 /* STATS */
 .stats-grid{
@@ -244,10 +218,7 @@ transform:translateY(40px);
 transition:0.6s ease;
 }
 
-.stat-card.show{
-opacity:1;
-transform:translateY(0);
-}
+.stat-card.show{opacity:1;transform:translateY(0);}
 
 .counter{
 font-size:42px;
@@ -266,10 +237,7 @@ transform:translateY(40px);
 transition:0.6s ease;
 }
 
-.cta.show{
-opacity:1;
-transform:translateY(0);
-}
+.cta.show{opacity:1;transform:translateY(0);}
 
 /* FOOTER */
 footer{
@@ -280,29 +248,22 @@ color:#94a3b8;
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.hero-content{
-flex-direction:column;
-text-align:center;
-gap:30px;
-}
-
-.text h1{
-font-size:38px;
-}
-
-.glass{
-width:100%;
-}
+.hero-content{flex-direction:column;text-align:center;gap:30px;}
+.text h1{font-size:38px;}
+.glass{width:100%;}
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
-<div><b>SWISA Associates</b></div>
+<div style="display:flex; align-items:center; gap:10px;">
+<img src="logo.png" alt="SWISA Logo" style="height:40px;">
+<b>SWISA Associates</b>
+</div>
+
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -316,7 +277,6 @@ width:100%;
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=5000&q=90" class="bg-img">
 
 <div class="hero-content">
-
 <div class="text">
 <h1>Build Your International Career With Confidence</h1>
 <p>Trusted overseas job placement, visa assistance, and global career guidance.</p>
@@ -330,7 +290,6 @@ width:100%;
 <p>✔ Global Network</p>
 <p>✔ Trusted Process</p>
 </div>
-
 </div>
 </div>
 
@@ -345,7 +304,6 @@ width:100%;
 <div class="card">Overseas Jobs</div>
 <div class="card">Documentation</div>
 </div>
-
 </div>
 </section>
 
@@ -356,7 +314,6 @@ width:100%;
 <p class="sub">Trusted results that define our success</p>
 
 <div class="stats-grid">
-
 <div class="stat-card">
 <h3 class="counter" data-target="1500">0</h3>
 <p>Clients Satisfied</p>
@@ -376,9 +333,7 @@ width:100%;
 <h3 class="counter" data-target="12">0</h3>
 <p>Years In The Field</p>
 </div>
-
 </div>
-
 </div>
 </section>
 
@@ -399,28 +354,22 @@ width:100%;
 </footer>
 
 <script>
-// sticky navbar
+// navbar
 window.addEventListener("scroll",()=>{
-const nav=document.getElementById("navbar");
-nav.classList.toggle("sticky",window.scrollY>50);
+document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 });
 
-// scroll animation
+// animations
 const items=document.querySelectorAll(".card, .stat-card, .cta");
-
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+if(entry.isIntersecting){entry.target.classList.add("show");}
 });
 });
-
 items.forEach(el=>observer.observe(el));
 
-// counter animation
+// counter
 const counters=document.querySelectorAll(".counter");
-
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -429,7 +378,6 @@ const update=()=>{
 const target=+counter.dataset.target;
 const current=+counter.innerText;
 const inc=Math.ceil(target/60);
-
 if(current<target){
 counter.innerText=current+inc;
 setTimeout(update,25);
@@ -442,7 +390,6 @@ update();
 }
 });
 });
-
 obs.observe(document.querySelector("#stats"));
 </script>
 
