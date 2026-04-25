@@ -15,8 +15,6 @@ box-sizing:border-box;
 font-family:Poppins;
 }
 
-html{scroll-behavior:smooth;}
-
 body{
 background:#020617;
 color:#fff;
@@ -46,12 +44,12 @@ text-decoration:none;
 font-size:14px;
 padding:8px 12px;
 border-radius:8px;
-transition:0.25s;
+transition:0.3s;
 }
 
 .navbar a:hover{
-background:rgba(59,130,246,0.18);
-transform:translateY(-1px);
+background:rgba(59,130,246,0.2);
+transform:translateY(-2px);
 }
 
 /* HERO */
@@ -71,7 +69,7 @@ content:"";
 position:absolute;
 inset:0;
 background:url('photo3.avif') center/cover no-repeat;
-filter:brightness(0.55) contrast(1.1);
+filter:brightness(0.55);
 transform:scale(1.05);
 z-index:-2;
 }
@@ -86,24 +84,18 @@ z-index:-1;
 
 .hero h1{
 font-size:48px;
-animation:fadeUp 0.8s ease forwards;
-opacity:0;
-transform:translateY(20px);
 }
 
 .hero p{
 font-size:16px;
 color:#cbd5e1;
 max-width:750px;
-margin:14px auto 0;
-animation:fadeUp 1s ease forwards;
-opacity:0;
-transform:translateY(20px);
+margin:12px auto 0;
 }
 
 /* SECTIONS */
 .section{
-padding:110px 60px; /* increased spacing */
+padding:100px 60px;
 }
 
 .container{
@@ -117,48 +109,55 @@ margin-bottom:18px;
 margin-top:50px;
 }
 
-/* TEXT */
+/* BOX (SERVICES STYLE MATCH) */
 .box{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 padding:35px;
 border-radius:16px;
 margin-top:20px;
-margin-bottom:30px;
-transition:0.25s ease;
+transition:0.5s ease;
+opacity:0;
+transform:translateY(40px);
 }
 
-/* ✔ subtle premium hover (NO JUMPY MOVEMENT) */
-.box:hover{
-transform:translateY(-3px);
-background:rgba(59,130,246,0.06);
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-border:1px solid rgba(59,130,246,0.25);
-}
-
-/* GRID */
+/* CARD GRID (SERVICES STYLE) */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
+gap:25px;
 margin-top:35px;
 }
 
-/* CARD */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 padding:25px;
 border-radius:14px;
-transition:0.25s ease;
+transition:0.5s ease;
+opacity:0;
+transform:translateY(40px);
 }
 
-/* ✔ smoother hover (less movement, more premium) */
+/* SAME HOVER STYLE LIKE SERVICES */
+.box:hover,
 .card:hover{
-transform:translateY(-4px);
-background:rgba(59,130,246,0.06);
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-border:1px solid rgba(59,130,246,0.25);
+transform:translateY(-6px);
+background:rgba(255,255,255,0.07);
+box-shadow:0 15px 30px rgba(0,0,0,0.35);
+border:1px solid rgba(59,130,246,0.3);
+}
+
+/* CTA (MATCH SERVICES STYLE) */
+.cta{
+background:rgba(255,255,255,0.06);
+padding:70px;
+border-radius:16px;
+text-align:center;
+margin-top:60px;
+opacity:0;
+transform:translateY(40px);
+transition:0.5s ease;
 }
 
 /* BUTTON */
@@ -170,21 +169,11 @@ background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
 transition:0.3s;
-box-shadow:0 10px 25px rgba(59,130,246,0.25);
 }
 
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 18px 35px rgba(59,130,246,0.35);
-}
-
-/* CTA */
-.cta{
-background:rgba(255,255,255,0.06);
-padding:70px;
-border-radius:16px;
-text-align:center;
-margin-top:60px;
+transform:translateY(-4px);
+box-shadow:0 20px 40px rgba(59,130,246,0.4);
 }
 
 /* FOOTER */
@@ -196,19 +185,10 @@ border-top:1px solid rgba(255,255,255,0.08);
 margin-top:60px;
 }
 
-/* ANIMATION */
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-.hero h1{font-size:32px;}
-.section{padding:70px 20px;}
-.navbar{padding:14px 20px;}
+/* SERVICES STYLE ANIMATION SYSTEM */
+.show{
+opacity:1 !important;
+transform:translateY(0) !important;
 }
 </style>
 
@@ -241,13 +221,13 @@ transform:translateY(0);
 
 <h2>👨‍💼 Who We Are</h2>
 
-<div class="box">
+<div class="box reveal">
 SWISA Associates is a trusted overseas consultancy dedicated to providing structured guidance and reliable support for international career opportunities. We focus on transparency, professionalism, and smooth processing for every candidate.
 </div>
 
 <h2>🤝 Our Commitment</h2>
 
-<div class="box">
+<div class="box reveal">
 We ensure a clear and professional journey for every client, maintaining honesty, structured workflow, and proper documentation support throughout the process.
 </div>
 
@@ -255,15 +235,15 @@ We ensure a clear and professional journey for every client, maintaining honesty
 
 <div class="grid">
 
-<div class="card">✔ Transparency in Process</div>
-<div class="card">✔ Reliable Guidance</div>
-<div class="card">✔ Professional Handling</div>
-<div class="card">✔ Global Opportunities</div>
+<div class="card reveal">✔ Transparency in Process</div>
+<div class="card reveal">✔ Reliable Guidance</div>
+<div class="card reveal">✔ Professional Handling</div>
+<div class="card reveal">✔ Global Opportunities</div>
 
 </div>
 
 <!-- CTA -->
-<div class="cta">
+<div class="cta reveal">
 <h2>🚀 Start Your Journey Today</h2>
 <p>Contact SWISA Associates for your future abroad 🌍</p>
 <br>
@@ -276,6 +256,21 @@ We ensure a clear and professional journey for every client, maintaining honesty
 <footer>
 SWISA Associates • New Delhi • 📞 9811084530
 </footer>
+
+<script>
+// SAME SERVICES PAGE STYLE ANIMATION
+const items=document.querySelectorAll('.reveal');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+
+items.forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
