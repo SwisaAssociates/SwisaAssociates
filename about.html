@@ -15,16 +15,14 @@ box-sizing:border-box;
 font-family:Poppins;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:#020617;
 color:#fff;
 }
 
-/* NAVBAR */
+html{scroll-behavior:smooth;}
+
+/* NAV */
 .navbar{
 position:sticky;
 top:0;
@@ -38,10 +36,6 @@ backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.navbar b{
-font-size:18px;
-}
-
 .navbar a{
 margin:0 10px;
 color:#fff;
@@ -49,27 +43,12 @@ text-decoration:none;
 font-size:14px;
 padding:8px 12px;
 border-radius:8px;
-position:relative;
 transition:0.3s;
+position:relative;
 }
 
-/* NAV HOVER */
-.navbar a::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:8px;
-transform:scale(0.8);
-opacity:0;
-transition:0.25s ease;
-z-index:-1;
-}
-
-.navbar a:hover::before{
-transform:scale(1);
-opacity:1;
+.navbar a:hover{
+background:rgba(59,130,246,0.25);
 }
 
 /* HERO */
@@ -89,7 +68,7 @@ content:"";
 position:absolute;
 inset:0;
 background:url('photo3.avif') center/cover no-repeat;
-filter:brightness(0.55) contrast(1.1);
+filter:brightness(0.55);
 transform:scale(1.05);
 z-index:-2;
 }
@@ -98,12 +77,12 @@ z-index:-2;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.5),rgba(0,0,0,0.85));
+background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.55),rgba(0,0,0,0.85));
 z-index:-1;
 }
 
 .hero h1{
-font-size:48px;
+font-size:52px;
 opacity:0;
 transform:translateY(20px);
 animation:fadeUp 0.8s forwards;
@@ -113,7 +92,7 @@ animation:fadeUp 0.8s forwards;
 font-size:16px;
 color:#cbd5e1;
 max-width:750px;
-margin:10px auto 0;
+margin:12px auto 0;
 opacity:0;
 transform:translateY(20px);
 animation:fadeUp 1s forwards;
@@ -131,16 +110,18 @@ margin:auto;
 }
 
 h2{
-font-size:34px;
+font-size:36px;
 margin-bottom:15px;
+color:#f8fafc;
 }
 
 p{
 color:#cbd5e1;
 line-height:1.8;
+font-size:15px;
 }
 
-/* BOX (UPDATED HOVER EFFECT 🔥) */
+/* BOX (ENHANCED) */
 .box{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
@@ -151,21 +132,6 @@ opacity:0;
 transform:translateY(40px);
 transition:0.4s ease;
 position:relative;
-overflow:hidden;
-}
-
-/* GLOW HOVER EFFECT */
-.box::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,transparent,rgba(59,130,246,0.08),transparent);
-transform:translateX(-100%);
-transition:0.6s;
-}
-
-.box:hover::before{
-transform:translateX(100%);
 }
 
 .box:hover{
@@ -187,7 +153,7 @@ gap:25px;
 margin-top:30px;
 }
 
-/* CARD (MATCHED HOVER STYLE 🔥) */
+/* CARDS (ENHANCED TEXT + FEEL) */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
@@ -196,33 +162,56 @@ border-radius:14px;
 opacity:0;
 transform:translateY(40px);
 transition:0.4s ease;
-position:relative;
-overflow:hidden;
-}
-
-/* SAME ANIMATION STYLE AS BOX */
-.card::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,transparent,rgba(59,130,246,0.08),transparent);
-transform:translateX(-100%);
-transition:0.6s;
-}
-
-.card:hover::before{
-transform:translateX(100%);
+text-align:center;
+font-weight:500;
+font-size:15px;
 }
 
 .card:hover{
 transform:translateY(-8px);
-border:1px solid rgba(59,130,246,0.4);
-box-shadow:0 20px 40px rgba(59,130,246,0.15);
+background:rgba(59,130,246,0.08);
+border:1px solid rgba(59,130,246,0.35);
+box-shadow:0 15px 35px rgba(59,130,246,0.15);
 }
 
 .card.show{
 opacity:1;
 transform:translateY(0);
+}
+
+/* CTA (FIXED + STRONG ANIMATION TEXT) */
+.cta{
+background:rgba(255,255,255,0.06);
+padding:60px;
+border-radius:16px;
+text-align:center;
+margin-top:40px;
+opacity:0;
+transform:translateY(40px);
+transition:0.5s;
+position:relative;
+overflow:hidden;
+}
+
+.cta:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(59,130,246,0.2);
+}
+
+.cta.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* CTA TEXT ANIMATION */
+.cta h2{
+animation:pulseText 2s infinite;
+}
+
+@keyframes pulseText{
+0%{text-shadow:0 0 0 rgba(59,130,246,0);}
+50%{text-shadow:0 0 20px rgba(59,130,246,0.4);}
+100%{text-shadow:0 0 0 rgba(59,130,246,0);}
 }
 
 /* BUTTON */
@@ -240,44 +229,6 @@ box-shadow:0 10px 25px rgba(59,130,246,0.25);
 .btn:hover{
 transform:translateY(-4px);
 box-shadow:0 20px 40px rgba(59,130,246,0.4);
-}
-
-/* CTA */
-.cta{
-background:rgba(255,255,255,0.06);
-padding:60px;
-border-radius:16px;
-text-align:center;
-margin-top:40px;
-opacity:0;
-transform:translateY(40px);
-transition:0.5s;
-position:relative;
-overflow:hidden;
-}
-
-/* CTA HOVER GLOW */
-.cta::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,transparent,rgba(59,130,246,0.08),transparent);
-transform:translateX(-100%);
-transition:0.6s;
-}
-
-.cta:hover::before{
-transform:translateX(100%);
-}
-
-.cta:hover{
-transform:translateY(-6px);
-box-shadow:0 25px 50px rgba(59,130,246,0.2);
-}
-
-.cta.show{
-opacity:1;
-transform:translateY(0);
 }
 
 /* FOOTER */
@@ -324,7 +275,7 @@ transform:translateY(0);
 <div class="hero">
 <div>
 <h1>About SWISA Associates</h1>
-<p>A professional overseas consultancy focused on delivering trusted, transparent, and structured international career solutions.</p>
+<p>A trusted overseas consultancy delivering structured, transparent and professional career solutions.</p>
 </div>
 </div>
 
@@ -334,31 +285,40 @@ transform:translateY(0);
 
 <h2>Who We Are</h2>
 <div class="box reveal">
-SWISA Associates is a trusted overseas consultancy dedicated to providing structured guidance and reliable support for international career opportunities. We focus on transparency, professionalism, and smooth processing for every candidate.
+SWISA Associates is a professional overseas consultancy focused on building international careers with transparency, trust and structured guidance.
 </div>
 
 <h2>Our Commitment</h2>
 <div class="box reveal">
-We ensure a clear and professional journey for every client, maintaining honesty, structured workflow, and proper documentation support throughout the process.
+We ensure a smooth, honest and reliable process for every candidate with complete documentation and support.
 </div>
 
 <h2>Core Values</h2>
 
 <div class="grid">
 
-<div class="card reveal">Transparency in Process</div>
-<div class="card reveal">Reliable Guidance</div>
-<div class="card reveal">Professional Handling</div>
+<div class="card reveal">Transparency</div>
+<div class="card reveal">Trust & Guidance</div>
+<div class="card reveal">Professional Support</div>
 <div class="card reveal">Global Opportunities</div>
 
 </div>
 
-<!-- CTA -->
+<!-- CTA (FIXED + ATTRACTIVE TEXT + ANIMATION) -->
 <div class="cta reveal">
-<h2>Start Your Journey Today</h2>
-<p>Contact SWISA Associates for your future abroad.</p>
+
+<h2>🚀 Start Your Journey Today</h2>
+
+<p>Contact SWISA Associates and begin your international career with confidence.</p>
+
 <br>
+
+<p style="color:#93c5fd;font-weight:500;animation:fadeUp 1s;">📞 Contact Now</p>
+
+<br>
+
 <a href="contact.html" class="btn">Contact Now</a>
+
 </div>
 
 </div>
