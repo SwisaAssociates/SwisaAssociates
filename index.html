@@ -1,16 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ✅ SEO ONLY -->
-<title>SWISA Associates - Visa, Manpower & Overseas Jobs</title>
-<meta name="description" content="SWISA Associates provides visa stamping, manpower services, air ticketing and overseas job consultancy in New Delhi.">
-<meta name="keywords" content="SWISA Associates, visa services, manpower services, overseas jobs, visa stamping India">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="YOUR_CODE_HERE">
+<title>SWISA Associates</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -29,22 +23,6 @@ scroll-behavior:smooth;
 body{
 background:#020617;
 color:#fff;
-
-/* PAGE LOAD */
-animation: pageLoad 0.8s ease-out;
-}
-
-@keyframes pageLoad{
-0%{
-opacity:0;
-transform:translateY(25px);
-filter:blur(6px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-filter:blur(0);
-}
 }
 
 /* HERO */
@@ -56,6 +34,7 @@ display:flex;
 flex-direction:column;
 }
 
+/* IMAGE (CLEAR + SHARP) */
 .bg-img{
 position:absolute;
 inset:0;
@@ -67,37 +46,40 @@ filter:brightness(1.12) contrast(1.08) saturate(1.15);
 transform:scale(1.03);
 }
 
+/* OVERLAY */
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
 z-index:-1;
-background:linear-gradient(120deg,rgba(0,0,0,0.55),rgba(0,0,0,0.25),rgba(0,0,0,0.6));
+background:linear-gradient(
+120deg,
+rgba(0,0,0,0.50),
+rgba(0,0,0,0.25),
+rgba(0,0,0,0.55)
+);
 }
 
-/* NAVBAR (STICKY PREMIUM) */
+/* NAVBAR */
 .navbar{
-width:100%;
-padding:18px 60px;
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+max-width:1100px;
+z-index:999;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-background:rgba(10,10,20,0.6);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.08);
+padding:14px 20px;
 
-position:fixed;
-top:0;
-left:0;
-z-index:999;
-
-transition:0.4s ease;
-}
-
-.navbar.sticky{
-background:rgba(10,10,20,0.95);
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+background:rgba(255,255,255,0.10);
+border:1px solid rgba(255,255,255,0.18);
+backdrop-filter:blur(15px);
+border-radius:14px;
 }
 
 .navbar a{
@@ -131,7 +113,7 @@ max-width:650px;
 .text h1{
 font-size:56px;
 line-height:1.2;
-margin-bottom:10px;
+margin-bottom:18px;
 }
 
 .text p{
@@ -148,25 +130,8 @@ padding:14px 28px;
 border-radius:12px;
 color:#fff;
 text-decoration:none;
-transition:.3s ease;
+transition:.3s;
 box-shadow:0 10px 25px rgba(59,130,246,0.25);
-position:relative;
-overflow:hidden;
-}
-
-.btn::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
-transition:0.5s;
-}
-
-.btn:hover::before{
-left:100%;
 }
 
 .btn:hover{
@@ -174,7 +139,7 @@ transform:translateY(-4px);
 box-shadow:0 20px 40px rgba(59,130,246,0.4);
 }
 
-/* GLASS */
+/* GLASS BOX */
 .glass{
 background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.15);
@@ -217,14 +182,7 @@ background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 padding:25px;
 border-radius:14px;
-transition:0.6s ease;
-opacity:0;
-transform:translateY(40px);
-}
-
-.card.show{
-opacity:1;
-transform:translateY(0);
+transition:.25s;
 }
 
 .card:hover{
@@ -244,14 +202,12 @@ border:1px solid rgba(255,255,255,0.12);
 padding:35px;
 border-radius:16px;
 text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:0.6s ease;
+transition:.3s;
 }
 
-.stat-card.show{
-opacity:1;
-transform:translateY(0);
+.stat-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .counter{
@@ -266,14 +222,6 @@ background:rgba(255,255,255,0.08);
 padding:60px;
 border-radius:16px;
 text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:0.6s ease;
-}
-
-.cta.show{
-opacity:1;
-transform:translateY(0);
 }
 
 /* FOOTER */
@@ -283,6 +231,7 @@ padding:25px;
 color:#94a3b8;
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
 .hero-content{
 flex-direction:column;
@@ -304,8 +253,13 @@ width:100%;
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar" id="navbar">
+<div class="hero">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=5000&q=90" class="bg-img">
+
+<!-- NAV -->
+
+<div class="navbar">
 <div><b>SWISA Associates</b></div>
 <div>
 <a href="index.html">Home</a>
@@ -316,14 +270,12 @@ width:100%;
 </div>
 
 <!-- HERO -->
-<div class="hero">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=5000&q=90" class="bg-img">
 
 <div class="hero-content">
 
 <div class="text">
-<h1>SWISA Associates</h1>
-<p>Build Your International Career With Confidence</p>
+<h1>Build Your International Career With Confidence</h1>
+<p>Trusted overseas job placement, visa assistance, and global career guidance.</p>
 <a href="services.html" class="btn">Explore Services</a>
 </div>
 
@@ -336,12 +288,106 @@ width:100%;
 </div>
 
 </div>
+
 </div>
 
-<!-- KEEP YOUR SERVICES, STATS, CTA SECTIONS EXACTLY SAME BELOW -->
+<!-- SERVICES -->
+
+<section>
+<div class="container">
+<h2>Our Services</h2>
+<p class="sub">Complete overseas career solutions</p>
+
+<div class="grid">
+<div class="card"><h3>Visa Processing</h3><p>End-to-end support.</p></div>
+<div class="card"><h3>Overseas Jobs</h3><p>Verified opportunities.</p></div>
+<div class="card"><h3>Documentation</h3><p>Full assistance.</p></div>
+</div>
+
+</div>
+</section>
+
+<!-- STATS -->
+
+<section id="stats">
+<div class="container">
+<h2>Our Achievements</h2>
+<p class="sub">Trusted results that define our success</p>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h3 class="counter" data-target="1500">0</h3>
+<p>Clients Satisfied</p>
+</div>
+
+<div class="stat-card">
+<h3 class="counter" data-target="990">0</h3>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat-card">
+<h3 class="counter" data-target="8">0</h3>
+<p>Team Members</p>
+</div>
+
+<div class="stat-card">
+<h3 class="counter" data-target="12">0</h3>
+<p>Years In The Field</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+
+<section>
+<div class="container">
+<div class="cta">
+<h2>Start Your Journey Today</h2>
+<p>Contact SWISA Associates for your future abroad.</p>
+<br>
+<a href="contact.html" class="btn">Contact Now</a>
+</div>
+</div>
+</section>
+
+<footer>
+<p>SWISA Associates • New Delhi • 9811084530</p>
+</footer>
+
+<!-- COUNTER SCRIPT -->
 
 <script>
-// your JS unchanged
+const counters = document.querySelectorAll('.counter');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+
+counters.forEach(counter => {
+const update = () => {
+const target = +counter.getAttribute('data-target');
+const current = +counter.innerText;
+const inc = Math.ceil(target / 60);
+
+if(current < target){
+counter.innerText = current + inc;
+setTimeout(update, 25);
+}else{
+counter.innerText = target + "+";
+}
+};
+update();
+});
+
+}
+});
+},{threshold:0.5});
+
+observer.observe(document.querySelector("#stats"));
 </script>
 
 </body>
