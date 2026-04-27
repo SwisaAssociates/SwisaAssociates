@@ -112,6 +112,30 @@ margin-bottom:30px;
 line-height:1.6;
 }
 
+/* FLOAT ANIMATION (ONLY ADDED) */
+.float-text{
+opacity:0;
+transform:translateY(25px);
+animation:floatUp 1s ease forwards;
+}
+
+.float-text:nth-of-type(2){
+animation-delay:0.2s;
+}
+
+@keyframes floatUp{
+0%{
+opacity:0;
+transform:translateY(25px);
+filter:blur(4px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+}
+
 /* GRID */
 .grid{
 display:grid;
@@ -265,8 +289,9 @@ font-size:34px;
 <!-- INTRO -->
 <section>
 <div class="container">
-<h2>🌍 Complete Overseas Solutions</h2>
-<p class="sub">
+<h2 class="float-text">🌍 Complete Overseas Solutions</h2>
+
+<p class="sub float-text">
 We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions ✈️ and immigration services for global career opportunities with full transparency and support.
 </p>
 </div>
@@ -337,7 +362,7 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 </div>
 </section>
 
-<!-- CTA (FULL RESTORED + ENHANCED VISUAL ONLY) -->
+<!-- CTA -->
 <section>
 <div class="container">
 <div class="cta reveal">
