@@ -3,22 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Services - SWISA Associates</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+body{background:#020617;color:#fff;}
+html{scroll-behavior:smooth;}
 
-body{
-background:#020617;
-color:#fff;
-}
+section{padding:110px 60px;}
+.container{max-width:1150px;margin:auto;}
+h2{font-size:36px;margin-bottom:12px;}
+.sub{color:#94a3b8;margin-bottom:35px;line-height:1.7;}
 
 /* NAV */
 .navbar{
@@ -27,46 +25,37 @@ padding:18px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(10,10,20,0.98);
+background:rgba(10,10,20,0.9);
 border-bottom:1px solid rgba(255,255,255,0.08);
-transition:.3s;
+position:fixed;
+top:0;
+z-index:999;
+transition:.4s;
 }
-
+.navbar.sticky{
+background:rgba(10,10,20,0.95);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
 .navbar a{
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-font-size:14px;
 padding:8px 12px;
 border-radius:8px;
 transition:.3s;
 }
-
-.navbar a:hover{
-background:rgba(59,130,246,0.3);
-}
-
-/* STICKY */
-.navbar.sticky{
-position:fixed;
-top:0;
-left:0;
-z-index:999;
-backdrop-filter:blur(15px);
-background:rgba(10,10,20,0.75);
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
+.navbar a:hover{background:rgba(59,130,246,0.3);}
 
 /* HERO */
 .hero{
-position:relative;
-height:60vh;
+height:65vh;
 display:flex;
 align-items:center;
 justify-content:center;
+position:relative;
+text-align:center;
 overflow:hidden;
 }
-
 .hero img{
 position:absolute;
 inset:0;
@@ -74,143 +63,71 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
-filter:brightness(1.15) contrast(1.1) saturate(1.15);
-transform:scale(1.03);
+filter:brightness(1.15);
 }
-
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.55);
+background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.35));
 z-index:-1;
 }
-
 .hero h1{
 font-size:52px;
-text-align:center;
-}
-
-/* SECTIONS */
-section{
-padding:90px 60px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-h2{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.sub{
-color:#94a3b8;
-margin-bottom:30px;
-line-height:1.6;
-}
-
-/* FLOAT ANIMATION (ONLY ADDED) */
-.float-text{
-opacity:0;
-transform:translateY(25px);
-animation:floatUp 1s ease forwards;
-}
-
-.float-text:nth-of-type(2){
-animation-delay:0.2s;
-}
-
-@keyframes floatUp{
-0%{
-opacity:0;
-transform:translateY(25px);
-filter:blur(4px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-filter:blur(0);
-}
+animation:fadeUp 1s;
 }
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+gap:30px;
 }
 
 /* CARD */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
-padding:28px;
+padding:30px;
 border-radius:16px;
-transition:.4s ease;
 opacity:0;
 transform:translateY(40px);
+transition:.5s;
 }
-
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
+.card.show{opacity:1;transform:translateY(0);}
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 background:rgba(255,255,255,0.08);
-}
-
-.card h3{
-color:#60a5fa;
-margin-bottom:10px;
 }
 
 /* SERVICE BOX */
 .service-box{
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.1);
-padding:30px;
-border-radius:16px;
-margin-bottom:20px;
-transition:.4s;
+padding:35px;
+border-radius:18px;
+margin-bottom:25px;
 opacity:0;
 transform:translateY(40px);
+transition:.5s;
 }
-
-.service-box.show{
-opacity:1;
-transform:translateY(0);
-}
-
+.service-box.show{opacity:1;transform:translateY(0);}
 .service-box:hover{
-transform:translateY(-6px);
-background:rgba(255,255,255,0.06);
-}
-
-.service-box h3{
-color:#60a5fa;
-margin-bottom:8px;
+transform:translateY(-8px);
+background:rgba(255,255,255,0.07);
 }
 
 /* CTA */
 .cta{
 text-align:center;
 background:rgba(255,255,255,0.08);
-padding:70px;
-border-radius:18px;
+padding:80px;
+border-radius:20px;
 opacity:0;
 transform:translateY(40px);
-transition:.4s ease;
+transition:.5s;
 }
-
-.cta.show{
-opacity:1;
-transform:translateY(0);
-}
+.cta.show{opacity:1;transform:translateY(0);}
 
 /* BUTTON */
 .btn{
@@ -220,63 +137,52 @@ padding:14px 28px;
 border-radius:12px;
 color:#fff;
 text-decoration:none;
-transition:.3s ease;
-box-shadow:0 10px 25px rgba(59,130,246,0.25);
+transition:.3s;
+box-shadow:0 10px 25px rgba(59,130,246,0.3);
 position:relative;
 overflow:hidden;
 }
-
 .btn::before{
 content:"";
 position:absolute;
-top:0;
 left:-100%;
+top:0;
 width:100%;
 height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
-transition:0.5s;
+transition:.5s;
 }
-
 .btn:hover::before{left:100%;}
-
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 40px rgba(59,130,246,0.4);
-}
+.btn:hover{transform:translateY(-5px);}
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-color:#94a3b8;
+footer{text-align:center;padding:30px;color:#94a3b8;}
+
+/* ANIMATION */
+@keyframes fadeUp{
+0%{opacity:0;transform:translateY(30px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.navbar{
-flex-direction:column;
-gap:10px;
-padding:15px;
-}
-
-.hero h1{
-font-size:34px;
-}
+.hero h1{font-size:34px;}
+section{padding:80px 20px;}
+.navbar{padding:15px;}
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
-<div><b>SWISA Associates 🌍</b></div>
+<b>SWISA Associates 🌍</b>
 <div>
-<a href="index.html">🏠 Home</a>
-<a href="services.html">💼 Services</a>
-<a href="about.html">ℹ️ About</a>
-<a href="contact.html">📞 Contact</a>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </div>
 </div>
 
@@ -289,10 +195,9 @@ font-size:34px;
 <!-- INTRO -->
 <section>
 <div class="container">
-<h2 class="float-text">🌍 Complete Overseas Solutions</h2>
-
-<p class="sub float-text">
-We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions ✈️ and immigration services for global career opportunities with full transparency and support.
+<h2>🌍 Complete Overseas Solutions</h2>
+<p class="sub">
+We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions ✈️ and immigration services for global career opportunities with full transparency and professional support.
 </p>
 </div>
 </section>
@@ -306,22 +211,22 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 
 <div class="card reveal">
 <h3>🛂 Visa Stamping</h3>
-<p>Complete visa stamping solutions for Gulf & international countries with fast, reliable processing.</p>
+<p>Complete visa stamping for Saudi, UAE, Kuwait and other Gulf countries with fast processing and verified documentation.</p>
 </div>
 
 <div class="card reveal">
 <h3>✈️ Overseas Jobs</h3>
-<p>Verified overseas job placements with trusted employers across UAE, Saudi, Qatar & more.</p>
+<p>Verified overseas job placements with trusted employers across construction, technical and service sectors.</p>
 </div>
 
 <div class="card reveal">
 <h3>👷 Manpower Services</h3>
-<p>Skilled & unskilled manpower recruitment solutions for international companies.</p>
+<p>Skilled and unskilled manpower recruitment for international companies with reliable sourcing.</p>
 </div>
 
 <div class="card reveal">
 <h3>🎫 Air Ticketing</h3>
-<p>Affordable global flight booking with complete travel assistance and support.</p>
+<p>Affordable flight booking with complete travel support and coordination.</p>
 </div>
 
 </div>
@@ -336,12 +241,12 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 
 <div class="service-box reveal">
 <h3>🇸🇦 Saudi Visa Stamping</h3>
-<p>End-to-end Saudi visa stamping with documentation, verification & embassy coordination.</p>
+<p>End-to-end Saudi visa stamping including documentation, verification and embassy coordination.</p>
 </div>
 
 <div class="service-box reveal">
 <h3>🇰🇼 Kuwait Visa Stamping</h3>
-<p>Fast Kuwait visa processing with complete support and verification system.</p>
+<p>Fast and secure Kuwait visa processing with complete support.</p>
 </div>
 
 <div class="service-box reveal">
@@ -351,12 +256,12 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 
 <div class="service-box reveal">
 <h3>🌍 Immigration Services</h3>
-<p>Professional immigration guidance for smooth global relocation process.</p>
+<p>Professional immigration guidance for smooth global relocation.</p>
 </div>
 
 <div class="service-box reveal">
 <h3>🏝️ Tour & Travel</h3>
-<p>Customized international travel planning, holiday packages & support.</p>
+<p>Customized international travel planning and holiday packages.</p>
 </div>
 
 </div>
@@ -369,13 +274,11 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 
 <h2>🚀 Start Your Journey Today</h2>
 
-<p>Contact SWISA Associates and begin your international career with confidence.</p>
+<p>
+Contact SWISA Associates and begin your international career with confidence.
+</p>
 
 <br><br>
-
-<p>📞 Contact Now</p>
-
-<br>
 
 <a href="contact.html" class="btn">📞 Contact Now</a>
 
@@ -384,15 +287,16 @@ We deliver trusted visa processing 🛂, manpower supply 👷, travel solutions 
 </section>
 
 <footer>
-<p>SWISA Associates • New Delhi • 📞 9811084530</p>
+SWISA Associates • New Delhi • 📞 9811084530
 </footer>
 
 <script>
+// NAVBAR
 window.addEventListener("scroll",()=>{
-let nav=document.getElementById("navbar");
-nav.classList.toggle("sticky",window.scrollY>50);
+document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 });
 
+// REVEAL
 const items=document.querySelectorAll(".reveal");
 
 const observer=new IntersectionObserver(entries=>{
@@ -401,7 +305,7 @@ if(entry.isIntersecting){
 entry.target.classList.add("show");
 }
 });
-},{threshold:0.2});
+});
 
 items.forEach(el=>observer.observe(el));
 </script>
