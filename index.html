@@ -6,8 +6,24 @@
 
 <title>SWISA Associates | Overseas Jobs, Visa & Manpower</title>
 
-<meta name="description" content="SWISA Associates - Trusted overseas consultancy for visa stamping, manpower, and international job placements.">
-<meta name="keywords" content="visa, overseas jobs, manpower, swisa associates">
+<meta name="description" content="SWISA Associates provides overseas jobs, visa stamping, manpower recruitment and immigration services.">
+<meta name="robots" content="index, follow">
+
+<!-- SEO SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SWISA Associates",
+  "url": "https://swisaassociates.github.io/SwisaAssociates/",
+  "logo": "logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91 9811084530",
+    "contactType": "customer support"
+  }
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -39,7 +55,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-font-size:14px;
 padding:8px 12px;
 border-radius:8px;
 transition:.3s;
@@ -61,13 +76,13 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
-filter:brightness(1.1) contrast(1.1);
+filter:brightness(1.05) contrast(1.1);
 }
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.7),rgba(0,0,0,0.3));
+background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.35));
 z-index:-1;
 }
 
@@ -76,16 +91,8 @@ padding:0 80px;
 max-width:700px;
 animation:fadeUp 1s ease;
 }
-.hero h1{
-font-size:56px;
-margin-bottom:15px;
-}
-.hero p{
-color:#cbd5e1;
-font-size:18px;
-margin-bottom:25px;
-line-height:1.6;
-}
+.hero h1{font-size:56px;margin-bottom:15px;}
+.hero p{color:#cbd5e1;font-size:18px;margin-bottom:25px;}
 
 /* BUTTON */
 .btn{
@@ -98,28 +105,13 @@ text-decoration:none;
 transition:.3s;
 box-shadow:0 10px 25px rgba(59,130,246,0.3);
 }
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 20px 40px rgba(59,130,246,0.4);
-}
+.btn:hover{transform:translateY(-5px);}
 
 /* SECTIONS */
-section{
-padding:100px 60px;
-}
-.container{
-max-width:1150px;
-margin:auto;
-}
-h2{
-font-size:36px;
-margin-bottom:15px;
-}
-.sub{
-color:#94a3b8;
-margin-bottom:35px;
-line-height:1.7;
-}
+section{padding:100px 60px;}
+.container{max-width:1150px;margin:auto;}
+h2{font-size:36px;margin-bottom:15px;}
+.sub{color:#94a3b8;margin-bottom:35px;line-height:1.7;}
 
 /* GRID */
 .grid{
@@ -139,10 +131,18 @@ transform:translateY(40px);
 transition:.5s;
 }
 .card.show{opacity:1;transform:translateY(0);}
-.card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.08);
+
+/* TRUST */
+.trust{
+background:rgba(255,255,255,0.04);
+padding:40px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:.5s;
 }
+.trust.show{opacity:1;transform:translateY(0);}
 
 /* STATS */
 .stats{
@@ -155,7 +155,6 @@ text-align:center;
 background:rgba(255,255,255,0.05);
 padding:35px;
 border-radius:16px;
-border:1px solid rgba(255,255,255,0.08);
 opacity:0;
 transform:translateY(40px);
 transition:.5s;
@@ -166,18 +165,6 @@ font-size:40px;
 color:#3b82f6;
 font-weight:700;
 }
-
-/* TRUST SECTION */
-.trust{
-background:rgba(255,255,255,0.04);
-padding:50px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.08);
-opacity:0;
-transform:translateY(40px);
-transition:.5s;
-}
-.trust.show{opacity:1;transform:translateY(0);}
 
 /* CTA */
 .cta{
@@ -204,13 +191,6 @@ border-top:1px solid rgba(255,255,255,0.08);
 from{opacity:0;transform:translateY(30px);}
 to{opacity:1;transform:translateY(0);}
 }
-
-/* RESPONSIVE */
-@media(max-width:900px){
-.hero h1{font-size:36px;}
-.hero-content{padding:0 20px;}
-section{padding:80px 20px;}
-}
 </style>
 </head>
 
@@ -218,7 +198,10 @@ section{padding:80px 20px;}
 
 <!-- NAV -->
 <div class="navbar" id="navbar">
-<div><b>SWISA Associates 🌍</b></div>
+<div style="display:flex;align-items:center;gap:10px;">
+<img src="logo.png" style="height:38px;">
+<b>SWISA Associates</b>
+</div>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -227,61 +210,59 @@ section{padding:80px 20px;}
 </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (IMAGE RESTORED PROPERLY) -->
 <div class="hero">
-<img src="photo1.jpg">
+<img src="photo1.jpg" alt="SWISA Hero Image">
 <div class="hero-content">
 <h1>Build Your Career Abroad With Confidence</h1>
-<p>Trusted overseas consultancy for visa processing, manpower recruitment, and international job placements with complete transparency.</p>
+<p>Trusted overseas consultancy for visa, manpower and international job placements.</p>
 <a href="services.html" class="btn">Explore Services</a>
 </div>
 </div>
 
-<!-- SERVICES PREVIEW -->
+<!-- SERVICES -->
 <section>
 <div class="container">
 <h2>Our Core Services</h2>
-<p class="sub">Complete overseas career solutions designed for professionals and skilled workers.</p>
 
 <div class="grid">
 
 <div class="card reveal">
 <h3>Visa Stamping</h3>
-<p>Fast and reliable visa processing for Gulf and international countries.</p>
+<p>Fast and reliable visa processing for Gulf countries.</p>
 </div>
 
 <div class="card reveal">
 <h3>Overseas Jobs</h3>
-<p>Verified job placements with trusted international employers.</p>
+<p>Verified international job placements with trusted employers.</p>
 </div>
 
 <div class="card reveal">
 <h3>Manpower Supply</h3>
-<p>Skilled and unskilled manpower recruitment for global companies.</p>
+<p>Skilled and unskilled manpower recruitment solutions.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- TRUST SECTION -->
+<!-- TRUST -->
 <section>
 <div class="container">
-<h2>Why People Trust SWISA</h2>
+<h2>Why Clients Trust Us</h2>
 
 <div class="trust reveal">
-✔ 12+ Years Industry Experience<br><br>
+✔ 12+ Years Experience<br><br>
 ✔ 1500+ Successful Placements<br><br>
-✔ Transparent Process System<br><br>
-✔ Verified Overseas Employers<br><br>
-✔ End-to-End Support
+✔ Verified Employers<br><br>
+✔ Transparent Process
 </div>
 
 </div>
 </section>
 
-<!-- STATS -->
-<section>
+<!-- STATS (FIXED CONSISTENT ANIMATION) -->
+<section id="stats">
 <div class="container">
 <h2>Our Achievements</h2>
 
@@ -311,8 +292,8 @@ section{padding:80px 20px;}
 <section>
 <div class="container">
 <div class="cta reveal">
-<h2>Start Your Journey Today 🚀</h2>
-<p>Contact SWISA Associates for trusted overseas career guidance.</p>
+<h2>🚀 Start Your Journey Today</h2>
+<p>Contact SWISA Associates for trusted overseas opportunities.</p>
 <br>
 <a href="contact.html" class="btn">Contact Now</a>
 </div>
@@ -330,7 +311,7 @@ window.addEventListener("scroll",()=>{
 document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 });
 
-// reveal
+// reveal animation
 const items=document.querySelectorAll(".reveal");
 
 const observer=new IntersectionObserver(entries=>{
@@ -340,14 +321,16 @@ entry.target.classList.add("show");
 }
 });
 });
-
 items.forEach(el=>observer.observe(el));
 
-// counter animation
-const counters=document.querySelectorAll(".counter");
+// FIXED COUNTER (RUNS ONLY ONCE)
+let counterStarted=false;
 
-const runCounter=()=>{
-counters.forEach(counter=>{
+function startCounter(){
+if(counterStarted) return;
+counterStarted=true;
+
+document.querySelectorAll(".counter").forEach(counter=>{
 const update=()=>{
 const target=+counter.dataset.target;
 const current=+counter.innerText;
@@ -362,9 +345,19 @@ counter.innerText=target+"+";
 };
 update();
 });
-};
+}
 
-window.addEventListener("scroll",runCounter);
+const statsSection=document.querySelector("#stats");
+
+const statsObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+startCounter();
+}
+});
+},{threshold:0.5});
+
+statsObserver.observe(statsSection);
 
 </script>
 
