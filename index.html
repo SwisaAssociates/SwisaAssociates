@@ -16,23 +16,17 @@ body{background:#020617;color:#fff;}
 /* GLOBAL */
 section{padding:110px 60px;}
 .container{max-width:1150px;margin:auto;}
-h2{font-size:36px;margin-bottom:12px;}
-.sub{color:#94a3b8;margin-bottom:35px;line-height:1.7;}
+h2{font-size:38px;margin-bottom:12px;}
+.sub{color:#94a3b8;margin-bottom:35px;line-height:1.8;}
 
 /* NAVBAR */
 .navbar{
-position:fixed;
-top:0;
-width:100%;
+position:fixed;top:0;width:100%;
 padding:18px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+display:flex;justify-content:space-between;align-items:center;
 background:rgba(10,10,20,0.6);
 backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-z-index:999;
-transition:.4s;
+z-index:999;transition:.4s;
 }
 .navbar.sticky{
 background:rgba(10,10,20,0.95);
@@ -42,7 +36,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-font-size:14px;
 padding:8px 12px;
 border-radius:8px;
 transition:.3s;
@@ -57,6 +50,7 @@ align-items:center;
 justify-content:center;
 position:relative;
 overflow:hidden;
+text-align:center;
 }
 .bg-img{
 position:absolute;
@@ -71,29 +65,28 @@ filter:brightness(1.15) contrast(1.1);
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.7),rgba(0,0,0,0.3));
+background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.35));
 z-index:-1;
 }
 .hero-content{
-text-align:center;
-max-width:850px;
+max-width:900px;
 animation:fadeUp 1s ease;
 }
 .hero h1{
-font-size:56px;
+font-size:60px;
 margin-bottom:20px;
 }
 .hero p{
 font-size:18px;
-margin-bottom:30px;
 color:#cbd5e1;
+margin-bottom:30px;
 }
 
 /* BUTTON */
 .btn{
 display:inline-block;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
-padding:14px 28px;
+padding:15px 30px;
 border-radius:12px;
 color:#fff;
 text-decoration:none;
@@ -105,18 +98,15 @@ overflow:hidden;
 .btn::before{
 content:"";
 position:absolute;
-top:0;
 left:-100%;
+top:0;
 width:100%;
 height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
 transition:.5s;
 }
 .btn:hover::before{left:100%;}
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 40px rgba(59,130,246,0.5);
-}
+.btn:hover{transform:translateY(-5px);}
 
 /* GRID */
 .grid{
@@ -129,11 +119,11 @@ gap:30px;
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
-padding:30px;
+padding:32px;
 border-radius:16px;
-transition:.4s;
 opacity:0;
 transform:translateY(40px);
+transition:.5s;
 }
 .card.show{opacity:1;transform:translateY(0);}
 .card:hover{
@@ -155,7 +145,7 @@ transition:.5s;
 }
 .stat.show{opacity:1;transform:translateY(0);}
 .counter{
-font-size:44px;
+font-size:46px;
 color:#3b82f6;
 font-weight:700;
 }
@@ -164,8 +154,8 @@ font-weight:700;
 .cta{
 text-align:center;
 background:rgba(255,255,255,0.08);
-padding:70px;
-border-radius:18px;
+padding:80px;
+border-radius:20px;
 opacity:0;
 transform:translateY(40px);
 transition:.5s;
@@ -179,7 +169,7 @@ padding:30px;
 color:#94a3b8;
 }
 
-/* WHATSAPP */
+/* FLOATING WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -191,7 +181,6 @@ color:#fff;
 text-decoration:none;
 font-size:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
-z-index:999;
 }
 
 /* ANIMATION */
@@ -202,9 +191,8 @@ z-index:999;
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.hero h1{font-size:36px;}
+.hero h1{font-size:38px;}
 section{padding:80px 20px;}
-.navbar{padding:15px;}
 }
 </style>
 </head>
@@ -213,7 +201,7 @@ section{padding:80px 20px;}
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
-<div><b>SWISA Associates 🌍</b></div>
+<b>SWISA Associates 🌍</b>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -228,8 +216,8 @@ section{padding:80px 20px;}
 
 <div class="hero-content">
 <h1>Build Your Career Abroad 🚀</h1>
-<p>Trusted visa processing, overseas jobs & manpower services with 1500+ successful placements.</p>
-<a href="contact.html" class="btn">Get Free Consultation</a>
+<p>Trusted visa processing, overseas jobs and manpower solutions with 1500+ successful placements and 12+ years of experience.</p>
+<a href="contact.html" class="btn">Start Your Journey</a>
 </div>
 </div>
 
@@ -237,27 +225,38 @@ section{padding:80px 20px;}
 <section>
 <div class="container">
 <h2>Our Services 💼</h2>
-<p class="sub">Complete overseas career solutions</p>
+<p class="sub">Complete overseas career solutions designed for reliability and success</p>
 
 <div class="grid">
-<div class="card reveal">🛂 Visa Processing</div>
-<div class="card reveal">🌍 Overseas Jobs</div>
-<div class="card reveal">📄 Documentation</div>
+<div class="card reveal">
+<h3>🛂 Visa Processing</h3>
+<p>End-to-end visa stamping for Gulf countries with proper documentation and fast approvals.</p>
+</div>
+
+<div class="card reveal">
+<h3>🌍 Overseas Jobs</h3>
+<p>Verified job opportunities with trusted international employers across multiple industries.</p>
+</div>
+
+<div class="card reveal">
+<h3>📄 Documentation</h3>
+<p>Professional document verification, attestation and embassy processing support.</p>
+</div>
 </div>
 </div>
 </section>
 
-<!-- TRUST -->
+<!-- PROCESS -->
 <section>
 <div class="container">
-<h2>Trusted by 1500+ Clients 🌍</h2>
-<p class="sub">Delivering reliable and transparent services</p>
+<h2>Our Process 🚀</h2>
+<p class="sub">A structured and transparent approach for smooth international placement</p>
 
 <div class="grid">
-<div class="card reveal">🏆 1500+ Placements</div>
-<div class="card reveal">📅 12+ Years Experience</div>
-<div class="card reveal">🌎 Global Network</div>
-<div class="card reveal">⚡ Fast Processing</div>
+<div class="card reveal"><h3>1️⃣ Consultation</h3><p>Understanding your profile and goals.</p></div>
+<div class="card reveal"><h3>2️⃣ Documentation</h3><p>Complete preparation and verification.</p></div>
+<div class="card reveal"><h3>3️⃣ Visa Processing</h3><p>Reliable and fast approvals.</p></div>
+<div class="card reveal"><h3>4️⃣ Departure</h3><p>Final travel and support.</p></div>
 </div>
 </div>
 </section>
@@ -268,17 +267,32 @@ section{padding:80px 20px;}
 <h2>Our Achievements 📊</h2>
 
 <div class="stats-grid">
-<div class="stat">
-<h3 class="counter" data-target="1500">0</h3>
-<p>Clients</p>
+<div class="stat"><h3 class="counter" data-target="1500">0</h3><p>Clients</p></div>
+<div class="stat"><h3 class="counter" data-target="990">0</h3><p>Projects</p></div>
+<div class="stat"><h3 class="counter" data-target="12">0</h3><p>Years Experience</p></div>
 </div>
-<div class="stat">
-<h3 class="counter" data-target="990">0</h3>
-<p>Projects</p>
 </div>
-<div class="stat">
-<h3 class="counter" data-target="12">0</h3>
-<p>Years</p>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+<div class="container">
+<h2>What Our Clients Say 💬</h2>
+
+<div class="grid">
+<div class="card reveal">
+<p>"Got visa quickly. Very professional service."</p>
+<b>— Imran</b>
+</div>
+
+<div class="card reveal">
+<p>"Smooth process and clear guidance."</p>
+<b>— Arman</b>
+</div>
+
+<div class="card reveal">
+<p>"Trusted consultancy. Highly recommended."</p>
+<b>— Faisal</b>
 </div>
 </div>
 </div>
@@ -289,7 +303,7 @@ section{padding:80px 20px;}
 <div class="container">
 <div class="cta reveal">
 <h2>Start Your Journey Today 🚀</h2>
-<p>Contact SWISA Associates and begin your international career.</p>
+<p>Contact SWISA Associates and begin your international career with confidence.</p>
 <br>
 <a href="contact.html" class="btn">Contact Now</a>
 </div>
@@ -312,17 +326,15 @@ document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 const reveal=document.querySelectorAll(".card,.stat,.cta");
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+if(entry.isIntersecting){entry.target.classList.add("show");}
 });
-},{threshold:0.2});
+});
 reveal.forEach(el=>observer.observe(el));
 
-// COUNTER (FINAL SMOOTH)
+// COUNTER
 const counters=document.querySelectorAll(".counter");
 
-const counterObserver=new IntersectionObserver(entries=>{
+const obs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 counters.forEach(counter=>{
@@ -330,16 +342,15 @@ if(counter.classList.contains("done")) return;
 counter.classList.add("done");
 
 let target=+counter.dataset.target;
-let duration=1500;
 let startTime=null;
 
 function animate(t){
 if(!startTime) startTime=t;
 let progress=t-startTime;
-let val=Math.min(Math.floor(progress/duration*target),target);
+let val=Math.min(Math.floor(progress/1500*target),target);
 counter.innerText=val;
 
-if(progress<duration){
+if(progress<1500){
 requestAnimationFrame(animate);
 }else{
 counter.innerText=target+"+";
@@ -349,9 +360,9 @@ requestAnimationFrame(animate);
 });
 }
 });
-},{threshold:0.5});
+});
 
-counterObserver.observe(document.querySelector("#stats"));
+obs.observe(document.querySelector("#stats"));
 </script>
 
 </body>
