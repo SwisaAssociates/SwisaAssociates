@@ -9,19 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+body{background:#020617;color:#fff;}
+html{scroll-behavior:smooth;}
 
-body{
-background:#020617;
-color:#fff;
-}
-
-/* NAVBAR */
+/* NAV */
 .navbar{
 position:sticky;
 top:0;
@@ -34,93 +26,64 @@ background:rgba(10,10,20,0.9);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
-
 .navbar a{
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-font-size:14px;
 padding:8px 12px;
 border-radius:8px;
-position:relative;
-transition:0.3s;
+transition:.3s;
 }
-
-/* NAV HOVER */
-.navbar a::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:8px;
-transform:scale(0.85);
-opacity:0;
-transition:0.25s;
-z-index:-1;
-}
-.navbar a:hover::before{
-transform:scale(1);
-opacity:1;
-}
+.navbar a:hover{background:rgba(59,130,246,0.3);}
 
 /* HERO */
 .hero{
-position:relative;
 height:70vh;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 overflow:hidden;
-padding:0 20px;
 }
-
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
 background:url('photo3.avif') center/cover no-repeat;
 filter:brightness(0.55);
-transform:scale(1.05);
 z-index:-2;
 }
-
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.5),rgba(0,0,0,0.85));
+background:linear-gradient(120deg,rgba(0,0,0,0.8),rgba(0,0,0,0.4));
 z-index:-1;
 }
-
 .hero h1{
 font-size:52px;
 animation:fadeUp 1s ease;
 }
-
 .hero p{
-margin-top:10px;
 color:#cbd5e1;
+margin-top:10px;
 max-width:800px;
 animation:fadeUp 1.2s ease;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
 padding:100px 60px;
 }
-
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 }
-
 h2{
 font-size:36px;
-margin-bottom:18px;
+margin-bottom:15px;
 }
-
 p{
 color:#cbd5e1;
 line-height:1.8;
@@ -130,20 +93,12 @@ line-height:1.8;
 .box{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:40px;
+padding:35px;
 border-radius:16px;
 margin-top:25px;
 opacity:0;
 transform:translateY(40px);
-transition:0.6s;
-}
-
-/* ✨ HOVER IMPROVED (ALL BOXES) */
-.box:hover,
-.card:hover,
-.cta:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.08);
+transition:.6s;
 }
 
 /* GRID */
@@ -162,7 +117,7 @@ padding:28px;
 border-radius:14px;
 opacity:0;
 transform:translateY(40px);
-transition:0.6s;
+transition:.6s;
 }
 
 /* CTA */
@@ -174,7 +129,15 @@ text-align:center;
 margin-top:50px;
 opacity:0;
 transform:translateY(40px);
-transition:0.6s;
+transition:.6s;
+}
+
+/* HOVER EFFECT (ALL BOXES) */
+.box:hover,
+.card:hover,
+.cta:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
 }
 
 /* BUTTON */
@@ -185,11 +148,11 @@ border-radius:12px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
-transition:0.3s;
+transition:.3s;
 box-shadow:0 10px 25px rgba(59,130,246,0.3);
 }
 .btn:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
 }
 
 /* FOOTER */
@@ -223,7 +186,7 @@ to{opacity:1;transform:translateY(0);}
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar">
 <div><b>SWISA Associates 🌍</b></div>
 <div>
@@ -238,7 +201,7 @@ to{opacity:1;transform:translateY(0);}
 <div class="hero">
 <div>
 <h1>About SWISA Associates 🏢</h1>
-<p>A trusted overseas consultancy focused on transparent processes, structured guidance, and long-term international career support.</p>
+<p>Trusted overseas consultancy delivering structured career opportunities with transparency, reliability, and professional support.</p>
 </div>
 </div>
 
@@ -249,30 +212,41 @@ to{opacity:1;transform:translateY(0);}
 <h2>Who We Are 👤</h2>
 
 <div class="box reveal">
-SWISA Associates is a professionally managed overseas consultancy providing structured career solutions for individuals seeking international job opportunities. We focus on transparency, documentation accuracy, and reliable guidance throughout the process.
+SWISA Associates is a professional overseas consultancy specializing in international job placements, visa assistance, and manpower recruitment services. We focus on transparent processes and trusted employer connections.
 </div>
 
 <h2>Our Mission 🎯</h2>
 
 <div class="box reveal">
-Our mission is to connect skilled and unskilled professionals with verified international employers while ensuring complete clarity, safety, and process transparency.
+To connect skilled and unskilled professionals with verified international opportunities while ensuring smooth, safe, and structured processing at every stage.
 </div>
 
-<h2>Our Commitment 🤝</h2>
+<h2>Global Presence 🌍</h2>
 
 <div class="box reveal">
-We are committed to providing ethical consultancy services, maintaining proper documentation flow, and ensuring a smooth experience for every candidate from consultation to departure.
+We provide overseas recruitment and visa support across UAE 🇦🇪, Saudi Arabia 🇸🇦, Kuwait 🇰🇼, Qatar 🇶🇦, Oman 🇴🇲, and other Gulf countries.
 </div>
 
-<h2>Core Values ⭐</h2>
+<h2>Industries We Serve 🏭</h2>
 
 <div class="grid">
 
-<div class="card reveal">✔ Transparency in Process</div>
-<div class="card reveal">✔ Reliable Guidance</div>
-<div class="card reveal">✔ Professional Handling</div>
-<div class="card reveal">✔ Global Opportunities</div>
+<div class="card reveal">Construction & Engineering</div>
+<div class="card reveal">Oil & Gas Industry</div>
+<div class="card reveal">Hospitality & Services</div>
+<div class="card reveal">Manufacturing Sector</div>
+<div class="card reveal">Technical & Skilled Labour</div>
 
+</div>
+
+<h2>Why Choose SWISA ⭐</h2>
+
+<div class="box reveal">
+✔ 12+ Years Experience<br>
+✔ 1500+ Successful Placements<br>
+✔ Verified International Employers<br>
+✔ Transparent Process System<br>
+✔ End-to-End Candidate Support
 </div>
 
 <!-- CTA -->
@@ -287,7 +261,7 @@ We are committed to providing ethical consultancy services, maintaining proper d
 </section>
 
 <footer>
-SWISA Associates • New Delhi • 📞 9811084530
+SWISA Associates • New Delhi • 9811084530
 </footer>
 
 <script>
