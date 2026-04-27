@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contact - SWISA Associates</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,9 @@ background:#020617;
 color:#fff;
 }
 
-/* NAVBAR */
+html{scroll-behavior:smooth;}
+
+/* NAV */
 .navbar{
 position:sticky;
 top:0;
@@ -38,46 +41,32 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 margin:0 10px;
 color:#fff;
 text-decoration:none;
+font-size:14px;
 padding:8px 12px;
 border-radius:8px;
-position:relative;
+transition:0.3s;
 }
-
-/* NAV HOVER BOX */
-.navbar a::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:8px;
-transform:scale(0.8);
-opacity:0;
-transition:0.25s;
-z-index:-1;
-}
-
-.navbar a:hover::before{
-transform:scale(1);
-opacity:1;
+.navbar a:hover{
+background:rgba(59,130,246,0.3);
 }
 
 /* HERO */
 .hero{
 position:relative;
-height:60vh;
+height:55vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+overflow:hidden;
 }
 
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
-background:url('photo4.avif') center/cover no-repeat;
-filter:brightness(0.55);
+background:url('photo2.avif') center/cover no-repeat;
+filter:brightness(0.5);
 z-index:-2;
 }
 
@@ -85,33 +74,47 @@ z-index:-2;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.7),rgba(0,0,0,0.85));
+background:linear-gradient(120deg,rgba(0,0,0,0.8),rgba(0,0,0,0.4));
 z-index:-1;
 }
 
 .hero h1{
-font-size:42px;
-animation:fadeUp 0.8s ease forwards;
+font-size:52px;
+animation:fadeUp 1s ease;
 }
 
 .hero p{
 color:#cbd5e1;
 margin-top:10px;
+animation:fadeUp 1.2s ease;
 }
 
 /* SECTION */
 .section{
-padding:90px 60px;
+padding:100px 60px;
+}
+
+.container{
 max-width:1100px;
 margin:auto;
 }
 
-/* GRID */
+h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:35px;
+line-height:1.7;
+}
+
+/* CONTACT GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
-margin-top:30px;
 }
 
 /* CARD */
@@ -120,38 +123,69 @@ background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 padding:30px;
 border-radius:16px;
-transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+transition:0.5s;
 }
-
+.card.show{opacity:1;transform:translateY(0);}
 .card:hover{
 transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
 }
+
+/* FORM */
+form{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:0.5s;
+}
+form.show{opacity:1;transform:translateY(0);}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.08);
+color:#fff;
+}
+
+textarea{height:120px;resize:none;}
 
 /* BUTTON */
 .btn{
 display:inline-block;
-margin-top:15px;
-padding:12px 24px;
-border-radius:10px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
+padding:14px 28px;
+border-radius:12px;
 color:#fff;
 text-decoration:none;
+border:none;
+cursor:pointer;
 transition:0.3s;
+box-shadow:0 10px 25px rgba(59,130,246,0.3);
 }
-
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 20px 40px rgba(59,130,246,0.4);
 }
 
-/* CTA */
-.cta{
-margin-top:60px;
-text-align:center;
-background:rgba(255,255,255,0.06);
-padding:50px;
+/* INFO BOX */
+.info{
+background:rgba(255,255,255,0.05);
+padding:30px;
 border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:0.5s;
 }
+.info.show{opacity:1;transform:translateY(0);}
 
 /* FOOTER */
 footer{
@@ -164,24 +198,24 @@ margin-top:50px;
 
 /* ANIMATION */
 @keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+0%{opacity:0;transform:translateY(20px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.section{padding:70px 20px;}
-.hero h1{font-size:28px;}
+.hero h1{font-size:34px;}
+.section{padding:80px 20px;}
+.navbar{padding:14px 20px;}
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar">
-<div><b>SWISA Associates</b></div>
+<div><b>SWISA Associates 🌍</b></div>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -193,65 +227,79 @@ to{opacity:1;transform:translateY(0);}
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>Contact Us</h1>
-<p>We are here to guide your international career journey</p>
+<h1>Contact Us 📞</h1>
+<p>Get in touch for trusted overseas job and visa assistance</p>
 </div>
 </div>
 
-<!-- CONTENT -->
+<!-- CONTACT SECTION -->
 <section class="section">
+<div class="container">
+
+<h2>Let’s Connect 🤝</h2>
+<p class="sub">
+We are here to guide you for overseas jobs, visa processing, and complete career support. Reach out anytime.
+</p>
 
 <div class="grid">
 
-<div class="card">
-<h3>📍 Address</h3>
-<p>
-SWISA Associates<br>
-53, 3rd Floor, Bharat Nagar,<br>
-New Friends Colony, New Delhi - 110025
-</p>
-</div>
+<!-- FORM -->
+<form class="reveal">
+<h3>Send Message 💬</h3>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Phone Number">
+<textarea placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
 
-<div class="card">
-<h3>📞 Phone</h3>
-<p>+91 9811084530</p>
-</div>
-
-<div class="card">
-<h3>📧 Email</h3>
-<p>swisaassociates05@gmail.com</p>
-</div>
-
-</div>
-
-<!-- CTA DIRECT CONNECT -->
-<div class="cta">
-
-<h2>Quick Contact</h2>
-<p>Reach us instantly for faster response</p>
+<!-- INFO -->
+<div class="info reveal">
+<h3>📍 Office Address</h3>
+<p>New Delhi, India</p>
 
 <br>
 
-<a class="btn"
-href="https://wa.me/919811084530?text=Hello%20SWISA%20Associates,%20I%20want%20to%20know%20more%20about%20your%20services."
-target="_blank">
-WhatsApp Now
-</a>
+<h3>📞 Phone</h3>
+<p>9811084530</p>
 
-<a class="btn"
-href="mailto:swisaassociates05@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20SWISA%20Associates,%0AI%20am%20interested%20in%20your%20services."
-style="margin-left:10px;">
-Send Email
-</a>
+<br>
 
+<h3>📧 Email</h3>
+<p>swisaassociates@gmail.com</p>
+
+<br>
+
+<h3>⚡ Quick Response</h3>
+<p>We usually respond within 24 hours for all queries.</p>
 </div>
 
+<!-- TRUST CARD -->
+<div class="card reveal">
+<h3>🌍 Trusted Consultancy</h3>
+<p>We have helped 1500+ candidates achieve their overseas career goals with transparency and guidance.</p>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-SWISA Associates • New Delhi • 9811084530
+SWISA Associates • New Delhi • 📞 9811084530
 </footer>
+
+<script>
+const items=document.querySelectorAll(".reveal,form,.info,.card");
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.2});
+
+items.forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
