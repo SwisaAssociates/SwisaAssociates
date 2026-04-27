@@ -6,27 +6,30 @@
 
 <title>SWISA Associates | Overseas Jobs, Visa & Manpower</title>
 
+<meta name="description" content="SWISA Associates - Trusted overseas consultancy for visa stamping, manpower, and international job placements.">
+<meta name="keywords" content="visa, overseas jobs, manpower, swisa associates">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-html{scroll-behavior:smooth;}
 body{background:#020617;color:#fff;}
+html{scroll-behavior:smooth;}
 
-/* GLOBAL */
-section{padding:110px 60px;}
-.container{max-width:1150px;margin:auto;}
-h2{font-size:38px;margin-bottom:12px;}
-.sub{color:#94a3b8;margin-bottom:35px;line-height:1.8;}
-
-/* NAVBAR */
+/* NAV */
 .navbar{
-position:fixed;top:0;width:100%;
-padding:18px 60px;
-display:flex;justify-content:space-between;align-items:center;
-background:rgba(10,10,20,0.6);
+position:fixed;
+top:0;
+width:100%;
+padding:16px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(10,10,20,0.7);
 backdrop-filter:blur(14px);
-z-index:999;transition:.4s;
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
+transition:.4s;
 }
 .navbar.sticky{
 background:rgba(10,10,20,0.95);
@@ -36,6 +39,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 margin:0 10px;
 color:#fff;
 text-decoration:none;
+font-size:14px;
 padding:8px 12px;
 border-radius:8px;
 transition:.3s;
@@ -45,81 +49,90 @@ transition:.3s;
 /* HERO */
 .hero{
 height:100vh;
+position:relative;
 display:flex;
 align-items:center;
-justify-content:center;
-position:relative;
 overflow:hidden;
-text-align:center;
 }
-.bg-img{
+.hero img{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
-filter:brightness(1.15) contrast(1.1);
+filter:brightness(1.1) contrast(1.1);
 }
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.35));
+background:linear-gradient(120deg,rgba(0,0,0,0.7),rgba(0,0,0,0.3));
 z-index:-1;
 }
+
 .hero-content{
-max-width:900px;
+padding:0 80px;
+max-width:700px;
 animation:fadeUp 1s ease;
 }
 .hero h1{
-font-size:60px;
-margin-bottom:20px;
+font-size:56px;
+margin-bottom:15px;
 }
 .hero p{
-font-size:18px;
 color:#cbd5e1;
-margin-bottom:30px;
+font-size:18px;
+margin-bottom:25px;
+line-height:1.6;
 }
 
 /* BUTTON */
 .btn{
 display:inline-block;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
-padding:15px 30px;
+padding:14px 28px;
 border-radius:12px;
 color:#fff;
 text-decoration:none;
 transition:.3s;
 box-shadow:0 10px 25px rgba(59,130,246,0.3);
-position:relative;
-overflow:hidden;
 }
-.btn::before{
-content:"";
-position:absolute;
-left:-100%;
-top:0;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.25),transparent);
-transition:.5s;
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(59,130,246,0.4);
 }
-.btn:hover::before{left:100%;}
-.btn:hover{transform:translateY(-5px);}
+
+/* SECTIONS */
+section{
+padding:100px 60px;
+}
+.container{
+max-width:1150px;
+margin:auto;
+}
+h2{
+font-size:36px;
+margin-bottom:15px;
+}
+.sub{
+color:#94a3b8;
+margin-bottom:35px;
+line-height:1.7;
+}
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 /* CARD */
 .card{
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-padding:32px;
+border:1px solid rgba(255,255,255,0.08);
+padding:30px;
 border-radius:16px;
 opacity:0;
 transform:translateY(40px);
@@ -132,30 +145,46 @@ background:rgba(255,255,255,0.08);
 }
 
 /* STATS */
-.stats-grid{
+.stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 }
 .stat{
 text-align:center;
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
 opacity:0;
 transform:translateY(40px);
 transition:.5s;
 }
 .stat.show{opacity:1;transform:translateY(0);}
 .counter{
-font-size:46px;
+font-size:40px;
 color:#3b82f6;
 font-weight:700;
 }
 
+/* TRUST SECTION */
+.trust{
+background:rgba(255,255,255,0.04);
+padding:50px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:.5s;
+}
+.trust.show{opacity:1;transform:translateY(0);}
+
 /* CTA */
 .cta{
 text-align:center;
-background:rgba(255,255,255,0.08);
-padding:80px;
-border-radius:20px;
+background:rgba(255,255,255,0.07);
+padding:70px;
+border-radius:18px;
 opacity:0;
 transform:translateY(40px);
 transition:.5s;
@@ -165,33 +194,21 @@ transition:.5s;
 /* FOOTER */
 footer{
 text-align:center;
-padding:30px;
+padding:25px;
 color:#94a3b8;
-}
-
-/* FLOATING WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 18px;
-border-radius:50px;
-color:#fff;
-text-decoration:none;
-font-size:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+border-top:1px solid rgba(255,255,255,0.08);
 }
 
 /* ANIMATION */
 @keyframes fadeUp{
-0%{opacity:0;transform:translateY(30px);}
-100%{opacity:1;transform:translateY(0);}
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.hero h1{font-size:38px;}
+.hero h1{font-size:36px;}
+.hero-content{padding:0 20px;}
 section{padding:80px 20px;}
 }
 </style>
@@ -199,9 +216,9 @@ section{padding:80px 20px;}
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar" id="navbar">
-<b>SWISA Associates 🌍</b>
+<div><b>SWISA Associates 🌍</b></div>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -212,89 +229,81 @@ section{padding:80px 20px;}
 
 <!-- HERO -->
 <div class="hero">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=5000&q=90" class="bg-img">
-
+<img src="photo1.jpg">
 <div class="hero-content">
-<h1>Build Your Career Abroad 🚀</h1>
-<p>Trusted visa processing, overseas jobs and manpower solutions with 1500+ successful placements and 12+ years of experience.</p>
-<a href="contact.html" class="btn">Start Your Journey</a>
+<h1>Build Your Career Abroad With Confidence</h1>
+<p>Trusted overseas consultancy for visa processing, manpower recruitment, and international job placements with complete transparency.</p>
+<a href="services.html" class="btn">Explore Services</a>
 </div>
 </div>
 
-<!-- SERVICES -->
+<!-- SERVICES PREVIEW -->
 <section>
 <div class="container">
-<h2>Our Services 💼</h2>
-<p class="sub">Complete overseas career solutions designed for reliability and success</p>
+<h2>Our Core Services</h2>
+<p class="sub">Complete overseas career solutions designed for professionals and skilled workers.</p>
 
 <div class="grid">
+
 <div class="card reveal">
-<h3>🛂 Visa Processing</h3>
-<p>End-to-end visa stamping for Gulf countries with proper documentation and fast approvals.</p>
+<h3>Visa Stamping</h3>
+<p>Fast and reliable visa processing for Gulf and international countries.</p>
 </div>
 
 <div class="card reveal">
-<h3>🌍 Overseas Jobs</h3>
-<p>Verified job opportunities with trusted international employers across multiple industries.</p>
+<h3>Overseas Jobs</h3>
+<p>Verified job placements with trusted international employers.</p>
 </div>
 
 <div class="card reveal">
-<h3>📄 Documentation</h3>
-<p>Professional document verification, attestation and embassy processing support.</p>
+<h3>Manpower Supply</h3>
+<p>Skilled and unskilled manpower recruitment for global companies.</p>
 </div>
+
 </div>
 </div>
 </section>
 
-<!-- PROCESS -->
+<!-- TRUST SECTION -->
 <section>
 <div class="container">
-<h2>Our Process 🚀</h2>
-<p class="sub">A structured and transparent approach for smooth international placement</p>
+<h2>Why People Trust SWISA</h2>
 
-<div class="grid">
-<div class="card reveal"><h3>1️⃣ Consultation</h3><p>Understanding your profile and goals.</p></div>
-<div class="card reveal"><h3>2️⃣ Documentation</h3><p>Complete preparation and verification.</p></div>
-<div class="card reveal"><h3>3️⃣ Visa Processing</h3><p>Reliable and fast approvals.</p></div>
-<div class="card reveal"><h3>4️⃣ Departure</h3><p>Final travel and support.</p></div>
+<div class="trust reveal">
+✔ 12+ Years Industry Experience<br><br>
+✔ 1500+ Successful Placements<br><br>
+✔ Transparent Process System<br><br>
+✔ Verified Overseas Employers<br><br>
+✔ End-to-End Support
 </div>
+
 </div>
 </section>
 
 <!-- STATS -->
-<section id="stats">
-<div class="container">
-<h2>Our Achievements 📊</h2>
-
-<div class="stats-grid">
-<div class="stat"><h3 class="counter" data-target="1500">0</h3><p>Clients</p></div>
-<div class="stat"><h3 class="counter" data-target="990">0</h3><p>Projects</p></div>
-<div class="stat"><h3 class="counter" data-target="12">0</h3><p>Years Experience</p></div>
-</div>
-</div>
-</section>
-
-<!-- TESTIMONIAL -->
 <section>
 <div class="container">
-<h2>What Our Clients Say 💬</h2>
+<h2>Our Achievements</h2>
 
-<div class="grid">
-<div class="card reveal">
-<p>"Got visa quickly. Very professional service."</p>
-<b>— Imran</b>
-</div>
+<div class="stats">
 
-<div class="card reveal">
-<p>"Smooth process and clear guidance."</p>
-<b>— Arman</b>
+<div class="stat reveal">
+<div class="counter" data-target="1500">0</div>
+<p>Clients</p>
 </div>
 
-<div class="card reveal">
-<p>"Trusted consultancy. Highly recommended."</p>
-<b>— Faisal</b>
+<div class="stat reveal">
+<div class="counter" data-target="990">0</div>
+<p>Projects</p>
 </div>
+
+<div class="stat reveal">
+<div class="counter" data-target="12">0</div>
+<p>Years</p>
 </div>
+
+</div>
+
 </div>
 </section>
 
@@ -303,7 +312,7 @@ section{padding:80px 20px;}
 <div class="container">
 <div class="cta reveal">
 <h2>Start Your Journey Today 🚀</h2>
-<p>Contact SWISA Associates and begin your international career with confidence.</p>
+<p>Contact SWISA Associates for trusted overseas career guidance.</p>
 <br>
 <a href="contact.html" class="btn">Contact Now</a>
 </div>
@@ -311,58 +320,52 @@ section{padding:80px 20px;}
 </section>
 
 <footer>
-SWISA Associates • New Delhi • 📞 9811084530
+SWISA Associates • New Delhi • 9811084530
 </footer>
 
-<a href="https://wa.me/919811084530" class="whatsapp">💬</a>
-
 <script>
-// NAVBAR
+
+// sticky nav
 window.addEventListener("scroll",()=>{
 document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
 });
 
-// REVEAL
-const reveal=document.querySelectorAll(".card,.stat,.cta");
+// reveal
+const items=document.querySelectorAll(".reveal");
+
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("show");}
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
 });
 });
-reveal.forEach(el=>observer.observe(el));
 
-// COUNTER
+items.forEach(el=>observer.observe(el));
+
+// counter animation
 const counters=document.querySelectorAll(".counter");
 
-const obs=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
+const runCounter=()=>{
 counters.forEach(counter=>{
-if(counter.classList.contains("done")) return;
-counter.classList.add("done");
+const update=()=>{
+const target=+counter.dataset.target;
+const current=+counter.innerText;
+const inc=Math.ceil(target/60);
 
-let target=+counter.dataset.target;
-let startTime=null;
-
-function animate(t){
-if(!startTime) startTime=t;
-let progress=t-startTime;
-let val=Math.min(Math.floor(progress/1500*target),target);
-counter.innerText=val;
-
-if(progress<1500){
-requestAnimationFrame(animate);
+if(current<target){
+counter.innerText=current+inc;
+setTimeout(update,20);
 }else{
 counter.innerText=target+"+";
 }
-}
-requestAnimationFrame(animate);
+};
+update();
 });
-}
-});
-});
+};
 
-obs.observe(document.querySelector("#stats"));
+window.addEventListener("scroll",runCounter);
+
 </script>
 
 </body>
