@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SWISA Dashboard | Lead Generation Control Panel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= BASE ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#020617;
+color:#e5e7eb;
+overflow-x:hidden;
+}
+
+/* ================= LAYOUT ================= */
+.wrapper{
+display:flex;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+width:250px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:rgba(255,255,255,0.03);
+border-right:1px solid rgba(255,255,255,0.08);
+padding:25px;
+backdrop-filter:blur(15px);
+}
+
+.sidebar h2{
+font-size:18px;
+margin-bottom:30px;
+color:#3b82f6;
+}
+
+.sidebar a{
+display:block;
+color:#94a3b8;
+text-decoration:none;
+margin:14px 0;
+font-size:14px;
+transition:0.3s;
+padding:6px;
+border-radius:8px;
+}
+
+.sidebar a:hover{
+background:rgba(59,130,246,0.1);
+color:#3b82f6;
+transform:translateX(4px);
+}
+
+/* ================= MAIN ================= */
+.main{
+margin-left:270px;
+padding:40px;
+}
+
+/* TOP BAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.topbar h1{
+font-size:26px;
+}
+
+.btn{
+padding:10px 16px;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
+border:none;
+color:white;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
+font-size:13px;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(59,130,246,0.25);
+}
+
+/* ================= GRID ================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:25px;
+border-radius:16px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#3b82f6;
+}
+
+/* METRICS */
+.number{
+font-size:32px;
+font-weight:700;
+color:#3b82f6;
+}
+
+.label{
+color:#94a3b8;
+font-size:13px;
+margin-top:5px;
+}
+
+/* ACTIVITY */
+.activity{
+margin-top:30px;
+padding:25px;
+background:rgba(255,255,255,0.04);
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.activity p{
+color:#94a3b8;
+font-size:14px;
+margin:8px 0;
+}
+
+/* LIVE DOT */
+.dot{
+display:inline-block;
+width:8px;
+height:8px;
+background:#22c55e;
+border-radius:50%;
+margin-right:6px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:1;}
+50%{opacity:0.3;}
+100%{opacity:1;}
+}
+
+/* ================= FADE ================= */
+.fade{
+animation:fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+.sidebar{
+display:none;
+}
+.main{
+margin-left:0;
+padding:20px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>🌍 SWISA SYSTEM</h2>
+
+<a href="index.html">🏠 Home</a>
+<a href="services.html">⚙ Modules</a>
+<a href="about.html">📘 About</a>
+<a href="contact.html">📞 Access</a>
+<a href="dashboard.html">📊 Dashboard</a>
+<a href="sell.html">💰 Pricing</a>
+</div>
+
+<!-- MAIN -->
+<div class="main fade">
+
+<!-- TOP BAR -->
+<div class="topbar">
+<h1>📊 Lead Generation Dashboard</h1>
+<a class="btn" href="#">+ Generate Report</a>
+</div>
+
+<!-- STATS -->
+<div class="grid">
+
+<div class="card">
+<div class="number">1,582</div>
+<div class="label">Total Leads Captured</div>
+</div>
+
+<div class="card">
+<div class="number">72%</div>
+<div class="label">Conversion Rate</div>
+</div>
+
+<div class="card">
+<div class="number">418</div>
+<div class="label">WhatsApp Clicks</div>
+</div>
+
+<div class="card">
+<div class="number">₹5.1L</div>
+<div class="label">Pipeline Value</div>
+</div>
+
+</div>
+
+<!-- ACTIVITY -->
+<div class="activity">
+
+<h3>⚡ Live Activity Feed</h3>
+
+<p><span class="dot"></span> User from Delhi clicked “Visa Assistance” → WhatsApp</p>
+<p><span class="dot"></span> User from UAE viewed Services → Lead captured</p>
+<p><span class="dot"></span> User from Saudi Arabia submitted inquiry form</p>
+<p><span class="dot"></span> User from Qatar clicked “Call Back Request”</p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
