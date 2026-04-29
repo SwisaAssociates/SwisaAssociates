@@ -4,28 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact SWISA Associates | Free Visa & Overseas Job Consultation</title>
+<title>Contact SWISA Associates | Free Overseas Consultation & Jobs</title>
 
-<meta name="description" content="Contact SWISA Associates for overseas jobs, visa assistance, immigration services. Get free consultation and instant WhatsApp response.">
+<meta name="description" content="Contact SWISA Associates for overseas jobs, visa assistance, immigration services. Get instant WhatsApp support and free consultation.">
+<meta name="robots" content="index, follow">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
 body{
 background: radial-gradient(circle at top,#0b1220,#020617);
 color:#e5e7eb;
 }
 
-/* ================= NAV ================= */
+/* NAV */
 .navbar{
 position:sticky;
 top:0;
@@ -34,7 +29,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:14px 50px;
-background:rgba(2,6,23,0.6);
+background:rgba(2,6,23,0.7);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
@@ -45,15 +40,10 @@ color:#fff;
 text-decoration:none;
 opacity:0.7;
 font-size:14px;
-transition:0.3s;
 }
+.navbar a:hover{opacity:1;color:#3b82f6;}
 
-.navbar a:hover{
-opacity:1;
-color:#3b82f6;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
 height:45vh;
 display:flex;
@@ -65,16 +55,14 @@ padding:0 20px;
 
 .hero h1{
 font-size:52px;
-animation:fadeUp 1s ease;
 }
 
 .hero p{
 color:#94a3b8;
 margin-top:10px;
-max-width:700px;
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 section{
 padding:90px 70px;
 }
@@ -87,22 +75,21 @@ margin:auto;
 h2{
 font-size:38px;
 margin-bottom:10px;
-color:#fff;
 }
 
 .sub{
 color:#94a3b8;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:35px;
 }
 
-/* ================= FORM ================= */
+/* FORM */
 form{
 background:rgba(255,255,255,0.04);
 padding:30px;
@@ -115,17 +102,15 @@ width:100%;
 padding:14px;
 margin-bottom:12px;
 border-radius:10px;
-border:1px solid rgba(255,255,255,0.08);
+border:none;
 background:rgba(255,255,255,0.05);
 color:#fff;
 outline:none;
 }
 
-textarea{
-height:110px;
-}
+textarea{height:110px;}
 
-/* ================= BUTTON ================= */
+/* BUTTON */
 .btn{
 width:100%;
 padding:14px;
@@ -142,7 +127,7 @@ transition:0.3s;
 transform:translateY(-3px);
 }
 
-/* ================= INFO ================= */
+/* INFO */
 .info{
 background:rgba(255,255,255,0.04);
 padding:30px;
@@ -150,16 +135,7 @@ border-radius:18px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-.info h3{
-color:#3b82f6;
-margin-bottom:8px;
-}
-
-.info p{
-color:#94a3b8;
-}
-
-/* ================= TRUST ================= */
+/* TRUST PSYCHOLOGY STRIP */
 .trust{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -172,10 +148,9 @@ background:rgba(255,255,255,0.04);
 padding:18px;
 text-align:center;
 border-radius:12px;
-border:1px solid rgba(255,255,255,0.08);
 }
 
-/* ================= CTA ================= */
+/* CTA */
 .cta{
 margin-top:50px;
 text-align:center;
@@ -185,13 +160,13 @@ background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 }
 
-/* ================= CHATBOT (NEW) ================= */
+/* ================= CHATBOT (UPGRADED AI STYLE) ================= */
 #chat-btn{
 position:fixed;
 bottom:25px;
 right:25px;
-width:55px;
-height:55px;
+width:60px;
+height:60px;
 border-radius:50%;
 background:#3b82f6;
 display:flex;
@@ -204,11 +179,11 @@ box-shadow:0 10px 30px rgba(0,0,0,0.4);
 
 #chat-box{
 position:fixed;
-bottom:90px;
+bottom:95px;
 right:25px;
-width:280px;
+width:300px;
 background:#0f172a;
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
 border-radius:14px;
 display:none;
 flex-direction:column;
@@ -217,7 +192,7 @@ overflow:hidden;
 
 .chat-header{
 background:#3b82f6;
-padding:10px;
+padding:12px;
 font-weight:600;
 }
 
@@ -226,29 +201,52 @@ padding:12px;
 font-size:14px;
 }
 
+.chat-msg{
+color:#94a3b8;
+margin-bottom:10px;
+}
+
 .chat-body button{
 width:100%;
 margin-top:8px;
-padding:8px;
+padding:10px;
 border:none;
 border-radius:8px;
 background:rgba(255,255,255,0.08);
 color:#fff;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+.chat-body button:hover{
+background:#3b82f6;
 }
 
-/* ================= MOBILE ================= */
+/* SELL LINK SECTION (BOTTOM ADDITION) */
+.sell-section{
+margin-top:60px;
+text-align:center;
+padding:40px;
+border-radius:16px;
+background:rgba(59,130,246,0.08);
+border:1px solid rgba(59,130,246,0.2);
+}
+
+.sell-section a{
+display:inline-block;
+margin-top:10px;
+padding:12px 20px;
+background:#3b82f6;
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+}
+
+/* MOBILE */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:32px;}
 section{padding:70px 20px;}
-.navbar{padding:14px 20px;}
 }
 
 </style>
@@ -270,8 +268,8 @@ section{padding:70px 20px;}
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>📞 Free Consultation</h1>
-<p>Start your overseas career with verified jobs, visa support & expert guidance.</p>
+<h1>📞 Get Free Consultation</h1>
+<p>Verified overseas jobs, visa support & fast WhatsApp assistance</p>
 </div>
 </div>
 
@@ -280,7 +278,7 @@ section{padding:70px 20px;}
 <div class="container">
 
 <h2>Contact & Apply 💬</h2>
-<p class="sub">Fast response via WhatsApp or form submission</p>
+<p class="sub">Fill form OR use chatbot for instant response</p>
 
 <div class="grid">
 
@@ -289,7 +287,7 @@ section{padding:70px 20px;}
 <input placeholder="Phone Number">
 <input placeholder="Preferred Country">
 <textarea placeholder="Your Message"></textarea>
-<button class="btn">🚀 Submit</button>
+<button class="btn" type="button">🚀 Submit Request</button>
 </form>
 
 <div class="info">
@@ -299,24 +297,34 @@ section{padding:70px 20px;}
 <h3>📞 Contact</h3>
 <p>+91 9811084530</p><br>
 
-<h3>⚡ Response</h3>
-<p>2–6 Hours Average</p>
+<h3>⚡ Response Time</h3>
+<p>Within 2–6 Hours</p><br>
+
+<h3>🌍 Services</h3>
+<p>Visa • Jobs • Immigration • Manpower</p>
 </div>
 
 </div>
 
-<!-- TRUST -->
+<!-- TRUST PSYCHOLOGY -->
 <div class="trust">
-<div>✔ Free Consultation</div>
-<div>✔ Verified Jobs</div>
 <div>✔ No Hidden Charges</div>
-<div>✔ Fast Support</div>
+<div>✔ Verified Employers</div>
+<div>✔ Fast Approval Process</div>
+<div>✔ Trusted Since 12+ Years</div>
 </div>
 
 <!-- CTA -->
 <div class="cta">
-<h2>🚀 Start Your Journey Today</h2>
-<p>Talk to our experts now</p>
+<h2>🚀 Start Your Career Today</h2>
+<p class="sub">Talk to real consultants instantly</p>
+</div>
+
+<!-- SELL PAGE LINK (IMPORTANT FOR YOU) -->
+<div class="sell-section">
+<h3>💼 Interested in Buying This Website?</h3>
+<p>This premium website system is available for sale.</p>
+<a href="sell.html">View Sell Page</a>
 </div>
 
 </div>
@@ -326,12 +334,20 @@ section{padding:70px 20px;}
 <div id="chat-btn">💬</div>
 
 <div id="chat-box">
-<div class="chat-header">SWISA Assistant</div>
+<div class="chat-header">SWISA AI Assistant</div>
+
 <div class="chat-body">
-<p>Select service:</p>
-<button onclick="go('Visa')">Visa</button>
-<button onclick="go('Jobs')">Jobs</button>
-<button onclick="go('Manpower')">Manpower</button>
+<div class="chat-msg">
+Hello 👋 I can help you apply for jobs or visa assistance instantly.
+</div>
+
+<p>Select option:</p>
+
+<button onclick="go('Visa Assistance')">🛂 Visa Help</button>
+<button onclick="go('Gulf Jobs')">✈️ Gulf Jobs</button>
+<button onclick="go('Manpower')">🏢 Manpower</button>
+<button onclick="go('Call Me Back')">📞 Call Back</button>
+
 </div>
 </div>
 
@@ -339,11 +355,14 @@ section{padding:70px 20px;}
 
 document.getElementById("chat-btn").onclick=()=>{
 let box=document.getElementById("chat-box");
-box.style.display=box.style.display==="flex"?"none":"flex";
+box.style.display = (box.style.display==="flex") ? "none" : "flex";
 }
 
 function go(type){
-window.open(`https://wa.me/919811084530?text=I am interested in ${type}`,"_blank");
+window.open(
+`https://wa.me/919811084530?text=Hi SWISA, I need ${type} assistance`,
+"_blank"
+);
 }
 
 </script>
