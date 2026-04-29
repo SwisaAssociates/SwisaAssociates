@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact SWISA Associates | Free Overseas Consultation</title>
+<title>Contact SWISA Associates | Free Visa & Overseas Job Consultation</title>
 
-<meta name="description" content="Contact SWISA Associates for overseas jobs, visa assistance, and immigration services. Get instant WhatsApp support and free consultation.">
+<meta name="description" content="Contact SWISA Associates for overseas jobs, visa assistance, immigration services. Get free consultation and instant WhatsApp response.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -23,10 +23,7 @@ font-family:Poppins;
 body{
 background: radial-gradient(circle at top,#0b1220,#020617);
 color:#e5e7eb;
-overflow-x:hidden;
 }
-
-html{scroll-behavior:smooth;}
 
 /* ================= NAV ================= */
 .navbar{
@@ -36,7 +33,7 @@ z-index:1000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 60px;
+padding:14px 50px;
 background:rgba(2,6,23,0.6);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
@@ -46,9 +43,9 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-opacity:0.8;
-transition:0.3s;
+opacity:0.7;
 font-size:14px;
+transition:0.3s;
 }
 
 .navbar a:hover{
@@ -58,25 +55,16 @@ color:#3b82f6;
 
 /* ================= HERO ================= */
 .hero{
-height:55vh;
+height:45vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-position:relative;
 padding:0 20px;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,#0f172a,#020617);
-z-index:-2;
-}
-
 .hero h1{
-font-size:58px;
+font-size:52px;
 animation:fadeUp 1s ease;
 }
 
@@ -84,12 +72,11 @@ animation:fadeUp 1s ease;
 color:#94a3b8;
 margin-top:10px;
 max-width:700px;
-line-height:1.7;
 }
 
 /* ================= SECTION ================= */
 section{
-padding:100px 80px;
+padding:90px 70px;
 }
 
 .container{
@@ -98,48 +85,36 @@ margin:auto;
 }
 
 h2{
-font-size:40px;
-margin-bottom:15px;
-background:linear-gradient(90deg,#fff,#94a3b8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:38px;
+margin-bottom:10px;
+color:#fff;
 }
 
 .sub{
 color:#94a3b8;
-margin-bottom:30px;
-line-height:1.7;
+margin-bottom:35px;
 }
 
 /* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:35px;
 }
 
 /* ================= FORM ================= */
 form{
 background:rgba(255,255,255,0.04);
-padding:35px;
-border-radius:20px;
+padding:30px;
+border-radius:18px;
 border:1px solid rgba(255,255,255,0.08);
-
-opacity:0;
-transform:translateY(60px);
-transition:0.7s cubic-bezier(0.22,1,0.36,1);
-}
-
-.show{
-opacity:1 !important;
-transform:translateY(0) !important;
 }
 
 input,textarea{
 width:100%;
 padding:14px;
-margin-bottom:15px;
-border-radius:12px;
+margin-bottom:12px;
+border-radius:10px;
 border:1px solid rgba(255,255,255,0.08);
 background:rgba(255,255,255,0.05);
 color:#fff;
@@ -147,105 +122,119 @@ outline:none;
 }
 
 textarea{
-height:120px;
-resize:none;
-}
-
-/* ================= INFO ================= */
-.info{
-background:rgba(255,255,255,0.04);
-padding:35px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-
-opacity:0;
-transform:translateY(60px);
-transition:0.7s ease;
-}
-
-.info h3{
-color:#3b82f6;
-margin-bottom:10px;
-}
-
-.info p{
-color:#94a3b8;
-line-height:1.6;
+height:110px;
 }
 
 /* ================= BUTTON ================= */
 .btn{
-display:inline-block;
 width:100%;
-text-align:center;
 padding:14px;
-border-radius:12px;
+border:none;
+border-radius:10px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
-text-decoration:none;
 font-weight:600;
-border:none;
 cursor:pointer;
 transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-5px);
+transform:translateY(-3px);
 }
 
-/* ================= WHATSAPP ================= */
-.whatsapp{
-display:block;
-margin-top:15px;
-padding:14px;
-border-radius:12px;
-background:#25D366;
-color:#fff;
-text-align:center;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
+/* ================= INFO ================= */
+.info{
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
 }
 
-.whatsapp:hover{
-transform:translateY(-5px);
+.info h3{
+color:#3b82f6;
+margin-bottom:8px;
 }
 
-/* ================= TRUST STRIP ================= */
+.info p{
+color:#94a3b8;
+}
+
+/* ================= TRUST ================= */
 .trust{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:50px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:40px;
 }
 
 .trust div{
 background:rgba(255,255,255,0.04);
-padding:20px;
-border-radius:14px;
+padding:18px;
 text-align:center;
+border-radius:12px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
 /* ================= CTA ================= */
 .cta{
-margin-top:60px;
+margin-top:50px;
 text-align:center;
+padding:60px;
+border-radius:18px;
 background:rgba(255,255,255,0.05);
-padding:70px;
-border-radius:22px;
 border:1px solid rgba(255,255,255,0.08);
-
-opacity:0;
-transform:translateY(60px);
 }
 
-/* ================= FOOTER ================= */
-footer{
-text-align:center;
-padding:25px;
-color:#94a3b8;
-border-top:1px solid rgba(255,255,255,0.08);
+/* ================= CHATBOT (NEW) ================= */
+#chat-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#3b82f6;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+#chat-box{
+position:fixed;
+bottom:90px;
+right:25px;
+width:280px;
+background:#0f172a;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:14px;
+display:none;
+flex-direction:column;
+overflow:hidden;
+}
+
+.chat-header{
+background:#3b82f6;
+padding:10px;
+font-weight:600;
+}
+
+.chat-body{
+padding:12px;
+font-size:14px;
+}
+
+.chat-body button{
+width:100%;
+margin-top:8px;
+padding:8px;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.08);
+color:#fff;
+cursor:pointer;
 }
 
 /* ================= ANIMATION ================= */
@@ -257,8 +246,8 @@ to{opacity:1;transform:translateY(0);}
 /* ================= MOBILE ================= */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
-.hero h1{font-size:34px;}
-section{padding:80px 20px;}
+.hero h1{font-size:32px;}
+section{padding:70px 20px;}
 .navbar{padding:14px 20px;}
 }
 
@@ -269,7 +258,7 @@ section{padding:80px 20px;}
 
 <!-- NAV -->
 <div class="navbar">
-<div><b>🌍 SWISA Associates</b></div>
+<div><b>SWISA Associates 🌍</b></div>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -281,94 +270,81 @@ section{padding:80px 20px;}
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>📞 Get Free Consultation</h1>
-<p>Start your overseas career journey with expert guidance and verified opportunities.</p>
+<h1>📞 Free Consultation</h1>
+<p>Start your overseas career with verified jobs, visa support & expert guidance.</p>
 </div>
 </div>
 
-<!-- CONTACT -->
+<!-- MAIN -->
 <section>
 <div class="container">
 
-<h2>💬 Contact & Apply Now</h2>
-<p class="sub">Fill the form or directly connect on WhatsApp for fastest response.</p>
+<h2>Contact & Apply 💬</h2>
+<p class="sub">Fast response via WhatsApp or form submission</p>
 
 <div class="grid">
 
-<!-- FORM -->
-<form class="reveal">
-<input type="text" placeholder="Full Name">
-<input type="text" placeholder="Phone Number">
-<input type="text" placeholder="Preferred Country (UAE / Saudi / Kuwait)">
+<form>
+<input placeholder="Full Name">
+<input placeholder="Phone Number">
+<input placeholder="Preferred Country">
 <textarea placeholder="Your Message"></textarea>
-<button class="btn" type="button">🚀 Submit Request</button>
-
-<a class="whatsapp" href="https://wa.me/919811084530">
-💬 WhatsApp Instant Reply
-</a>
-
+<button class="btn">🚀 Submit</button>
 </form>
 
-<!-- INFO -->
-<div class="info reveal">
-
+<div class="info">
 <h3>📍 Office</h3>
-<p>SWISA Associates<br>New Delhi, India</p>
-<br>
+<p>New Delhi, India</p><br>
 
-<h3>📞 Direct Contact</h3>
-<p>+91 9811084530</p>
-<br>
+<h3>📞 Contact</h3>
+<p>+91 9811084530</p><br>
 
-<h3>⚡ Response Time</h3>
-<p>Usually within 2–6 hours</p>
-<br>
-
-<h3>🌍 Services</h3>
-<p>Visa • Jobs • Immigration • Manpower</p>
-
+<h3>⚡ Response</h3>
+<p>2–6 Hours Average</p>
 </div>
 
 </div>
 
 <!-- TRUST -->
 <div class="trust">
-
 <div>✔ Free Consultation</div>
 <div>✔ Verified Jobs</div>
-<div>✔ Fast Response</div>
 <div>✔ No Hidden Charges</div>
-
+<div>✔ Fast Support</div>
 </div>
 
 <!-- CTA -->
-<div class="cta reveal">
-<h2>🚀 Start Your Global Career Today</h2>
-<p class="sub">Talk to our experts and begin your overseas journey.</p>
+<div class="cta">
+<h2>🚀 Start Your Journey Today</h2>
+<p>Talk to our experts now</p>
 </div>
 
 </div>
 </section>
 
-<footer>
-🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • New Delhi
-</footer>
+<!-- CHATBOT -->
+<div id="chat-btn">💬</div>
+
+<div id="chat-box">
+<div class="chat-header">SWISA Assistant</div>
+<div class="chat-body">
+<p>Select service:</p>
+<button onclick="go('Visa')">Visa</button>
+<button onclick="go('Jobs')">Jobs</button>
+<button onclick="go('Manpower')">Manpower</button>
+</div>
+</div>
 
 <script>
 
-/* ================= SCROLL ANIMATION ================= */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-setTimeout(()=>{
-entry.target.classList.add("show");
-},80);
+document.getElementById("chat-btn").onclick=()=>{
+let box=document.getElementById("chat-box");
+box.style.display=box.style.display==="flex"?"none":"flex";
 }
-});
-},{threshold:0.15});
 
-document.querySelectorAll('.reveal, form, .info, .cta')
-.forEach(el=>observer.observe(el));
+function go(type){
+window.open(`https://wa.me/919811084530?text=I am interested in ${type}`,"_blank");
+}
 
 </script>
 
