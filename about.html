@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About SWISA Associates | Immigration & Overseas Jobs Experts</title>
+<title>About SWISA SYSTEM | Lead Generation SaaS Infrastructure</title>
 
-<meta name="description" content="SWISA Associates is a trusted overseas consultancy offering visa processing, manpower recruitment, and international job placement services with transparency and professionalism.">
+<meta name="description" content="SWISA SYSTEM is a SaaS-style lead generation infrastructure built for immigration and overseas job agencies to convert traffic into WhatsApp leads.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= GLOBAL ================= */
 *{
 margin:0;
 padding:0;
@@ -26,80 +25,67 @@ color:#e5e7eb;
 overflow-x:hidden;
 }
 
-html{scroll-behavior:smooth;}
-
-/* ================= NAV ================= */
+/* NAV */
 .navbar{
-position:sticky;
+position:fixed;
 top:0;
-z-index:1000;
+width:100%;
+padding:16px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 60px;
-background:rgba(2,6,23,0.6);
-backdrop-filter:blur(14px);
+background:rgba(2,6,23,0.75);
+backdrop-filter:blur(16px);
 border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
 }
 
 .navbar a{
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-opacity:0.8;
-transition:0.3s;
+opacity:0.75;
 font-size:14px;
 }
+.navbar a:hover{opacity:1;color:#3b82f6;}
 
-.navbar a:hover{
-opacity:1;
-color:#3b82f6;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
 height:70vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-position:relative;
 padding:0 20px;
+position:relative;
 }
 
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
-background:url('photo3.avif') center/cover;
-filter:brightness(0.45);
-z-index:-2;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.85),rgba(0,0,0,0.4));
+background:linear-gradient(120deg,rgba(0,0,0,0.9),rgba(0,0,0,0.4)),
+url("photo3.avif") center/cover;
 z-index:-1;
+filter:brightness(0.6);
 }
 
 .hero h1{
-font-size:58px;
-animation:fadeUp 1s ease;
+font-size:54px;
+line-height:1.2;
 }
 
 .hero p{
-margin-top:15px;
 color:#94a3b8;
-max-width:750px;
-line-height:1.7;
-animation:fadeUp 1.2s ease;
+margin-top:12px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
 }
 
-/* ================= SECTION ================= */
+/* SECTION */
 section{
-padding:120px 80px;
+padding:100px 80px;
 }
 
 .container{
@@ -108,107 +94,113 @@ margin:auto;
 }
 
 h2{
-font-size:40px;
-margin-bottom:20px;
-background:linear-gradient(90deg,#fff,#94a3b8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:38px;
+margin-bottom:10px;
 }
 
-/* ================= CARD / BOX ================= */
-.box{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-padding:35px;
-border-radius:18px;
-margin-bottom:25px;
-line-height:1.8;
+.sub{
+color:#94a3b8;
+margin-bottom:40px;
+line-height:1.7;
+}
 
-opacity:0;
-transform:translateY(60px);
-transition:0.7s cubic-bezier(0.22,1,0.36,1);
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* BOX */
+.box{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* SAAS PROFILE BLOCK */
+.profile{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.04);
+background:rgba(255,255,255,0.05);
+padding:28px;
+border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
-padding:25px;
-border-radius:14px;
-text-align:center;
-
-opacity:0;
-transform:translateY(60px);
-transition:0.7s cubic-bezier(0.22,1,0.36,1);
 }
 
-.show{
-opacity:1 !important;
-transform:translateY(0) !important;
+@media(max-width:900px){
+.profile{grid-template-columns:1fr;}
+.hero h1{font-size:34px;}
+section{padding:80px 20px;}
 }
 
-/* hover premium feel */
-.box:hover,
-.card:hover{
-transform:translateY(-8px) scale(1.01);
-border-color:rgba(59,130,246,0.4);
+/* TAG */
+.tag{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+background:rgba(59,130,246,0.15);
+color:#3b82f6;
+font-size:12px;
+margin-bottom:15px;
 }
 
-/* ================= GRID ================= */
-.grid{
+/* METRICS */
+.metrics{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 margin-top:30px;
 }
 
-/* ================= CTA ================= */
-.cta{
+.metric{
+background:rgba(255,255,255,0.04);
+padding:25px;
+border-radius:14px;
 text-align:center;
-background:rgba(255,255,255,0.05);
-padding:80px;
-border-radius:22px;
 border:1px solid rgba(255,255,255,0.08);
-
-opacity:0;
-transform:translateY(60px);
-transition:0.7s ease;
 }
 
-/* ================= BUTTON ================= */
+.metric h3{
+color:#3b82f6;
+font-size:28px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+margin-top:60px;
+padding:60px;
+background:rgba(59,130,246,0.08);
+border:1px solid rgba(59,130,246,0.25);
+border-radius:18px;
+}
+
 .btn{
 display:inline-block;
+margin-top:20px;
 padding:14px 26px;
-border-radius:12px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
+border-radius:10px;
 font-weight:600;
 transition:0.3s;
 }
+.btn:hover{transform:translateY(-4px);}
 
-.btn:hover{
-transform:translateY(-5px);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
 text-align:center;
-padding:25px;
+padding:30px;
 color:#94a3b8;
 border-top:1px solid rgba(255,255,255,0.08);
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(25px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-.hero h1{font-size:34px;}
-section{padding:80px 20px;}
-.navbar{padding:14px 20px;}
+margin-top:40px;
 }
 
 </style>
@@ -218,97 +210,156 @@ section{padding:80px 20px;}
 
 <!-- NAV -->
 <div class="navbar">
-<div><b>🌍 SWISA Associates</b></div>
+<div><b>🌍 SWISA SYSTEM</b></div>
 <div>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="services.html">Modules</a>
 <a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<a href="contact.html">Access</a>
 </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>🏢 About SWISA Associates</h1>
-<p>We are a trusted overseas recruitment & immigration consultancy helping professionals build global careers with verified employers and transparent processes.</p>
+<h1>🏢 About the System</h1>
+<p>A SaaS-style lead generation infrastructure built for immigration & overseas job agencies.</p>
 </div>
 </div>
 
-<!-- CONTENT -->
+<!-- WHO WE ARE -->
 <section>
 <div class="container">
 
-<h2>👤 Who We Are</h2>
-<div class="box reveal">
-SWISA Associates is a professional overseas consultancy specializing in international job placements, visa processing, and manpower recruitment.  
-We operate with a strong focus on transparency, ethical hiring practices, and long-term career building.
+<div class="tag">SYSTEM PROFILE</div>
+<h2>What is SWISA SYSTEM?</h2>
+
+<div class="profile">
+
+<div class="box">
+<h3>📊 Core Identity</h3>
+<p style="color:#94a3b8;margin-top:10px;line-height:1.8;">
+SWISA SYSTEM is not a traditional website or consultancy.
+It is a structured conversion infrastructure designed to turn traffic into WhatsApp leads using funnel logic and SEO architecture.
+</p>
 </div>
 
-<h2>🎯 Our Mission</h2>
-<div class="box reveal">
-To connect skilled and unskilled workers with verified global opportunities while ensuring complete support in documentation, visa processing, and onboarding.
+<div class="box">
+<h3>⚙️ System Type</h3>
+<p style="color:#94a3b8;margin-top:10px;line-height:1.8;">
+• Lead Generation SaaS Model<br>
+• Conversion Funnel System<br>
+• SEO Traffic Engine<br>
+• WhatsApp Automation Flow
+</p>
 </div>
 
-<h2>🌍 Global Reach</h2>
-<div class="box reveal">
-We provide recruitment solutions across UAE, Saudi Arabia, Kuwait, Qatar, Oman, and other Gulf countries with verified employer networks.
 </div>
 
-<h2>🏭 Industries We Serve</h2>
+</div>
+</section>
+
+<!-- MISSION -->
+<section>
+<div class="container">
+
+<h2>🎯 System Purpose</h2>
+
+<div class="box">
+<p style="color:#94a3b8;line-height:1.9;">
+The purpose of SWISA SYSTEM is to remove dependency on ads and manual marketing for immigration agencies.
+<br><br>
+Instead of random websites that “look good”, this system is designed to:
+<br><br>
+✔ Capture high-intent visitors<br>
+✔ Convert them into WhatsApp leads<br>
+✔ Structure trust automatically<br>
+✔ Improve inquiry conversion rate
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- METRICS -->
+<section>
+<div class="container">
+
+<h2>📈 System Indicators</h2>
+
+<div class="metrics">
+
+<div class="metric">
+<h3>3–5x</h3>
+<p style="color:#94a3b8;">Higher inquiry rate potential</p>
+</div>
+
+<div class="metric">
+<h3>24/7</h3>
+<p style="color:#94a3b8;">Automated lead capture</p>
+</div>
+
+<div class="metric">
+<h3>SEO</h3>
+<p style="color:#94a3b8;">Organic traffic optimized</p>
+</div>
+
+<div class="metric">
+<h3>WA</h3>
+<p style="color:#94a3b8;">Direct conversion channel</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- WHY DIFFERENT -->
+<section>
+<div class="container">
+
+<h2>💡 Why This System is Different</h2>
 
 <div class="grid">
 
-<div class="card reveal">Construction</div>
-<div class="card reveal">Oil & Gas</div>
-<div class="card reveal">Hospitality</div>
-<div class="card reveal">Manufacturing</div>
-<div class="card reveal">Skilled Labour</div>
+<div class="card">
+<h3>Traditional Website</h3>
+<p style="color:#94a3b8;margin-top:10px;">
+Information display only, no conversion structure.
+</p>
+</div>
+
+<div class="card">
+<h3>SWISA SYSTEM</h3>
+<p style="color:#94a3b8;margin-top:10px;">
+Engineered funnel system designed for lead conversion.
+</p>
+</div>
 
 </div>
 
-<h2>⭐ Why Choose Us</h2>
-<div class="box reveal">
-✔ 12+ Years Experience<br>
-✔ 1500+ Successful Placements<br>
-✔ Verified International Employers<br>
-✔ Transparent Process<br>
-✔ End-to-End Support
 </div>
+</section>
 
 <!-- CTA -->
-<div class="cta reveal">
-<h2>🚀 Start Your Global Career Today</h2>
-<p style="color:#94a3b8;margin:10px 0 25px;">
-Contact our experts and begin your overseas journey with confidence.
+<section>
+<div class="container">
+
+<div class="cta">
+<h2>🚀 Ready to Activate System?</h2>
+<p style="color:#94a3b8;margin-top:10px;">
+Deploy SWISA SYSTEM for your agency and start generating structured leads.
 </p>
-<a class="btn" href="contact.html">📞 Contact Now</a>
+
+<a href="contact.html" class="btn">💬 Get Access</a>
 </div>
 
 </div>
 </section>
 
 <footer>
-🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • New Delhi
+🌍 SWISA SYSTEM • SaaS Lead Infrastructure
 </footer>
-
-<script>
-
-/* ================= OPTIMIZED SCROLL ANIMATION ================= */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-setTimeout(()=>{
-entry.target.classList.add("show");
-},80);
-}
-});
-},{threshold:0.15});
-
-document.querySelectorAll('.reveal, .box, .card, .cta')
-.forEach(el=>observer.observe(el));
-
-</script>
 
 </body>
 </html>
