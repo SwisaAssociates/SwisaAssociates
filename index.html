@@ -5,29 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🔥 SEO TITLE (THIS FIXES GOOGLE SNIPPET) -->
 <title>SWISA Associates | Overseas Jobs, Visa & Immigration Consultancy India</title>
 
-<!-- 🔥 PRIMARY SEO -->
-<meta name="description" content="SWISA Associates is a trusted overseas jobs and immigration consultancy in India offering visa processing, Gulf recruitment, manpower supply and global career support.">
-<meta name="keywords" content="overseas jobs India, visa consultancy Delhi, Gulf jobs UAE Saudi, immigration services India, manpower recruitment agency, work abroad jobs">
+<meta name="description" content="SWISA Associates is a trusted overseas jobs and immigration consultancy in India offering visa processing, Gulf recruitment, manpower supply, document assistance and global career support with 1500+ successful placements.">
+<meta name="keywords" content="overseas jobs India, visa consultancy Delhi, Gulf jobs UAE Saudi, immigration services India, manpower recruitment agency, work abroad jobs, visa processing India">
 <meta name="robots" content="index, follow">
-<meta name="author" content="SWISA Associates">
-
-<!-- 🔥 BRAND CONTROL (IMPORTANT FOR GOOGLE PREVIEW) -->
-<meta name="theme-color" content="#0b1220">
-
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="SWISA Associates | Overseas Jobs & Visa Consultancy India">
-<meta property="og:description" content="Trusted recruitment agency with 1500+ placements in UAE, Saudi Arabia & Gulf countries.">
-<meta property="og:image" content="photo.avif">
-<meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 body{
 background:radial-gradient(circle at top,#0b1220,#020617);
@@ -36,7 +23,7 @@ overflow-x:hidden;
 }
 html{scroll-behavior:smooth;}
 
-/* ================= NAV ================= */
+/* NAV */
 .navbar{
 position:fixed;
 top:0;
@@ -57,11 +44,10 @@ color:#fff;
 text-decoration:none;
 opacity:0.85;
 font-size:14px;
-transition:0.3s;
 }
 .navbar a:hover{opacity:1;color:#3b82f6;}
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -90,16 +76,16 @@ z-index:-1;
 .hero h1{
 font-size:64px;
 line-height:1.1;
-animation:fadeUp 1s ease;
 }
 
 .hero p{
 margin-top:15px;
 color:#94a3b8;
-max-width:650px;
-line-height:1.6;
+max-width:750px;
+line-height:1.7;
 }
 
+/* BUTTONS */
 .btn{
 display:inline-block;
 margin-top:25px;
@@ -109,27 +95,39 @@ background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
 font-weight:600;
-transition:0.3s;
+margin-right:10px;
 }
 .btn:hover{transform:translateY(-5px);}
 
-/* ================= SECTIONS ================= */
-section{padding:120px 80px;}
+.btn-outline{
+background:transparent;
+border:1px solid #3b82f6;
+}
+
+/* SECTIONS */
+section{padding:100px 80px;}
 .container{max-width:1100px;margin:auto;}
 
 h2{
 font-size:40px;
 margin-bottom:20px;
-color:#fff;
 }
 
 .sub{
 color:#94a3b8;
-margin-bottom:40px;
-line-height:1.7;
+margin-bottom:30px;
+line-height:1.8;
 }
 
-/* ================= GRID ================= */
+/* TEXT BLOCK (SEO BOOST) */
+.text-block{
+color:#cbd5e1;
+line-height:1.9;
+margin-bottom:30px;
+font-size:15px;
+}
+
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -139,25 +137,11 @@ gap:25px;
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:30px;
-border-radius:18px;
-transition:0.4s;
-opacity:0;
-transform:translateY(30px);
-will-change:transform, opacity;
+padding:28px;
+border-radius:16px;
 }
 
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:rgba(59,130,246,0.4);
-}
-
-/* ================= STATS ================= */
+/* STATS */
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -177,47 +161,29 @@ color:#3b82f6;
 font-weight:700;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 .cta{
 text-align:center;
 background:rgba(255,255,255,0.05);
-padding:80px;
+padding:70px;
 border-radius:22px;
 border:1px solid rgba(255,255,255,0.08);
-opacity:0;
-transform:translateY(30px);
 }
 
-.cta.show{
-opacity:1;
-transform:translateY(0);
+.sell-box{
+margin-top:40px;
+padding:50px;
+border:1px solid #3b82f6;
+border-radius:18px;
+text-align:center;
 }
 
-/* ================= WHATSAPP ================= */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 18px;
-border-radius:50px;
-color:#fff;
-text-decoration:none;
-font-weight:600;
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
 text-align:center;
 padding:25px;
 color:#94a3b8;
 border-top:1px solid rgba(255,255,255,0.08);
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 </style>
@@ -233,135 +199,427 @@ to{opacity:1;transform:translateY(0);}
 <a href="services.html">Services</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="sell.html">Sell Website</a>
 </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>🌍 Build Your Global Career</h1>
-<p>Trusted immigration & overseas jobs consultancy helping candidates secure verified jobs in Gulf countries.</p>
-<a href="services.html" class="btn">🚀 Explore Services</a>
+<h1>🌍 Build Your Global Career With Trusted Experts</h1>
+
+<p>
+SWISA Associates is a professional overseas recruitment and immigration consultancy based in India, helping candidates secure verified jobs in UAE, Saudi Arabia, Kuwait, Qatar and other Gulf countries.  
+We specialize in visa processing, manpower recruitment, overseas placement, documentation and end-to-end career support.
+</p>
+
+<a href="services.html" class="btn">Explore Services</a>
+<a href="sell.html" class="btn btn-outline">Buy Website</a>
 </div>
 </div>
+
+<!-- ABOUT SEO SECTION -->
+<section>
+<div class="container">
+
+<h2>💼 About SWISA Associates</h2>
+
+<p class="text-block">
+We are a trusted overseas consultancy with strong experience in international recruitment and visa processing services. Our mission is to connect skilled and unskilled workers with verified international employers while ensuring a safe, transparent and structured hiring process.
+</p>
+
+<p class="text-block">
+Our services include overseas job placement, Gulf recruitment, work visa assistance, manpower supply solutions, document verification and immigration support. With over 1500+ successful placements, we have built a strong reputation in the overseas job industry.
+</p>
+
+</div>
+</section>
 
 <!-- SERVICES -->
 <section>
 <div class="container">
+
 <h2>💼 Core Services</h2>
-<p class="sub">Complete overseas career solutions.</p>
 
 <div class="grid">
 
-<div class="card reveal">🛂 Visa Processing</div>
-<div class="card reveal">✈️ Overseas Jobs</div>
-<div class="card reveal">🏢 Recruitment</div>
+<div class="card">🛂 Visa Processing for Gulf Countries</div>
+<div class="card">✈️ Overseas Job Placement</div>
+<div class="card">🏢 Manpower Recruitment</div>
 
 </div>
+
 </div>
 </section>
 
 <!-- TRUST -->
 <section>
 <div class="container">
-<h2>⭐ Why Trust Us</h2>
+
+<h2>⭐ Why Choose Us</h2>
 
 <div class="grid">
-<div class="card reveal">✔ 12+ Years Experience</div>
-<div class="card reveal">✔ Verified Employers</div>
-<div class="card reveal">✔ 1500+ Placements</div>
+<div class="card">✔ 12+ Years Experience</div>
+<div class="card">✔ Verified Employers</div>
+<div class="card">✔ Transparent Process</div>
+<div class="card">✔ 1500+ Successful Placements</div>
 </div>
+
 </div>
 </section>
 
 <!-- STATS -->
 <section>
 <div class="container">
+
 <h2>📊 Our Impact</h2>
 
 <div class="stats">
 
 <div class="stat">
-<div class="counter" data-target="1500">0</div>
+<div class="counter">1500+</div>
 <p>Clients</p>
 </div>
 
 <div class="stat">
-<div class="counter" data-target="40">0</div>
+<div class="counter">40+</div>
 <p>Countries</p>
 </div>
 
 <div class="stat">
-<div class="counter" data-target="12">0</div>
+<div class="counter">12+</div>
 <p>Years</p>
 </div>
 
 </div>
+
 </div>
 </section>
 
-<!-- CTA -->
+<!-- SELL CTA -->
 <section>
 <div class="container">
-<div class="cta reveal">
-<h2>🚀 Start Your Overseas Journey Today</h2>
-<p class="sub">Get expert consultation instantly.</p>
-<a href="https://wa.me/919811084530" class="btn">💬 WhatsApp Us</a>
+
+<div class="sell-box">
+<h2>💰 Want This Premium Website?</h2>
+<p class="sub">
+Fully built SEO-optimized immigration website with lead system, trust branding and conversion design.
+</p>
+
+<a href="sell.html" class="btn">👉 View Pricing</a>
 </div>
+
 </div>
 </section>
 
 <footer>
-🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • India
+🌍 SWISA Associates • India • Overseas Jobs Consultancy
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919811084530">💬 Chat</a>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
 
-<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* FAST REVEAL */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
+<title>SWISA Associates | Overseas Jobs, Visa & Immigration Consultancy India</title>
+
+<meta name="description" content="SWISA Associates is a trusted overseas jobs and immigration consultancy in India providing visa processing, Gulf recruitment, manpower supply, document attestation and international job placement services with 1500+ successful placements.">
+<meta name="keywords" content="overseas jobs India, visa consultancy Delhi, Gulf jobs UAE Saudi, immigration services India, manpower recruitment agency, work abroad jobs, visa processing India, foreign jobs consultancy">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+body{
+background:radial-gradient(circle at top,#0b1220,#020617);
+color:#e5e7eb;
+overflow-x:hidden;
 }
-});
-},{threshold:0.15});
+html{scroll-behavior:smooth;}
 
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
-});
-
-/* COUNTER (OPTIMIZED) */
-const counters=document.querySelectorAll(".counter");
-
-const counterObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-const el=entry.target;
-const target=+el.dataset.target;
-let current=0;
-const step=Math.ceil(target/60);
-
-function update(){
-current+=step;
-if(current<target){
-el.innerText=current;
-requestAnimationFrame(update);
-}else{
-el.innerText=target+"+";
-}
+/* NAV */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:16px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(2,6,23,0.75);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
 }
 
-update();
-counterObserver.unobserve(el);
+.navbar a{
+margin:0 10px;
+color:#fff;
+text-decoration:none;
+opacity:0.85;
+font-size:14px;
 }
-});
-},{threshold:0.4});
+.navbar a:hover{opacity:1;color:#3b82f6;}
 
-counters.forEach(c=>counterObserver.observe(c));
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+padding:0 80px;
+position:relative;
+}
 
-</script>
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("photo.avif") center/cover;
+filter:brightness(0.45);
+z-index:-2;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,rgba(0,0,0,0.85),rgba(0,0,0,0.4));
+z-index:-1;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.1;
+}
+
+.hero p{
+margin-top:15px;
+color:#94a3b8;
+max-width:800px;
+line-height:1.8;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 26px;
+border-radius:12px;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
+color:#fff;
+text-decoration:none;
+font-weight:600;
+margin-right:10px;
+}
+
+/* SECTIONS */
+section{padding:110px 80px;}
+.container{max-width:1100px;margin:auto;}
+
+h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:30px;
+line-height:1.8;
+}
+
+/* TEXT BLOCK SEO */
+.text{
+color:#cbd5e1;
+line-height:2;
+margin-bottom:25px;
+font-size:15px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+padding:28px;
+border-radius:16px;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.stat{
+text-align:center;
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:18px;
+}
+
+.counter{
+font-size:44px;
+color:#3b82f6;
+font-weight:700;
+}
+
+/* SELL */
+.sell{
+margin-top:50px;
+padding:60px;
+border:1px solid #3b82f6;
+border-radius:18px;
+text-align:center;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+<div><b>🌍 SWISA Associates</b></div>
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="sell.html">Sell Website</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>🌍 Trusted Overseas Jobs & Immigration Consultancy</h1>
+
+<p>
+SWISA Associates is a professional overseas recruitment and immigration consultancy in India, helping candidates secure verified international job opportunities in UAE, Saudi Arabia, Kuwait, Qatar, Oman and other Gulf countries. We specialize in visa processing, manpower recruitment, document verification, overseas job placement and complete relocation support.
+</p>
+
+<a href="services.html" class="btn">Explore Services</a>
+<a href="sell.html" class="btn">Buy Website</a>
+</div>
+</div>
+
+<!-- ABOUT SEO -->
+<section>
+<div class="container">
+
+<h2>🏢 About SWISA Associates</h2>
+
+<p class="text">
+SWISA Associates is a leading overseas consultancy providing professional recruitment and visa assistance services for job seekers across India. We work with verified international employers to ensure safe, transparent and legal hiring processes.
+</p>
+
+<p class="text">
+Our consultancy focuses on connecting skilled and unskilled workers with job opportunities in Gulf countries including UAE, Saudi Arabia, Kuwait, Qatar and Oman. We provide complete assistance from documentation, visa stamping, job selection, interview coordination and final placement.
+</p>
+
+<p class="text">
+With more than 1500+ successful overseas placements, we have built strong trust in the industry by maintaining transparency, ethical recruitment practices and reliable employer networks.
+</p>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section>
+<div class="container">
+
+<h2>💼 Core Services</h2>
+
+<div class="grid">
+<div class="card">🛂 Visa Processing & Stamping</div>
+<div class="card">✈️ Overseas Job Placement</div>
+<div class="card">🏢 Manpower Recruitment</div>
+<div class="card">📄 Document Attestation</div>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST -->
+<section>
+<div class="container">
+
+<h2>⭐ Why Choose Us</h2>
+
+<div class="grid">
+<div class="card">✔ 12+ Years Experience</div>
+<div class="card">✔ Verified International Employers</div>
+<div class="card">✔ 100% Transparent Process</div>
+<div class="card">✔ 1500+ Successful Placements</div>
+</div>
+
+</div>
+</section>
+
+<!-- STATS -->
+<section>
+<div class="container">
+
+<h2>📊 Our Impact</h2>
+
+<div class="stats">
+<div class="stat">
+<div class="counter">1500+</div>
+<p>Clients</p>
+</div>
+
+<div class="stat">
+<div class="counter">40+</div>
+<p>Countries</p>
+</div>
+
+<div class="stat">
+<div class="counter">12+</div>
+<p>Years</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- SELL -->
+<section>
+<div class="container">
+
+<div class="sell">
+<h2>💰 Want to Own This Premium Website?</h2>
+<p class="sub">
+Fully built SEO-optimized business website with trust system, lead generation design and premium branding.
+</p>
+
+<a href="sell.html" class="btn">👉 View Sell Page</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+🌍 SWISA Associates • India • Overseas Jobs Consultancy
+</footer>
 
 </body>
 </html>
