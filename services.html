@@ -4,16 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Services - SWISA Associates</title>
+<title>💼 Services | SWISA Associates - Immigration & Overseas Jobs</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="SWISA Associates provides visa stamping, overseas jobs, manpower recruitment, immigration services and global relocation support.">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:#020617;color:#fff;}
+
+/* ================= GLOBAL ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background: radial-gradient(circle at top,#0b1220,#020617);
+color:#e5e7eb;
+overflow-x:hidden;
+}
+
 html{scroll-behavior:smooth;}
 
-/* NAV */
+/* ================= NAV ================= */
 .navbar{
 position:fixed;
 top:0;
@@ -22,166 +38,198 @@ padding:16px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(10,10,20,0.75);
+background:rgba(2,6,23,0.6);
 backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
+
 .navbar a{
 margin:0 10px;
 color:#fff;
 text-decoration:none;
-padding:8px 12px;
-border-radius:8px;
-transition:.3s;
+opacity:0.8;
+transition:0.3s;
+font-size:14px;
 }
-.navbar a:hover{background:rgba(59,130,246,0.3);}
 
-/* HERO */
+.navbar a:hover{
+opacity:1;
+color:#3b82f6;
+}
+
+/* ================= HERO ================= */
 .hero{
-height:65vh;
-position:relative;
+height:60vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-overflow:hidden;
+position:relative;
 }
+
 .hero img{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
+filter:brightness(0.45);
 z-index:-2;
-filter:brightness(1.1);
 }
+
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.75),rgba(0,0,0,0.4));
+background:linear-gradient(120deg,rgba(0,0,0,0.85),rgba(0,0,0,0.4));
 z-index:-1;
 }
+
 .hero h1{
-font-size:52px;
+font-size:58px;
 animation:fadeUp 1s ease;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 section{
-padding:100px 60px;
+padding:120px 80px;
 }
+
 .container{
-max-width:1150px;
+max-width:1100px;
 margin:auto;
 }
+
 h2{
-font-size:36px;
-margin-bottom:15px;
+font-size:40px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#fff,#94a3b8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
+
 .sub{
 color:#94a3b8;
 margin-bottom:40px;
 line-height:1.7;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 padding:30px;
-border-radius:16px;
+border-radius:18px;
+backdrop-filter:blur(10px);
+
 opacity:0;
-transform:translateY(40px);
-transition:.5s;
-}
-.card.show{opacity:1;transform:translateY(0);}
-.card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.08);
+transform:translateY(60px);
+transition:0.6s cubic-bezier(0.22,1,0.36,1);
 }
 
-/* SERVICE BOX */
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+border-color:rgba(59,130,246,0.4);
+}
+
+/* ================= SERVICE BOX ================= */
 .service-box{
 background:rgba(255,255,255,0.04);
 border:1px solid rgba(255,255,255,0.08);
 padding:32px;
-border-radius:16px;
+border-radius:18px;
 margin-bottom:25px;
+
 opacity:0;
-transform:translateY(40px);
-transition:.5s;
+transform:translateY(60px);
+transition:0.6s cubic-bezier(0.22,1,0.36,1);
 }
-.service-box.show{opacity:1;transform:translateY(0);}
+
+.service-box.show{
+opacity:1;
+transform:translateY(0);
+}
+
 .service-box:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 background:rgba(255,255,255,0.07);
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .cta{
 text-align:center;
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.05);
 padding:80px;
-border-radius:18px;
-opacity:0;
-transform:translateY(40px);
-transition:.5s;
-}
-.cta.show{opacity:1;transform:translateY(0);}
+border-radius:22px;
+border:1px solid rgba(255,255,255,0.08);
 
-/* BUTTON */
+opacity:0;
+transform:translateY(60px);
+}
+
+.cta.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= BUTTON ================= */
 .btn{
 display:inline-block;
+padding:14px 26px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
-padding:14px 28px;
+color:white;
 border-radius:12px;
-color:#fff;
 text-decoration:none;
-transition:.3s;
-box-shadow:0 10px 25px rgba(59,130,246,0.3);
-}
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 20px 40px rgba(59,130,246,0.4);
+font-weight:600;
+transition:0.3s;
 }
 
-/* FOOTER */
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
 footer{
 text-align:center;
-padding:30px;
+padding:25px;
 color:#94a3b8;
 border-top:1px solid rgba(255,255,255,0.08);
 }
 
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(30px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE ================= */
 @media(max-width:900px){
 .hero h1{font-size:34px;}
 section{padding:80px 20px;}
 .navbar{padding:14px 20px;}
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<div class="navbar" id="navbar">
-<div><b>SWISA Associates 🌍</b></div>
+<div class="navbar">
+<div><b>🌍 SWISA Associates</b></div>
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -193,15 +241,15 @@ section{padding:80px 20px;}
 <!-- HERO -->
 <div class="hero">
 <img src="photo2.avif">
-<h1>💼 Our Professional Services</h1>
+<h1>💼 Premium Global Services</h1>
 </div>
 
 <!-- INTRO -->
 <section>
 <div class="container">
-<h2>🌍 Complete Overseas Solutions</h2>
+<h2>🌍 Trusted Overseas Solutions</h2>
 <p class="sub">
-We provide structured overseas career services with complete transparency, verified employers, and end-to-end guidance for international opportunities.
+We provide structured, transparent and professional overseas career solutions trusted by thousands of job seekers worldwide.
 </p>
 </div>
 </section>
@@ -210,28 +258,27 @@ We provide structured overseas career services with complete transparency, verif
 <section>
 <div class="container">
 <h2>🔥 Core Services</h2>
-<p class="sub">Primary solutions for overseas career building</p>
 
 <div class="grid">
 
 <div class="card reveal">
-<h3>🛂 Visa Stamping</h3>
-<p>Fast and reliable visa processing for Gulf countries including Saudi, UAE, Kuwait and more.</p>
+<h3>🛂 Visa Processing</h3>
+<p>Fast and reliable visa support for Gulf & global countries.</p>
 </div>
 
 <div class="card reveal">
 <h3>✈️ Overseas Jobs</h3>
-<p>Verified international job placements with trusted employers across multiple industries.</p>
+<p>Verified international job placements.</p>
 </div>
 
 <div class="card reveal">
-<h3>👷 Manpower Supply</h3>
-<p>Skilled and unskilled manpower recruitment for global companies with structured sourcing.</p>
+<h3>🏢 Recruitment</h3>
+<p>Global manpower supply solutions.</p>
 </div>
 
 <div class="card reveal">
-<h3>🎫 Air Ticketing</h3>
-<p>Affordable flight booking with complete travel assistance and coordination.</p>
+<h3>🎫 Travel Assistance</h3>
+<p>End-to-end flight & relocation support.</p>
 </div>
 
 </div>
@@ -242,31 +289,25 @@ We provide structured overseas career services with complete transparency, verif
 <section>
 <div class="container">
 <h2>⭐ Specialized Services</h2>
-<p class="sub">Advanced processing & documentation support</p>
 
 <div class="service-box reveal">
-<h3>🇸🇦 Saudi Visa Stamping</h3>
-<p>Complete Saudi visa processing with documentation, verification and embassy coordination.</p>
+<h3>🇸🇦 Saudi Visa Processing</h3>
+<p>Complete Saudi visa documentation and embassy support.</p>
 </div>
 
 <div class="service-box reveal">
 <h3>🇰🇼 Kuwait Visa Stamping</h3>
-<p>Fast and secure Kuwait visa stamping with full support system.</p>
+<p>Fast approval assistance for Kuwait job visas.</p>
 </div>
 
 <div class="service-box reveal">
 <h3>📄 Document Attestation</h3>
-<p>Legalization and attestation for education and employment documents.</p>
+<p>Legalization of educational and employment documents.</p>
 </div>
 
 <div class="service-box reveal">
 <h3>🌍 Immigration Services</h3>
-<p>Professional immigration guidance for smooth international relocation.</p>
-</div>
-
-<div class="service-box reveal">
-<h3>🏝️ Tour & Travel</h3>
-<p>Customized international travel planning and holiday packages.</p>
+<p>Full relocation support for global migration.</p>
 </div>
 
 </div>
@@ -275,37 +316,37 @@ We provide structured overseas career services with complete transparency, verif
 <!-- CTA -->
 <section>
 <div class="container">
+
 <div class="cta reveal">
 <h2>🚀 Start Your Journey Today</h2>
-<p>Contact SWISA Associates for trusted overseas career support.</p>
-<br><br>
+<p class="sub">Get expert guidance and secure your overseas career.</p>
 <a href="contact.html" class="btn">📞 Contact Now</a>
 </div>
+
 </div>
 </section>
 
 <footer>
-SWISA Associates • New Delhi • 9811084530
+🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • New Delhi
 </footer>
 
 <script>
-// navbar
-window.addEventListener("scroll",()=>{
-document.getElementById("navbar").classList.toggle("sticky",window.scrollY>50);
-});
 
-// reveal
-const items=document.querySelectorAll(".reveal");
-
+/* ===== Apple-style reveal fix (optimized) ===== */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
+setTimeout(()=>{
 entry.target.classList.add("show");
+},100);
 }
 });
+},{threshold:0.15});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
 });
 
-items.forEach(el=>observer.observe(el));
 </script>
 
 </body>
