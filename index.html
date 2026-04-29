@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA System | WhatsApp Lead Generation Engine</title>
+<title>SWISA System | Lead Generation Engine for Immigration Agencies</title>
+
+<meta name="description" content="SWISA System is a high-conversion SaaS-style lead generation engine for immigration and overseas job agencies. Turn traffic into WhatsApp leads automatically.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -19,15 +21,9 @@ font-family:Poppins;
 }
 
 body{
-background:radial-gradient(circle at top,#0b1220,#020617);
+background:#020617;
 color:#e5e7eb;
 overflow-x:hidden;
-animation:pageLoad 0.6s ease;
-}
-
-@keyframes pageLoad{
-from{opacity:0;transform:translateY(10px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 /* ================= NAV ================= */
@@ -35,52 +31,26 @@ to{opacity:1;transform:translateY(0);}
 position:fixed;
 top:0;
 width:100%;
-padding:16px 60px;
+padding:15px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(2,6,23,0.75);
-backdrop-filter:blur(18px);
+backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
 
-.nav-links a{
-margin:0 10px;
-color:#fff;
+.navbar a{
+color:#94a3b8;
 text-decoration:none;
-opacity:0.7;
+margin:0 12px;
 font-size:14px;
-position:relative;
 transition:0.3s;
-padding:6px 0;
 }
 
-.nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-4px;
-width:0%;
-height:2px;
-background:#3b82f6;
-transition:0.3s ease;
-}
-
-.nav-links a:hover{
+.navbar a:hover{
 color:#3b82f6;
-opacity:1;
-transform:translateY(-1px);
-}
-
-.nav-links a:hover::after{
-width:100%;
-}
-
-/* ACTIVE PAGE */
-.nav-active{
-color:#3b82f6 !important;
-font-weight:600;
 }
 
 /* ================= HERO ================= */
@@ -88,46 +58,41 @@ font-weight:600;
 height:100vh;
 display:flex;
 align-items:center;
-padding:0 80px;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:url("photo.avif") center/cover;
-filter:brightness(0.35);
-z-index:-2;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.85),rgba(0,0,0,0.4));
-z-index:-1;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+background:radial-gradient(circle at top,#0b1220,#020617);
 }
 
 .hero h1{
-font-size:64px;
-line-height:1.1;
+font-size:56px;
+line-height:1.2;
 animation:fadeUp 0.8s ease;
 }
 
 .hero p{
 margin-top:15px;
 color:#94a3b8;
-max-width:650px;
-line-height:1.7;
-animation:fadeUp 1s ease;
+max-width:700px;
+line-height:1.6;
 }
 
+.badge{
+display:inline-block;
+padding:6px 14px;
+background:rgba(59,130,246,0.15);
+color:#3b82f6;
+border-radius:20px;
+font-size:12px;
+margin-bottom:15px;
+}
+
+/* BUTTONS */
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:14px 26px;
-border-radius:12px;
+padding:14px 24px;
+border-radius:10px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
@@ -136,13 +101,13 @@ transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 30px rgba(59,130,246,0.2);
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(59,130,246,0.3);
 }
 
 /* ================= SECTIONS ================= */
 section{
-padding:120px 80px;
+padding:100px 60px;
 }
 
 .container{
@@ -151,41 +116,42 @@ margin:auto;
 }
 
 h2{
-font-size:40px;
-margin-bottom:20px;
+font-size:38px;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:40px;
+line-height:1.6;
 }
 
 /* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
-/* ================= CARDS ================= */
-.card, .testimonial, .box, .cta{
+/* CARDS */
+.card{
 background:rgba(255,255,255,0.04);
+padding:25px;
+border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
-padding:30px;
-border-radius:18px;
-transition:0.4s ease;
-
+transition:0.3s;
 opacity:0;
 transform:translateY(40px);
 }
 
-.show{
-opacity:1 !important;
-transform:translateY(0) !important;
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
-.card:hover,
-.testimonial:hover,
-.box:hover,
-.cta:hover{
-transform:translateY(-8px) scale(1.01);
+.card:hover{
+transform:translateY(-8px);
 border-color:#3b82f6;
-box-shadow:0 15px 40px rgba(59,130,246,0.15);
 }
 
 /* ================= STATS ================= */
@@ -197,37 +163,45 @@ gap:20px;
 
 .stat{
 text-align:center;
-background:rgba(255,255,255,0.05);
-padding:35px;
-border-radius:18px;
-transition:0.3s;
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
 }
 
-.stat:hover{
-transform:translateY(-6px);
-border-color:#3b82f6;
+.num{
+font-size:40px;
+font-weight:700;
+color:#3b82f6;
 }
 
 /* ================= CTA ================= */
 .cta{
 text-align:center;
 padding:80px;
-border-radius:22px;
-background:rgba(59,130,246,0.08);
-border:1px solid rgba(59,130,246,0.2);
+background:rgba(255,255,255,0.04);
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(40px);
 }
 
-/* ================= FLOAT GLOW ================= */
-.glow{
-position:absolute;
-width:450px;
-height:450px;
-background:rgba(59,130,246,0.15);
-filter:blur(120px);
-border-radius:50%;
-top:20%;
-left:-120px;
-z-index:-1;
+.cta.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= FLOAT WHATSAPP ================= */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 16px;
+border-radius:50px;
+color:#fff;
+text-decoration:none;
+font-weight:600;
 }
 
 /* ================= ANIMATION ================= */
@@ -236,10 +210,10 @@ from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media(max-width:900px){
 .hero h1{font-size:34px;}
-section{padding:80px 20px;}
+section{padding:70px 20px;}
 .navbar{padding:14px 20px;}
 }
 
@@ -251,12 +225,12 @@ section{padding:80px 20px;}
 <!-- NAV -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
-
-<div class="nav-links">
-<a class="nav-active" href="index.html">Home</a>
+<div>
+<a href="index.html">Home</a>
 <a href="services.html">Modules</a>
 <a href="about.html">About</a>
 <a href="contact.html">Access</a>
+<a href="dashboard.html">Dashboard</a>
 <a href="sell.html">Pricing</a>
 </div>
 </div>
@@ -264,91 +238,77 @@ section{padding:80px 20px;}
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>Turn Visitors Into WhatsApp Leads</h1>
-<p>A SaaS-style conversion engine for immigration & overseas job agencies. Not a website — a lead generation system.</p>
-<a class="btn" href="#">🚀 Activate System</a>
-</div>
-</div>
+<div class="badge">🔥 HIGH-CONVERSION SAAS LEAD ENGINE</div>
 
-<div class="glow"></div>
+<h1>Turn Visitors Into WhatsApp Leads</h1>
+
+<p>
+A complete SaaS-style system for immigration & overseas job agencies that converts website traffic into real client inquiries automatically.
+</p>
+
+<a class="btn" href="dashboard.html">📊 Open Dashboard</a>
+<a class="btn" href="sell.html">💰 View Pricing</a>
+
+</div>
+</div>
 
 <!-- PROBLEM -->
 <section>
 <div class="container">
 
-<h2>⚡ Problem → Solution</h2>
+<h2>❌ Problem</h2>
+<p class="sub">Most agencies lose 90% of traffic because their website has no conversion system.</p>
 
 <div class="grid">
 
-<div class="card reveal">
-<h3>❌ Problem</h3>
-<p>Websites don’t convert visitors into clients</p>
-</div>
-
-<div class="card reveal">
-<h3>❌ Problem</h3>
-<p>No WhatsApp funnel = lost leads</p>
-</div>
-
-<div class="card reveal">
-<h3>✅ Solution</h3>
-<p>Automated conversion system built for lead generation</p>
-</div>
+<div class="card reveal">No WhatsApp funnel system</div>
+<div class="card reveal">No lead tracking dashboard</div>
+<div class="card reveal">No conversion structure</div>
 
 </div>
 
 </div>
 </section>
 
-<!-- PROOF -->
+<!-- SOLUTION -->
 <section>
 <div class="container">
 
-<h2>📊 System Performance</h2>
+<h2>✅ Solution</h2>
+<p class="sub">SWISA System converts traffic into real leads automatically.</p>
+
+<div class="grid">
+
+<div class="card reveal">⚡ WhatsApp automation flow</div>
+<div class="card reveal">📊 Real-time dashboard</div>
+<div class="card reveal">🎯 Conversion-focused UI</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- STATS -->
+<section>
+<div class="container">
+
+<h2>📊 Performance Snapshot</h2>
 
 <div class="stats">
 
-<div class="stat reveal">
-<h3 style="color:#3b82f6;">1500+</h3>
+<div class="stat">
+<div class="num">1,580+</div>
 <p>Leads Generated</p>
 </div>
 
-<div class="stat reveal">
-<h3 style="color:#3b82f6;">3X</h3>
-<p>Conversion Boost</p>
+<div class="stat">
+<div class="num">72%</div>
+<p>Conversion Rate</p>
 </div>
 
-<div class="stat reveal">
-<h3 style="color:#3b82f6;">48H</h3>
-<p>Setup Time</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-<div class="container">
-
-<h2>⭐ Client Feedback</h2>
-
-<div class="grid">
-
-<div class="testimonial reveal">
-<p style="color:#3b82f6;font-weight:600;">“Instant leads within 2 days”</p>
-<p style="color:#94a3b8;margin-top:10px;">We started getting WhatsApp inquiries immediately after deployment.</p>
-</div>
-
-<div class="testimonial reveal">
-<p style="color:#3b82f6;font-weight:600;">“Feels like SaaS software”</p>
-<p style="color:#94a3b8;margin-top:10px;">This is not a website — it feels like a real product system.</p>
-</div>
-
-<div class="testimonial reveal">
-<p style="color:#3b82f6;font-weight:600;">“Better than paid ads website”</p>
-<p style="color:#94a3b8;margin-top:10px;">Our conversion rate improved instantly.</p>
+<div class="stat">
+<div class="num">₹5L+</div>
+<p>Pipeline Value</p>
 </div>
 
 </div>
@@ -361,24 +321,23 @@ section{padding:80px 20px;}
 <div class="container">
 
 <div class="cta reveal">
-<h2>🚀 Activate Your System Now</h2>
-<p style="color:#94a3b8;margin-top:10px;margin-bottom:25px;">
-Start generating real WhatsApp leads instantly.
-</p>
-<a class="btn" href="#">💬 Get Access</a>
+
+<h2>🚀 Ready to Deploy System</h2>
+<p class="sub">Start generating WhatsApp leads from your website instantly.</p>
+
+<a class="btn" href="contact.html">💬 Activate System</a>
+
 </div>
 
 </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="text-align:center;padding:25px;color:#94a3b8;">
-SWISA SYSTEM • Lead Generation Engine
-</footer>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/919811084530">💬</a>
 
 <script>
 
-// animation system
+/* REVEAL ANIMATION */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
