@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA Lead System | Overseas Job Conversion Engine</title>
+<title>SWISA SYSTEM | Lead Generation SaaS for Immigration Agencies</title>
 
-<meta name="description" content="High-performance overseas job lead generation system designed to convert traffic into WhatsApp inquiries for immigration agencies.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0b1220">
+<meta name="description" content="A conversion SaaS system that turns traffic into WhatsApp leads for immigration & overseas job agencies. Built with funnel architecture & SEO automation.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -22,7 +20,7 @@ font-family:Poppins;
 }
 
 body{
-background:radial-gradient(circle at top,#0b1220,#020617);
+background: radial-gradient(circle at top,#0b1220,#020617);
 color:#e5e7eb;
 overflow-x:hidden;
 }
@@ -36,8 +34,8 @@ padding:16px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(14px);
+background:rgba(2,6,23,0.75);
+backdrop-filter:blur(16px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
@@ -46,17 +44,19 @@ z-index:999;
 margin:0 10px;
 color:#fff;
 text-decoration:none;
+opacity:0.75;
 font-size:14px;
-opacity:0.8;
 }
-.navbar a:hover{color:#3b82f6;opacity:1;}
+.navbar a:hover{opacity:1;color:#3b82f6;}
 
 /* HERO */
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
-padding:0 80px;
+justify-content:center;
+text-align:center;
+padding:0 20px;
 position:relative;
 }
 
@@ -64,51 +64,53 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:url("photo.avif") center/cover;
-filter:brightness(0.35);
-z-index:-2;
+background:linear-gradient(120deg,rgba(0,0,0,0.9),rgba(0,0,0,0.4)),
+url("photo.avif") center/cover;
+z-index:-1;
+filter:brightness(0.6);
 }
 
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.92),rgba(0,0,0,0.5));
-z-index:-1;
+.badge{
+display:inline-block;
+padding:6px 14px;
+background:rgba(59,130,246,0.15);
+color:#3b82f6;
+border-radius:20px;
+font-size:12px;
+margin-bottom:15px;
 }
 
 .hero h1{
-font-size:62px;
-line-height:1.1;
+font-size:56px;
+line-height:1.2;
 font-weight:700;
 }
 
 .hero p{
-margin-top:18px;
-max-width:650px;
+margin-top:15px;
 color:#94a3b8;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
 line-height:1.7;
 }
 
-/* BUTTON */
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:14px 26px;
-border-radius:12px;
+padding:14px 28px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 text-decoration:none;
+border-radius:10px;
 font-weight:600;
 transition:0.3s;
 }
-.btn:hover{
-transform:translateY(-4px);
-}
+.btn:hover{transform:translateY(-4px);}
 
 /* SECTIONS */
 section{
-padding:110px 80px;
+padding:100px 80px;
 }
 
 .container{
@@ -117,8 +119,8 @@ margin:auto;
 }
 
 h2{
-font-size:40px;
-margin-bottom:15px;
+font-size:38px;
+margin-bottom:10px;
 }
 
 .sub{
@@ -134,7 +136,7 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
@@ -144,49 +146,84 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-border-color:rgba(59,130,246,0.4);
+transform:translateY(-6px);
+border-color:#3b82f6;
 }
 
-/* TRUST BAR */
+/* SYSTEM BLOCK */
+.system{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.box{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:900px){
+.system{grid-template-columns:1fr;}
+.hero h1{font-size:34px;}
+section{padding:80px 20px;}
+}
+
+/* VALUE STACK */
+.stack{
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.stack ul{
+margin-top:15px;
+padding-left:18px;
+color:#cbd5e1;
+line-height:2;
+}
+
+/* PRICING */
+.pricing{
+text-align:center;
+padding:60px;
+background:rgba(59,130,246,0.08);
+border:1px solid rgba(59,130,246,0.25);
+border-radius:18px;
+margin-top:40px;
+}
+
+.price{
+font-size:34px;
+font-weight:800;
+color:#3b82f6;
+margin-top:10px;
+}
+
+/* TRUST STRIP */
 .trust{
-display:flex;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
-margin-top:35px;
+margin-top:40px;
 }
 
 .trust div{
-background:rgba(255,255,255,0.05);
-padding:12px 16px;
-border-radius:10px;
-font-size:13px;
-color:#cbd5e1;
-}
-
-/* CTA */
-.cta{
+background:rgba(255,255,255,0.04);
+padding:16px;
 text-align:center;
-padding:80px;
-border-radius:20px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
+border-radius:12px;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:25px;
+padding:30px;
 color:#94a3b8;
 border-top:1px solid rgba(255,255,255,0.08);
-}
-
-/* MOBILE */
-@media(max-width:900px){
-.hero{padding:0 20px;}
-.hero h1{font-size:34px;}
-section{padding:70px 20px;}
-.navbar{padding:14px 20px;}
+margin-top:40px;
 }
 
 </style>
@@ -199,83 +236,149 @@ section{padding:70px 20px;}
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="services.html">Modules</a>
 <a href="about.html">About</a>
-<a href="contact.html">Contact</a>
+<a href="contact.html">Access</a>
 </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>Turn Visitors Into <span style="color:#3b82f6;">WhatsApp Leads</span></h1>
+<div class="badge">HIGH-CONVERSION SAAS SYSTEM</div>
+
+<h1>Turn Traffic Into<br>WhatsApp Leads Automatically</h1>
 
 <p>
-A conversion-focused system built for immigration & overseas job agencies.
-Not a website — a complete lead generation engine that brings clients.
+A structured SaaS-style funnel system built for immigration & overseas job agencies to convert visitors into real leads without ads dependency.
 </p>
 
-<a class="btn" href="contact.html">🚀 Activate System</a>
+<a href="contact.html" class="btn">🚀 Activate System</a>
 </div>
 </div>
 
-<!-- PROBLEM -->
+<!-- PROBLEM / SYSTEM -->
 <section>
 <div class="container">
-<h2>❌ Problem</h2>
-<p class="sub">Most agencies lose clients because their website does not convert traffic.</p>
 
-<div class="grid">
-<div class="card">❌ No lead tracking system</div>
-<div class="card">❌ No WhatsApp funnel</div>
-<div class="card">❌ No conversion structure</div>
+<h2>⚡ The System Behind It</h2>
+<p class="sub">This is not a website — it is a conversion architecture.</p>
+
+<div class="system">
+
+<div class="box">
+<h3>❌ Old Model</h3>
+<p style="color:#94a3b8;margin-top:10px;">
+• Static website<br>
+• No tracking<br>
+• No funnel logic<br>
+• No conversion path
+</p>
 </div>
+
+<div class="box">
+<h3>✅ SWISA SYSTEM</h3>
+<p style="color:#94a3b8;margin-top:10px;">
+• Funnel-based structure<br>
+• WhatsApp conversion flow<br>
+• SEO lead capture system<br>
+• Visitor intent tracking logic
+</p>
+</div>
+
+</div>
+
 </div>
 </section>
 
-<!-- SOLUTION -->
+<!-- VALUE STACK -->
 <section>
 <div class="container">
-<h2>✅ Solution</h2>
-<p class="sub">This system is built to turn visitors into real inquiries automatically.</p>
+
+<h2>📦 System Modules</h2>
 
 <div class="grid">
-<div class="card">✔ WhatsApp conversion flow</div>
-<div class="card">✔ SEO-ready structure</div>
-<div class="card">✔ High-trust design system</div>
+
+<div class="stack">
+<h3>Lead Capture Engine</h3>
+<ul>
+<li>WhatsApp integration funnel</li>
+<li>Click-to-convert system</li>
+</ul>
 </div>
+
+<div class="stack">
+<h3>Traffic Layer</h3>
+<ul>
+<li>SEO optimized structure</li>
+<li>Google indexing setup</li>
+</ul>
+</div>
+
+<div class="stack">
+<h3>Conversion Layer</h3>
+<ul>
+<li>Psychology-based layout</li>
+<li>Trust trigger sections</li>
+</ul>
+</div>
+
+</div>
+
 </div>
 </section>
 
-<!-- WHY IT WORKS -->
+<!-- TRUST -->
 <section>
 <div class="container">
-<h2>⭐ Why It Works</h2>
-<p class="sub">Built using conversion psychology used in high-ticket SaaS landing pages.</p>
 
+<h2>⭐ Why This Works</h2>
+
+<div class="grid">
+
+<div class="card">Built like SaaS landing funnels</div>
+<div class="card">Optimized for lead conversion</div>
+<div class="card">Works without ads dependency</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- PRICING -->
+<section>
+<div class="container">
+
+<div class="pricing">
+<h2>🚀 Access System</h2>
+<p class="sub">Limited deployment access for agencies</p>
+
+<div class="price">₹50,000 – ₹75,000</div>
+
+<a href="contact.html" class="btn">💬 Request Access</a>
+
+<p style="margin-top:15px;color:#94a3b8;font-size:13px;">
+Includes setup guidance + full transfer
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST STRIP -->
+<section>
+<div class="container">
 <div class="trust">
-<div>✔ Instant Trust Design</div>
-<div>✔ Mobile Optimized</div>
-<div>✔ Lead Focused Layout</div>
-<div>✔ Business Ready System</div>
-</div>
-
-</div>
-</section>
-
-<!-- CTA -->
-<section>
-<div class="container">
-<div class="cta">
-<h2>🚀 Start Getting Leads Today</h2>
-<p class="sub">Deploy instantly and start receiving WhatsApp inquiries from real users.</p>
-<a class="btn" href="contact.html">💬 Get System Now</a>
+<div>✔ Conversion System</div>
+<div>✔ SEO Ready</div>
+<div>✔ WhatsApp Funnel</div>
+<div>✔ Agency Use</div>
 </div>
 </div>
 </section>
 
 <footer>
-© SWISA Lead System • Immigration & Overseas Jobs Funnel • India
+🌍 SWISA SYSTEM • SaaS Lead Generation Infrastructure
 </footer>
 
 </body>
