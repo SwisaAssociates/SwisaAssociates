@@ -7,23 +7,36 @@
 
 <title>SWISA Associates | Overseas Jobs, Visa & Immigration Consultancy India</title>
 
-<meta name="description" content="SWISA Associates is a trusted overseas jobs and immigration consultancy in India providing visa processing, Gulf recruitment, manpower supply and international job placement services.">
+<meta name="description" content="SWISA Associates is a trusted overseas recruitment and immigration consultancy in India offering visa processing, Gulf jobs, manpower recruitment, and global career support with 1500+ successful placements.">
+<meta name="keywords" content="overseas jobs India, visa consultancy Delhi, Gulf jobs UAE Saudi, immigration services India, manpower recruitment agency, work abroad jobs">
 <meta name="robots" content="index, follow">
+<meta name="author" content="SWISA Associates">
+<meta name="theme-color" content="#0b1220">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- 🔥 FIX GOOGLE SNIPPET BRANDING -->
+<meta name="google-site-verification" content="google32d9c9b8dd1c3161.html">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="SWISA Associates | Overseas Jobs & Visa Consultancy India">
+<meta property="og:description" content="Trusted recruitment agency with 1500+ placements in UAE, Saudi Arabia & Gulf countries.">
+<meta property="og:image" content="photo.avif">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* BASE */
+/* ================= BASE ================= */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 body{
 background:radial-gradient(circle at top,#0b1220,#020617);
 color:#e5e7eb;
 overflow-x:hidden;
 }
+
 html{scroll-behavior:smooth;}
 
-/* NAV */
+/* ================= NAV ================= */
 .navbar{
 position:fixed;
 top:0;
@@ -34,6 +47,7 @@ justify-content:space-between;
 align-items:center;
 background:rgba(2,6,23,0.75);
 backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
 
@@ -43,10 +57,15 @@ color:#fff;
 text-decoration:none;
 opacity:0.85;
 font-size:14px;
+transition:0.3s;
 }
-.navbar a:hover{opacity:1;color:#3b82f6;}
 
-/* HERO */
+.navbar a:hover{
+opacity:1;
+color:#3b82f6;
+}
+
+/* ================= HERO ================= */
 .hero{
 height:100vh;
 display:flex;
@@ -75,18 +94,17 @@ z-index:-1;
 .hero h1{
 font-size:64px;
 line-height:1.1;
-animation:fadeUp 1s ease;
+animation:fadeUp 0.8s ease;
 }
 
 .hero p{
 margin-top:15px;
 color:#94a3b8;
-max-width:750px;
-line-height:1.8;
-animation:fadeUp 1.2s ease;
+max-width:650px;
+line-height:1.6;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn{
 display:inline-block;
 margin-top:25px;
@@ -98,22 +116,20 @@ text-decoration:none;
 font-weight:600;
 transition:0.3s;
 }
-.btn:hover{transform:translateY(-5px);}
 
-/* SECTIONS */
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* ================= SECTIONS ================= */
 section{
 padding:110px 80px;
-opacity:0;
-transform:translateY(40px);
-transition:0.8s ease;
 }
 
-section.show{
-opacity:1;
-transform:translateY(0);
+.container{
+max-width:1100px;
+margin:auto;
 }
-
-.container{max-width:1100px;margin:auto;}
 
 h2{
 font-size:40px;
@@ -122,38 +138,40 @@ margin-bottom:20px;
 
 .sub{
 color:#94a3b8;
-margin-bottom:30px;
-line-height:1.8;
+margin-bottom:40px;
+line-height:1.7;
 }
 
-/* TEXT */
-.text{
-color:#cbd5e1;
-line-height:2;
-margin-bottom:20px;
-}
-
-/* GRID */
+/* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
+/* ================= CARD ================= */
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:28px;
-border-radius:16px;
-transition:0.4s;
+padding:30px;
+border-radius:18px;
+opacity:0;
+transform:translateY(30px);
+transition:0.6s ease;
+will-change:transform,opacity;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
 transform:translateY(-8px);
-border-color:#3b82f6;
+border-color:rgba(59,130,246,0.4);
 }
 
-/* STATS */
+/* ================= STATS ================= */
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -173,16 +191,36 @@ color:#3b82f6;
 font-weight:700;
 }
 
-/* SELL */
-.sell{
-margin-top:50px;
-padding:60px;
-border:1px solid #3b82f6;
-border-radius:18px;
+/* ================= CTA ================= */
+.cta{
 text-align:center;
+background:rgba(255,255,255,0.05);
+padding:80px;
+border-radius:22px;
+opacity:0;
+transform:translateY(30px);
+transition:0.6s;
 }
 
-/* FOOTER */
+.cta.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 18px;
+border-radius:50px;
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+
+/* ================= FOOTER ================= */
 footer{
 text-align:center;
 padding:25px;
@@ -190,13 +228,14 @@ color:#94a3b8;
 border-top:1px solid rgba(255,255,255,0.08);
 }
 
-/* ANIMATION */
+/* ================= ANIMATION ================= */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(20px);}
 to{opacity:1;transform:translateY(0);}
 }
 
 </style>
+
 </head>
 
 <body>
@@ -209,56 +248,33 @@ to{opacity:1;transform:translateY(0);}
 <a href="services.html">Services</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
-<a href="sell.html">Sell Website</a>
 </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>🌍 Trusted Overseas Jobs & Immigration Consultancy</h1>
-
+<h1>🌍 Build Your Global Career</h1>
 <p>
-SWISA Associates provides professional overseas recruitment, visa processing, and manpower supply services across UAE, Saudi Arabia, Kuwait, Qatar and other Gulf countries with verified employers and transparent hiring process.
+Trusted overseas recruitment & visa consultancy helping candidates secure verified jobs in UAE, Saudi Arabia, Kuwait and Gulf countries.
 </p>
-
-<a href="services.html" class="btn">Explore Services</a>
-<a href="sell.html" class="btn">Buy Website</a>
+<a href="services.html" class="btn">🚀 Explore Services</a>
 </div>
 </div>
-
-<!-- ABOUT -->
-<section>
-<div class="container">
-
-<h2>🏢 About Us</h2>
-
-<p class="text">
-We are a professional overseas consultancy helping candidates find verified international job opportunities with trusted employers.
-</p>
-
-<p class="text">
-Our services include visa processing, overseas job placement, manpower recruitment, document attestation and complete relocation assistance.
-</p>
-
-<p class="text">
-With 1500+ successful placements, we have built strong credibility in the overseas recruitment industry.
-</p>
-
-</div>
-</section>
 
 <!-- SERVICES -->
 <section>
 <div class="container">
 
 <h2>💼 Core Services</h2>
+<p class="sub">Complete overseas career solutions with verified employers.</p>
 
 <div class="grid">
-<div class="card">Visa Processing</div>
-<div class="card">Overseas Jobs</div>
-<div class="card">Manpower Recruitment</div>
-<div class="card">Document Attestation</div>
+
+<div class="card reveal">🛂 Visa Processing</div>
+<div class="card reveal">✈️ Overseas Jobs</div>
+<div class="card reveal">🏢 Recruitment</div>
+
 </div>
 
 </div>
@@ -268,13 +284,12 @@ With 1500+ successful placements, we have built strong credibility in the overse
 <section>
 <div class="container">
 
-<h2>⭐ Why Choose Us</h2>
+<h2>⭐ Why Trust Us</h2>
 
 <div class="grid">
-<div class="card">12+ Years Experience</div>
-<div class="card">Verified Employers</div>
-<div class="card">Transparent Process</div>
-<div class="card">1500+ Placements</div>
+<div class="card reveal">✔ 12+ Years Experience</div>
+<div class="card reveal">✔ Verified Employers</div>
+<div class="card reveal">✔ 1500+ Placements</div>
 </div>
 
 </div>
@@ -289,17 +304,17 @@ With 1500+ successful placements, we have built strong credibility in the overse
 <div class="stats">
 
 <div class="stat">
-<div class="counter">1500+</div>
+<div class="counter" data-target="1500">0</div>
 <p>Clients</p>
 </div>
 
 <div class="stat">
-<div class="counter">40+</div>
+<div class="counter" data-target="40">0</div>
 <p>Countries</p>
 </div>
 
 <div class="stat">
-<div class="counter">12+</div>
+<div class="counter" data-target="12">0</div>
 <p>Years</p>
 </div>
 
@@ -308,29 +323,28 @@ With 1500+ successful placements, we have built strong credibility in the overse
 </div>
 </section>
 
-<!-- SELL -->
+<!-- CTA -->
 <section>
 <div class="container">
 
-<div class="sell">
-<h2>💰 Want to Buy This Website?</h2>
-<p class="sub">Premium ready-made business website with SEO + leads + branding system.</p>
-
-<a href="sell.html" class="btn">View Sell Page</a>
+<div class="cta reveal">
+<h2>🚀 Start Your Overseas Journey Today</h2>
+<p class="sub">Get expert consultation instantly.</p>
+<a href="https://wa.me/919811084530" class="btn">💬 WhatsApp Us</a>
 </div>
 
 </div>
 </section>
 
 <footer>
-🌍 SWISA Associates • India • Overseas Jobs Consultancy
+🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • India
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919811084530">💬 Chat</a>
 
 <script>
 
-/* SECTION REVEAL (SMOOTH + LIGHTWEIGHT) */
-const sections=document.querySelectorAll("section");
-
+// smooth reveal
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -339,7 +353,38 @@ entry.target.classList.add("show");
 });
 },{threshold:0.15});
 
-sections.forEach(sec=>observer.observe(sec));
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+// smooth counter (no lag)
+const counters=document.querySelectorAll(".counter");
+
+const counterObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+const el=entry.target;
+const target=+el.dataset.target;
+let current=0;
+const step=Math.ceil(target/70);
+
+function update(){
+current+=step;
+if(current<target){
+el.innerText=current;
+requestAnimationFrame(update);
+}else{
+el.innerText=target+"+";
+}
+}
+
+update();
+counterObserver.unobserve(el);
+}
+});
+},{threshold:0.4});
+
+counters.forEach(c=>counterObserver.observe(c));
 
 </script>
 
