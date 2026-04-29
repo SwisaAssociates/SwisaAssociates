@@ -4,18 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🌍 SWISA Associates | Immigration, Visa & Overseas Jobs Experts</title>
+<title>🌍 SWISA Associates | Immigration, Visa & Overseas Jobs</title>
 
-<meta name="description" content="SWISA Associates is a trusted immigration consultancy offering visa processing, overseas jobs, manpower recruitment, and global relocation support.">
+<meta name="description" content="SWISA Associates is a trusted immigration consultancy offering visa processing, overseas jobs, manpower recruitment, and global relocation services.">
 <meta name="keywords" content="visa consultancy, immigration services, overseas jobs, work visa, Gulf jobs, Canada immigration, manpower recruitment">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://swisaassociates.github.io/SwisaAssociates/">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= GLOBAL ================= */
+/* ================= BASE ================= */
 *{
 margin:0;
 padding:0;
@@ -52,6 +51,7 @@ color:#fff;
 text-decoration:none;
 opacity:0.8;
 transition:0.3s;
+font-size:14px;
 }
 
 .navbar a:hover{
@@ -73,7 +73,7 @@ content:"";
 position:absolute;
 inset:0;
 background:url("photo.avif") center/cover;
-filter:brightness(0.5);
+filter:brightness(0.45);
 z-index:-2;
 }
 
@@ -96,6 +96,7 @@ margin-top:15px;
 color:#94a3b8;
 max-width:600px;
 line-height:1.6;
+font-size:16px;
 }
 
 .btn{
@@ -114,7 +115,7 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 section{
 padding:120px 80px;
 }
@@ -151,10 +152,9 @@ border:1px solid rgba(255,255,255,0.08);
 padding:30px;
 border-radius:18px;
 backdrop-filter:blur(10px);
-transition:0.5s cubic-bezier(0.22,1,0.36,1);
-
+transition:0.4s;
 opacity:0;
-transform:translateY(60px);
+transform:translateY(50px);
 }
 
 .card.show{
@@ -163,7 +163,7 @@ transform:translateY(0);
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.02);
+transform:translateY(-10px);
 border-color:rgba(59,130,246,0.4);
 }
 
@@ -195,9 +195,8 @@ background:rgba(255,255,255,0.05);
 padding:80px;
 border-radius:22px;
 border:1px solid rgba(255,255,255,0.08);
-
 opacity:0;
-transform:translateY(60px);
+transform:translateY(50px);
 }
 
 .cta.show{
@@ -252,13 +251,13 @@ to{opacity:1;transform:translateY(0);}
 <!-- HERO -->
 <div class="hero">
 <div>
-<h1>🌍 Build Your Global Career With Confidence</h1>
-<p>Trusted immigration & overseas recruitment consultancy helping professionals secure international opportunities with verified employers.</p>
+<h1>🌍 Build Your Global Career</h1>
+<p>Trusted immigration & overseas job consultancy helping professionals achieve international opportunities with verified employers.</p>
 <a href="services.html" class="btn">🚀 Explore Services</a>
 </div>
 </div>
 
-<!-- SERVICES PREVIEW -->
+<!-- SERVICES -->
 <section>
 <div class="container">
 
@@ -269,7 +268,7 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="card reveal">
 <h3>🛂 Visa Processing</h3>
-<p>Fast & reliable visa approval support.</p>
+<p>Fast & reliable visa support for Gulf & global countries.</p>
 </div>
 
 <div class="card reveal">
@@ -290,21 +289,13 @@ to{opacity:1;transform:translateY(0);}
 <section>
 <div class="container">
 
-<h2>⭐ Why People Trust Us</h2>
+<h2>⭐ Why Trust Us</h2>
 
 <div class="grid">
 
-<div class="card reveal">
-✔ 12+ Years Experience
-</div>
-
-<div class="card reveal">
-✔ 1500+ Successful Placements
-</div>
-
-<div class="card reveal">
-✔ Verified Global Employers
-</div>
+<div class="card reveal">✔ 12+ Years Experience</div>
+<div class="card reveal">✔ Verified Employers</div>
+<div class="card reveal">✔ 1500+ Placements</div>
 
 </div>
 
@@ -345,13 +336,14 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="cta reveal">
 <h2>🚀 Start Your Overseas Journey Today</h2>
-<p class="sub">Get expert consultation and begin your international career with confidence.</p>
+<p class="sub">Get expert consultation and begin your international career now.</p>
 <a href="https://wa.me/919811084530" class="btn">💬 WhatsApp Us</a>
 </div>
 
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 🌍 SWISA Associates • Immigration & Overseas Jobs Consultancy • New Delhi
 </footer>
@@ -360,7 +352,7 @@ to{opacity:1;transform:translateY(0);}
 
 <script>
 
-// reveal animation
+/* ================= SMOOTH REVEAL ================= */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -375,35 +367,35 @@ document.querySelectorAll(".reveal").forEach(el=>{
 observer.observe(el);
 });
 
-// counter
-let started=false;
+/* ================= FAST COUNTER FIX ================= */
+const counters=document.querySelectorAll(".counter");
 
-function runCounter(){
-if(started) return;
-started=true;
+const counterObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+const el=entry.target;
+const target=+el.dataset.target;
+let current=0;
 
-document.querySelectorAll(".counter").forEach(c=>{
-const update=()=>{
-const target=+c.dataset.target;
-const current=+c.innerText;
-const inc=Math.ceil(target/60);
+const step=Math.ceil(target/80);
 
+function update(){
+current+=step;
 if(current<target){
-c.innerText=current+inc;
-setTimeout(update,20);
+el.innerText=current;
+requestAnimationFrame(update);
 }else{
-c.innerText=target+"+";
+el.innerText=target+"+";
 }
-};
-update();
-});
 }
 
-new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting) runCounter();
+update();
+counterObserver.unobserve(el);
+}
 });
-},{threshold:0.5}).observe(document.querySelector("section:nth-of-type(4)"));
+},{threshold:0.4});
+
+counters.forEach(c=>counterObserver.observe(c));
 
 </script>
 
