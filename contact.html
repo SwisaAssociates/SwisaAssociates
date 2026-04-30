@@ -10,7 +10,7 @@
 
 <style>
 
-/* ================= GLOBAL ================= */
+/* ================= BASE SYSTEM ================= */
 *{
 margin:0;
 padding:0;
@@ -24,18 +24,19 @@ color:#e5e7eb;
 overflow-x:hidden;
 }
 
-/* ================= NAV (UNIFIED) ================= */
+/* ================= UNIFIED NAV (ALL PAGES SAME STYLE) ================= */
 .navbar{
-position:sticky;
+position:fixed;
 top:0;
-z-index:1000;
+width:100%;
+padding:16px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 60px;
 background:rgba(2,6,23,0.75);
 backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:1000;
 }
 
 .navbar a{
@@ -44,16 +45,32 @@ color:#94a3b8;
 text-decoration:none;
 font-size:14px;
 transition:0.3s;
+position:relative;
+}
+
+.navbar a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#3b82f6;
+transition:0.3s;
 }
 
 .navbar a:hover{
 color:#3b82f6;
 }
 
+.navbar a:hover::after{
+width:100%;
+}
+
 /* ================= HERO ================= */
 .hero{
 text-align:center;
-padding:90px 20px 40px;
+padding:120px 20px 50px;
 }
 
 .badge{
@@ -69,6 +86,7 @@ margin-bottom:15px;
 .hero h1{
 font-size:54px;
 line-height:1.1;
+animation:fadeUp 0.8s ease;
 }
 
 .hero p{
@@ -76,6 +94,7 @@ color:#94a3b8;
 max-width:750px;
 margin:15px auto;
 line-height:1.6;
+animation:fadeUp 1s ease;
 }
 
 /* ================= CONTAINER ================= */
@@ -92,7 +111,7 @@ grid-template-columns:1fr 1fr;
 gap:30px;
 }
 
-/* ================= CARD ================= */
+/* ================= CARDS ================= */
 .card{
 background:rgba(255,255,255,0.04);
 padding:28px;
@@ -102,11 +121,12 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
 border-color:#3b82f6;
+box-shadow:0 15px 40px rgba(59,130,246,0.15);
 }
 
-/* ================= INPUT ================= */
+/* ================= INPUTS ================= */
 input,textarea{
 width:100%;
 padding:14px;
@@ -121,10 +141,10 @@ transition:0.3s;
 
 input:focus,textarea:focus{
 border:1px solid #3b82f6;
-box-shadow:0 0 10px rgba(59,130,246,0.3);
+box-shadow:0 0 12px rgba(59,130,246,0.25);
 }
 
-textarea{height:120px;}
+textarea{height:130px;}
 
 /* ================= BUTTON ================= */
 .btn{
@@ -143,10 +163,9 @@ overflow:hidden;
 
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(59,130,246,0.3);
+box-shadow:0 12px 30px rgba(59,130,246,0.3);
 }
 
-/* shimmer */
 .btn::after{
 content:"";
 position:absolute;
@@ -181,7 +200,7 @@ transition:0.3s;
 }
 
 .trust div:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border:1px solid #3b82f6;
 }
 
@@ -189,13 +208,13 @@ border:1px solid #3b82f6;
 .cta{
 margin-top:50px;
 text-align:center;
-padding:60px;
+padding:70px;
 border-radius:18px;
 background:rgba(59,130,246,0.08);
 border:1px solid rgba(59,130,246,0.2);
 }
 
-/* ================= WHATSAPP ================= */
+/* ================= WHATSAPP FLOAT ================= */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -206,9 +225,14 @@ border-radius:50px;
 color:#fff;
 text-decoration:none;
 font-weight:600;
+transition:0.3s;
 }
 
-/* ================= ANIMATION ================= */
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* ================= ANIMATION SYSTEM ================= */
 .reveal{
 opacity:0;
 transform:translateY(40px);
@@ -220,11 +244,17 @@ opacity:1;
 transform:translateY(0);
 }
 
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
 /* ================= MOBILE ================= */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:34px;}
 .navbar{padding:14px 20px;}
+.cta{padding:40px;}
 }
 
 </style>
@@ -232,7 +262,7 @@ transform:translateY(0);
 
 <body>
 
-<!-- NAV -->
+<!-- NAV (UNIFIED SYSTEM NAV) -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
@@ -241,6 +271,7 @@ transform:translateY(0);
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="dashboard.html">Dashboard</a>
+<a href="sell.html">Pricing</a>
 </div>
 </div>
 
@@ -249,7 +280,7 @@ transform:translateY(0);
 <div class="badge">⚡ ACTIVATION CENTER</div>
 
 <h1>Get Demo / Activate System</h1>
-<p>Talk to our team and activate your AI-style lead generation system for immigration agencies.</p>
+<p>Talk to our team and activate your high-conversion lead system built for immigration agencies.</p>
 </div>
 
 <!-- MAIN -->
@@ -259,7 +290,7 @@ transform:translateY(0);
 
 <!-- FORM -->
 <div class="card reveal">
-<h3>📩 Request Demo</h3><br>
+<h3>📩 Request Demo Access</h3><br>
 
 <input placeholder="Full Name">
 <input placeholder="Business Name">
@@ -273,10 +304,10 @@ transform:translateY(0);
 <div class="card reveal">
 <h3>⚡ What You Get</h3><br>
 
-<p>✔ Full Lead System Website</p><br>
-<p>✔ WhatsApp Funnel Integration</p><br>
-<p>✔ Conversion Optimization</p><br>
+<p>✔ Full Lead Generation Website</p><br>
+<p>✔ WhatsApp Funnel System</p><br>
 <p>✔ SEO Structure Setup</p><br>
+<p>✔ Conversion Optimized Pages</p><br>
 <p>✔ Deployment Guidance</p>
 </div>
 
@@ -284,16 +315,18 @@ transform:translateY(0);
 
 <!-- TRUST -->
 <div class="trust reveal">
-<div>✔ High Conversion System</div>
-<div>✔ SaaS Architecture</div>
+<div>✔ SaaS Style System</div>
+<div>✔ High Conversion Design</div>
 <div>✔ Agency Focused</div>
-<div>✔ Instant Setup</div>
+<div>✔ Instant Deployment</div>
 </div>
 
 <!-- CTA -->
 <div class="cta reveal">
 <h2>🚀 Serious Buyers Only</h2>
-<p style="color:#94a3b8;margin-top:10px;">This is not a website — it is a lead system.</p>
+<p style="color:#94a3b8;margin-top:10px;">
+This is not a website — it is a conversion system.
+</p>
 
 <br>
 <a class="btn" href="https://wa.me/919811084530">💬 Talk on WhatsApp</a>
