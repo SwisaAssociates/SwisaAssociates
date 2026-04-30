@@ -6,7 +6,7 @@
 
 <title>SWISA Dashboard | Secure Admin Panel</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -171,7 +171,6 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-/* MOBILE */
 @media(max-width:900px){
 .sidebar{display:none;}
 .main{margin-left:0;padding:18px;}
@@ -268,10 +267,11 @@ const db = getFirestore(app);
 
 let leads = [];
 
-/* LOGIN */
+/* 🔐 LOGIN (UPDATED PASSWORD) */
 window.login = function(){
 const pass = document.getElementById("pass").value;
-if(pass === "admin123"){
+
+if(pass === "NHIBATAUNGA***"){
 document.getElementById("loginScreen").style.display="none";
 loadLeads();
 }else{
