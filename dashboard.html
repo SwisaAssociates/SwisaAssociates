@@ -4,27 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA Dashboard | Live Lead Control Panel</title>
+<title>SWISA Dashboard | Secure Admin Panel</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
 body{
 background:#020617;
 color:#e5e7eb;
-overflow-x:hidden;
 }
 
-/* ================= SIDEBAR ================= */
+/* LOGIN SCREEN */
+.login-screen{
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.login-box{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.1);
+width:300px;
+text-align:center;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+outline:none;
+background:#0b1220;
+color:#fff;
+}
+
+.login-box button{
+width:100%;
+margin-top:15px;
+padding:12px;
+border:none;
+border-radius:10px;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
+color:#fff;
+cursor:pointer;
+}
+
+/* SIDEBAR */
 .sidebar{
 width:240px;
 height:100vh;
@@ -35,10 +70,7 @@ padding:22px;
 backdrop-filter:blur(16px);
 }
 
-.sidebar h2{
-color:#3b82f6;
-margin-bottom:25px;
-}
+.sidebar h2{color:#3b82f6;margin-bottom:25px;}
 
 .sidebar a{
 display:block;
@@ -56,13 +88,13 @@ color:#3b82f6;
 transform:translateX(4px);
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 .main{
 margin-left:260px;
 padding:30px;
 }
 
-/* ================= TOPBAR ================= */
+/* TOPBAR */
 .topbar{
 display:flex;
 justify-content:space-between;
@@ -70,10 +102,7 @@ align-items:center;
 margin-bottom:25px;
 }
 
-.title{
-font-size:20px;
-font-weight:600;
-}
+.title{font-size:20px;font-weight:600;}
 
 .btn{
 padding:10px 14px;
@@ -83,16 +112,10 @@ background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;
 cursor:pointer;
 font-size:13px;
-transition:0.3s;
 margin-left:8px;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(59,130,246,0.25);
-}
-
-/* ================= CARDS ================= */
+/* CARDS */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -104,12 +127,6 @@ background:rgba(255,255,255,0.04);
 padding:22px;
 border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#3b82f6;
 }
 
 .number{
@@ -118,13 +135,7 @@ font-weight:700;
 color:#3b82f6;
 }
 
-.small{
-color:#94a3b8;
-font-size:13px;
-margin-top:5px;
-}
-
-/* ================= TABLE ================= */
+/* TABLE */
 .table{
 margin-top:25px;
 background:rgba(255,255,255,0.03);
@@ -133,10 +144,7 @@ border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse;}
 
 th,td{
 padding:12px;
@@ -146,17 +154,10 @@ color:#cbd5e1;
 border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-th{color:#94a3b8;}
+.delete{color:#ef4444;cursor:pointer;}
 
-.delete{
-color:#ef4444;
-cursor:pointer;
-}
-
-/* ================= LIVE DOT ================= */
 .dot{
-width:8px;
-height:8px;
+width:8px;height:8px;
 background:#22c55e;
 border-radius:50%;
 display:inline-block;
@@ -170,14 +171,7 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-/* ================= STATES ================= */
-.empty,.loader{
-text-align:center;
-padding:25px;
-color:#94a3b8;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media(max-width:900px){
 .sidebar{display:none;}
 .main{margin-left:0;padding:18px;}
@@ -187,6 +181,15 @@ color:#94a3b8;
 </head>
 
 <body>
+
+<!-- 🔐 LOGIN -->
+<div class="login-screen" id="loginScreen">
+<div class="login-box">
+<h3>🔐 Admin Login</h3>
+<input type="password" id="pass" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+</div>
+</div>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
@@ -201,40 +204,36 @@ color:#94a3b8;
 <!-- MAIN -->
 <div class="main">
 
-<!-- TOPBAR -->
 <div class="topbar">
-<div class="title">📊 Live Lead Dashboard</div>
-
+<div class="title">📊 Secure Lead Dashboard</div>
 <div>
 <button class="btn" onclick="exportCSV()">📥 Export</button>
 <button class="btn" onclick="loadLeads()">🔄 Refresh</button>
 </div>
 </div>
 
-<!-- STATS -->
 <div class="grid">
 
 <div class="card">
 <div class="number" id="total">0</div>
-<div class="small">Total Leads</div>
+<div>Total Leads</div>
 </div>
 
 <div class="card">
 <div class="number" id="today">0</div>
-<div class="small">Today Leads</div>
+<div>Today Leads</div>
 </div>
 
 <div class="card">
 <div class="number"><span class="dot"></span>LIVE</div>
-<div class="small">System Status</div>
+<div>System Status</div>
 </div>
 
 </div>
 
-<!-- TABLE -->
 <div class="table">
 
-<div id="loading" class="loader">Connecting to Firebase...</div>
+<div id="loading">Connecting...</div>
 
 <table id="table" style="display:none;">
 <thead>
@@ -248,10 +247,6 @@ color:#94a3b8;
 <tbody id="tbody"></tbody>
 </table>
 
-<div id="empty" class="empty" style="display:none;">
-No leads yet — system ready 🚀
-</div>
-
 </div>
 
 </div>
@@ -260,22 +255,12 @@ No leads yet — system ready 🚀
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {
-getFirestore,
-collection,
-onSnapshot,
-deleteDoc,
-doc
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-/* 🔥 YOUR FIREBASE CONFIG */
 const firebaseConfig = {
 apiKey: "AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
 authDomain: "swisa-associates1.firebaseapp.com",
-projectId: "swisa-associates1",
-storageBucket: "swisa-associates1.firebasestorage.app",
-messagingSenderId: "730305882663",
-appId: "1:730305882663:web:bfc45f64ee34b78836fc02"
+projectId: "swisa-associates1"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -283,30 +268,25 @@ const db = getFirestore(app);
 
 let leads = [];
 
-/* LOAD LEADS */
+/* LOGIN */
+window.login = function(){
+const pass = document.getElementById("pass").value;
+if(pass === "admin123"){
+document.getElementById("loginScreen").style.display="none";
+loadLeads();
+}else{
+alert("Wrong Password");
+}
+}
+
+/* LOAD */
 function loadLeads(){
-
 onSnapshot(collection(db,"leads"),(snap)=>{
-
 leads = snap.docs.map(d=>({id:d.id,...d.data()}));
-
-document.getElementById("loading").style.display="none";
-
-if(leads.length===0){
-document.getElementById("empty").style.display="block";
-document.getElementById("table").style.display="none";
-return;
-}
-
-document.getElementById("empty").style.display="none";
-document.getElementById("table").style.display="table";
-
 render();
-
+document.getElementById("loading").style.display="none";
 });
-
 }
-
 window.loadLeads = loadLeads;
 
 /* RENDER */
@@ -314,27 +294,22 @@ function render(){
 
 document.getElementById("total").innerText = leads.length;
 
-let todayCount = 0;
-const today = new Date().toDateString();
+let todayCount=0;
+const today=new Date().toDateString();
 
-const tbody = document.getElementById("tbody");
-tbody.innerHTML = "";
+const tbody=document.getElementById("tbody");
+tbody.innerHTML="";
 
 leads.forEach(l=>{
 
-let t;
-try{
-t = l.time?.toDate ? l.time.toDate() : new Date(l.time);
-}catch{
-t = new Date();
-}
+let t=new Date(l.time);
 
-if(t.toDateString() === today) todayCount++;
+if(t.toDateString()===today) todayCount++;
 
-tbody.innerHTML += `
+tbody.innerHTML+=`
 <tr>
-<td>${l.name || "N/A"}</td>
-<td>${l.phone || "N/A"}</td>
+<td>${l.name||""}</td>
+<td>${l.phone||""}</td>
 <td>${t.toLocaleString()}</td>
 <td class="delete" onclick="delLead('${l.id}')">Delete</td>
 </tr>
@@ -342,35 +317,27 @@ tbody.innerHTML += `
 
 });
 
-document.getElementById("today").innerText = todayCount;
+document.getElementById("today").innerText=todayCount;
 }
 
 /* DELETE */
 window.delLead = async function(id){
-if(!confirm("Delete this lead?")) return;
+if(!confirm("Delete?")) return;
 await deleteDoc(doc(db,"leads",id));
 }
 
 /* EXPORT */
-window.exportCSV = function(){
-
+window.exportCSV=function(){
 let csv="Name,Phone,Time\n";
-
 leads.forEach(l=>{
-let t = l.time?.toDate ? l.time.toDate() : new Date(l.time);
-csv+=`${l.name || ""},${l.phone || ""},${t}\n`;
+csv+=`${l.name},${l.phone},${new Date(l.time)}\n`;
 });
-
-const blob=new Blob([csv],{type:"text/csv"});
+const blob=new Blob([csv]);
 const a=document.createElement("a");
 a.href=URL.createObjectURL(blob);
 a.download="leads.csv";
 a.click();
-
 }
-
-/* INIT */
-loadLeads();
 
 </script>
 
