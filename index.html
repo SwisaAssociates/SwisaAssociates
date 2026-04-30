@@ -4,30 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA System | Convert Traffic Into WhatsApp Leads</title>
-<meta name="description" content="Turn visitors into WhatsApp leads with SWISA System. Built for immigration agencies.">
+<title>SWISA System | AI Lead Engine for Agencies</title>
+<meta name="description" content="Convert traffic into WhatsApp leads with SWISA System. Built for immigration agencies and online businesses.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:#020617;color:#e5e7eb;overflow-x:hidden}
-html{scroll-behavior:smooth}
+/* ================= BASE ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
 
-/* NAV */
+body{
+background:#020617;
+color:#e5e7eb;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle, rgba(59,130,246,0.12), transparent 60%);
+top:-250px;
+left:-250px;
+filter:blur(90px);
+z-index:-1;
+}
+
+/* ================= NAV ================= */
 .navbar{
-position:fixed;top:0;width:100%;padding:15px 50px;
-display:flex;justify-content:space-between;align-items:center;
+position:fixed;
+top:0;
+width:100%;
+padding:16px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 background:rgba(2,6,23,0.75);
-backdrop-filter:blur(14px);
+backdrop-filter:blur(16px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
-.navbar a{color:#94a3b8;text-decoration:none;margin:0 12px;font-size:14px;transition:0.3s}
-.navbar a:hover{color:#3b82f6}
 
-/* HERO */
+.navbar a{
+color:#94a3b8;
+text-decoration:none;
+margin:0 12px;
+font-size:14px;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#3b82f6;
+}
+
+/* ================= HERO ================= */
 .hero{
 height:100vh;
 display:flex;
@@ -41,44 +79,70 @@ background:radial-gradient(circle at top,#0b1220,#020617);
 .hero h1{
 font-size:56px;
 line-height:1.2;
-animation:fadeUp 1s ease;
+opacity:0;
+animation:floatIn 1s ease forwards;
 }
 
-.hero span{color:#3b82f6}
-
-.hero p{margin-top:15px;color:#94a3b8;max-width:700px;line-height:1.6}
+.hero p{
+margin-top:15px;
+color:#94a3b8;
+max-width:700px;
+line-height:1.6;
+opacity:0;
+animation:floatIn 1.2s ease forwards;
+}
 
 .badge{
-display:inline-block;padding:6px 14px;
+display:inline-block;
+padding:6px 14px;
 background:rgba(59,130,246,0.15);
 color:#3b82f6;
-border-radius:20px;font-size:12px;margin-bottom:15px;
-animation:fadeUp 0.8s ease;
+border-radius:20px;
+font-size:12px;
+margin-bottom:15px;
+opacity:0;
+animation:floatIn 0.8s ease forwards;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 .lead-box{
-margin-top:25px;padding:20px;
+margin-top:25px;
+padding:22px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
-border-radius:14px;
-display:inline-block;
+border-radius:16px;
 backdrop-filter:blur(10px);
+display:inline-block;
 transition:0.3s;
 }
-.lead-box:hover{transform:translateY(-3px)}
 
-input{
-padding:12px;border-radius:8px;border:none;
-margin:6px;width:220px;background:#020617;color:#fff;outline:none;
+.lead-box:hover{
+transform:translateY(-4px);
 }
 
-/* BUTTON */
+input{
+padding:12px;
+border-radius:8px;
+border:none;
+margin:6px;
+width:220px;
+background:#020617;
+color:#fff;
+outline:none;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* ================= BUTTON ================= */
 .btn{
-display:inline-block;margin-top:15px;padding:14px 24px;
+display:inline-block;
+margin-top:15px;
+padding:14px 24px;
 border-radius:10px;
 background:linear-gradient(135deg,#3b82f6,#6366f1);
-color:#fff;text-decoration:none;font-weight:600;border:none;
+color:#fff;
+text-decoration:none;
+font-weight:600;
+border:none;
 cursor:pointer;
 transition:0.3s;
 position:relative;
@@ -87,33 +151,53 @@ overflow:hidden;
 
 .btn:hover{
 transform:translateY(-4px) scale(1.03);
-box-shadow:0 10px 30px rgba(59,130,246,0.4);
+box-shadow:0 20px 50px rgba(59,130,246,0.35);
 }
 
 .btn::after{
 content:"";
 position:absolute;
-top:0;left:-100%;
-width:100%;height:100%;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
 transition:0.5s;
 }
-.btn:hover::after{left:100%}
 
-/* SECTIONS */
-section{padding:100px 60px}
-.container{max-width:1100px;margin:auto}
-h2{font-size:38px;margin-bottom:10px}
-.sub{color:#94a3b8;margin-bottom:40px}
+.btn:hover::after{
+left:100%;
+}
 
-/* GRID */
+/* ================= SECTIONS ================= */
+section{
+padding:100px 60px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.sub{
+color:#94a3b8;
+margin-bottom:40px;
+line-height:1.6;
+}
+
+/* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card{
 background:rgba(255,255,255,0.04);
 padding:25px;
@@ -121,21 +205,27 @@ border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
 opacity:0;
-transform:translateY(40px);
-}
-.card.show{opacity:1;transform:translateY(0)}
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-border-color:#3b82f6;
-box-shadow:0 15px 40px rgba(59,130,246,0.2);
+transform:translateY(30px);
 }
 
-/* STATS */
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+border-color:#3b82f6;
+box-shadow:0 20px 60px rgba(59,130,246,0.2);
+}
+
+/* ================= STATS ================= */
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
+
 .stat{
 text-align:center;
 background:rgba(255,255,255,0.04);
@@ -143,14 +233,18 @@ padding:30px;
 border-radius:16px;
 transition:0.3s;
 }
-.stat:hover{transform:translateY(-6px)}
+
+.stat:hover{
+transform:translateY(-6px);
+}
+
 .num{
 font-size:40px;
 font-weight:700;
 color:#3b82f6;
 }
 
-/* CTA */
+/* ================= CTA ================= */
 .cta{
 text-align:center;
 padding:80px;
@@ -159,9 +253,13 @@ border-radius:18px;
 opacity:0;
 transform:translateY(40px);
 }
-.cta.show{opacity:1;transform:translateY(0)}
 
-/* WHATSAPP */
+.cta.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= WHATSAPP ================= */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -173,12 +271,21 @@ color:#fff;
 text-decoration:none;
 transition:0.3s;
 }
-.whatsapp:hover{transform:scale(1.1)}
 
-/* ANIMATIONS */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes floatIn{
+to{
+opacity:1;
+transform:translateY(0);
+}
+from{
+opacity:0;
+transform:translateY(20px);
+}
 }
 
 /* MOBILE */
@@ -193,6 +300,7 @@ section{padding:70px 20px}
 
 <body>
 
+<!-- NAV -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
@@ -209,11 +317,11 @@ section{padding:70px 20px}
 <div class="hero">
 <div>
 
-<div class="badge">🔥 HIGH-CONVERSION SYSTEM</div>
+<div class="badge">🔥 PREMIUM LEAD ENGINE SYSTEM</div>
 
-<h1>Convert Website Traffic <br> Into <span>Real WhatsApp Clients</span></h1>
+<h1>Convert Website Traffic <br> Into High-Quality Leads</h1>
 
-<p>Turn visitors into high-quality leads automatically using a SaaS-grade system built for agencies.</p>
+<p>Automate WhatsApp lead generation for immigration & service businesses with a complete SaaS system.</p>
 
 <div class="lead-box">
 <input id="name" placeholder="Your Name">
@@ -229,12 +337,12 @@ section{padding:70px 20px}
 <!-- STATS -->
 <section>
 <div class="container">
-<h2>📊 Performance</h2>
+<h2>📊 Performance Snapshot</h2>
 
 <div class="stats">
-<div class="stat"><div class="num" data-target="1580">0</div><p>Leads</p></div>
-<div class="stat"><div class="num" data-target="72">0</div><p>Conversion %</p></div>
-<div class="stat"><div class="num" data-target="500000">0</div><p>Pipeline ₹</p></div>
+<div class="stat"><div class="num" data-target="1580">0</div><p>Leads Generated</p></div>
+<div class="stat"><div class="num" data-target="72">0</div><p>Conversion Rate</p></div>
+<div class="stat"><div class="num" data-target="500000">0</div><p>Pipeline Value ₹</p></div>
 </div>
 
 </div>
@@ -244,7 +352,7 @@ section{padding:70px 20px}
 <section>
 <div class="container">
 <div class="cta reveal">
-<h2>🚀 Ready?</h2>
+<h2>🚀 Ready to Launch</h2>
 <p class="sub">Start generating leads instantly.</p>
 <button class="btn" onclick="document.querySelector('.lead-box').scrollIntoView()">Activate</button>
 </div>
@@ -268,20 +376,16 @@ const app=initializeApp(firebaseConfig);
 const db=getFirestore(app);
 
 window.sendLead=async function(){
-
 const name=document.getElementById("name").value.trim();
 const phone=document.getElementById("phone").value.trim();
 
 if(!name||!phone){alert("Fill all fields");return;}
 
-try{
-await addDoc(collection(db,"leads"),{name,phone,time:new Date()});
-window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})`;
-}catch(e){
-alert("Firebase error");
-console.log(e);
-}
+await addDoc(collection(db,"leads"),{
+name,phone,time:new Date()
+});
 
+window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})`;
 }
 </script>
 
@@ -296,32 +400,29 @@ if(e.isIntersecting)e.target.classList.add("show");
 
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-// number animation (fixed)
-const nums=document.querySelectorAll(".num");
-
-function animate(num){
-const target=+num.dataset.target;
+function animateNum(el){
+const target=+el.dataset.target;
 let c=0;
-const step=Math.ceil(target/100);
+const step=target/120;
 
 const t=setInterval(()=>{
 c+=step;
 if(c>=target){
-num.innerText=target.toLocaleString();
+el.innerText=target.toLocaleString();
 clearInterval(t);
 }else{
-num.innerText=c.toLocaleString();
+el.innerText=Math.floor(c).toLocaleString();
 }
 },20);
 }
 
 let run=false;
 window.addEventListener("scroll",()=>{
-if(run) return;
-nums.forEach(n=>{
+if(run)return;
+document.querySelectorAll(".num").forEach(n=>{
 if(n.getBoundingClientRect().top<window.innerHeight){
 run=true;
-animate(n);
+animateNum(n);
 }
 });
 });
