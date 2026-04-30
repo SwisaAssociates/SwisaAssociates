@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact SWISA System | Get Leads, Demo & Activation</title>
-
-<meta name="description" content="Activate SWISA lead generation system. Get demo, pricing, WhatsApp support and instant onboarding for immigration & overseas job agencies.">
+<title>Contact SWISA System | Get Demo & Activation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* ================= GLOBAL ================= */
 *{
 margin:0;
 padding:0;
@@ -22,9 +21,10 @@ font-family:Poppins;
 body{
 background:radial-gradient(circle at top,#0b1220,#020617);
 color:#e5e7eb;
+overflow-x:hidden;
 }
 
-/* NAV */
+/* ================= NAV (UNIFIED) ================= */
 .navbar{
 position:sticky;
 top:0;
@@ -32,22 +32,25 @@ z-index:1000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:14px 50px;
+padding:16px 60px;
 background:rgba(2,6,23,0.75);
-backdrop-filter:blur(16px);
+backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .navbar a{
 margin:0 10px;
-color:#fff;
+color:#94a3b8;
 text-decoration:none;
-opacity:0.7;
 font-size:14px;
+transition:0.3s;
 }
-.navbar a:hover{opacity:1;color:#3b82f6;}
 
-/* HERO */
+.navbar a:hover{
+color:#3b82f6;
+}
+
+/* ================= HERO ================= */
 .hero{
 text-align:center;
 padding:90px 20px 40px;
@@ -75,28 +78,35 @@ margin:15px auto;
 line-height:1.6;
 }
 
-/* GRID */
+/* ================= CONTAINER ================= */
 .container{
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
 }
 
+/* ================= GRID ================= */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.04);
 padding:28px;
 border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
 }
 
-/* FORM */
+.card:hover{
+transform:translateY(-6px);
+border-color:#3b82f6;
+}
+
+/* ================= INPUT ================= */
 input,textarea{
 width:100%;
 padding:14px;
@@ -106,10 +116,17 @@ border:none;
 background:rgba(255,255,255,0.05);
 color:#fff;
 outline:none;
+transition:0.3s;
+}
+
+input:focus,textarea:focus{
+border:1px solid #3b82f6;
+box-shadow:0 0 10px rgba(59,130,246,0.3);
 }
 
 textarea{height:120px;}
 
+/* ================= BUTTON ================= */
 .btn{
 width:100%;
 padding:14px;
@@ -120,13 +137,32 @@ color:#fff;
 font-weight:600;
 cursor:pointer;
 transition:0.3s;
+position:relative;
+overflow:hidden;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(59,130,246,0.3);
 }
 
-/* TRUST STRIP */
+/* shimmer */
+.btn::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
+transition:0.5s;
+}
+
+.btn:hover::after{
+left:100%;
+}
+
+/* ================= TRUST ================= */
 .trust{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -141,9 +177,15 @@ border-radius:12px;
 text-align:center;
 font-size:13px;
 color:#cbd5e1;
+transition:0.3s;
 }
 
-/* CTA BLOCK */
+.trust div:hover{
+transform:translateY(-5px);
+border:1px solid #3b82f6;
+}
+
+/* ================= CTA ================= */
 .cta{
 margin-top:50px;
 text-align:center;
@@ -153,11 +195,7 @@ background:rgba(59,130,246,0.08);
 border:1px solid rgba(59,130,246,0.2);
 }
 
-.cta h2{
-font-size:32px;
-}
-
-/* FLOAT WHATSAPP */
+/* ================= WHATSAPP ================= */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -170,10 +208,23 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* MOBILE */
+/* ================= ANIMATION ================= */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:0.8s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:34px;}
+.navbar{padding:14px 20px;}
 }
 
 </style>
@@ -186,20 +237,19 @@ font-weight:600;
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="services.html">Modules</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="dashboard.html">Dashboard</a>
 </div>
 </div>
 
 <!-- HERO -->
-<div class="hero">
-<div class="badge">⚡ ACTIVATION CENTER • LEAD SYSTEM</div>
+<div class="hero reveal">
+<div class="badge">⚡ ACTIVATION CENTER</div>
 
 <h1>Get Demo / Activate System</h1>
-<p>
-Talk to our team to activate your <b>lead generation engine</b> built for immigration & overseas job agencies.
-</p>
+<p>Talk to our team and activate your AI-style lead generation system for immigration agencies.</p>
 </div>
 
 <!-- MAIN -->
@@ -208,61 +258,60 @@ Talk to our team to activate your <b>lead generation engine</b> built for immigr
 <div class="grid">
 
 <!-- FORM -->
-<div class="card">
-<h3>📩 Request Demo Access</h3><br>
+<div class="card reveal">
+<h3>📩 Request Demo</h3><br>
 
 <input placeholder="Full Name">
 <input placeholder="Business Name">
-<input placeholder="Phone / WhatsApp">
-<input placeholder="Target Country (optional)">
+<input placeholder="WhatsApp Number">
 <textarea placeholder="Tell us your requirement"></textarea>
 
 <button class="btn">🚀 Request Activation</button>
 </div>
 
 <!-- INFO -->
-<div class="card">
+<div class="card reveal">
 <h3>⚡ What You Get</h3><br>
 
-<p>✔ Full Website System Access</p><br>
-<p>✔ WhatsApp Lead Funnel Setup</p><br>
-<p>✔ SEO Structure Included</p><br>
-<p>✔ Conversion Optimized Pages</p><br>
-<p>✔ Deployment Support</p><br>
-
-<hr style="border:1px solid rgba(255,255,255,0.1);margin:20px 0;">
-
-<h3>📞 Direct Contact</h3><br>
-<p>WhatsApp: +91 9811084530</p>
-<p>Response: 1–6 Hours</p>
+<p>✔ Full Lead System Website</p><br>
+<p>✔ WhatsApp Funnel Integration</p><br>
+<p>✔ Conversion Optimization</p><br>
+<p>✔ SEO Structure Setup</p><br>
+<p>✔ Deployment Guidance</p>
 </div>
 
 </div>
 
-<!-- TRUST PSYCHOLOGY -->
-<div class="trust">
-<div>✔ Used by Recruitment Agencies</div>
-<div>✔ High Conversion Funnel</div>
-<div>✔ SaaS-Style System</div>
-<div>✔ Instant Deployment</div>
+<!-- TRUST -->
+<div class="trust reveal">
+<div>✔ High Conversion System</div>
+<div>✔ SaaS Architecture</div>
+<div>✔ Agency Focused</div>
+<div>✔ Instant Setup</div>
 </div>
 
 <!-- CTA -->
-<div class="cta">
+<div class="cta reveal">
 <h2>🚀 Serious Buyers Only</h2>
-<p style="color:#94a3b8;margin-top:10px;">
-This is not a website — it is a <b>lead generation system</b>.
-</p>
+<p style="color:#94a3b8;margin-top:10px;">This is not a website — it is a lead system.</p>
 
 <br>
-
 <a class="btn" href="https://wa.me/919811084530">💬 Talk on WhatsApp</a>
 </div>
 
 </div>
 
-<!-- FLOAT -->
-<a class="whatsapp" href="https://wa.me/919811084530">💬 Chat</a>
+<a class="whatsapp" href="https://wa.me/919811084530">💬</a>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting) e.target.classList.add("show");
+});
+},{threshold:0.15});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
