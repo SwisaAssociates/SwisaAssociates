@@ -17,32 +17,26 @@ background:#020617;
 color:#e5e7eb;
 }
 
-/* ===== LOGIN OVERLAY (SAAS STYLE) ===== */
+/* LOGIN SCREEN */
 .login-screen{
 position:fixed;
 inset:0;
-background:radial-gradient(circle at top,#0b1220,#020617);
+background:rgba(2,6,23,0.98);
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:99999;
-backdrop-filter:blur(10px);
+z-index:9999;
 }
 
 .login-box{
-width:340px;
-padding:30px;
-border-radius:18px;
-background:rgba(255,255,255,0.06);
+background:rgba(255,255,255,0.05);
+padding:32px;
+border-radius:16px;
 border:1px solid rgba(255,255,255,0.1);
+width:320px;
 text-align:center;
+backdrop-filter:blur(15px);
 box-shadow:0 20px 60px rgba(0,0,0,0.5);
-animation:pop 0.5s ease;
-}
-
-@keyframes pop{
-from{transform:scale(0.9);opacity:0}
-to{transform:scale(1);opacity:1}
 }
 
 .login-box h3{
@@ -54,12 +48,12 @@ color:#3b82f6;
 width:100%;
 padding:12px;
 margin-top:10px;
-border-radius:10px;
+border-radius:8px;
 border:none;
 outline:none;
 background:#0b1220;
 color:#fff;
-border:1px solid rgba(255,255,255,0.08);
+padding-right:40px;
 }
 
 .login-box button{
@@ -74,7 +68,25 @@ cursor:pointer;
 font-weight:600;
 }
 
-/* ===== SIDEBAR ===== */
+/* ERROR TEXT */
+.error{
+color:#ef4444;
+font-size:13px;
+margin-top:8px;
+display:none;
+}
+
+/* EYE ICON */
+.eye{
+position:absolute;
+right:12px;
+top:62%;
+transform:translateY(-50%);
+cursor:pointer;
+color:#94a3b8;
+}
+
+/* SIDEBAR */
 .sidebar{
 width:240px;
 height:100vh;
@@ -85,10 +97,7 @@ padding:22px;
 backdrop-filter:blur(16px);
 }
 
-.sidebar h2{
-color:#3b82f6;
-margin-bottom:25px;
-}
+.sidebar h2{color:#3b82f6;margin-bottom:25px;}
 
 .sidebar a{
 display:block;
@@ -106,16 +115,10 @@ color:#3b82f6;
 transform:translateX(4px);
 }
 
-/* ===== MAIN ===== */
+/* MAIN */
 .main{
 margin-left:260px;
 padding:30px;
-animation:fade 0.6s ease;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
 }
 
 /* TOPBAR */
@@ -126,12 +129,8 @@ align-items:center;
 margin-bottom:25px;
 }
 
-.title{
-font-size:20px;
-font-weight:600;
-}
+.title{font-size:20px;font-weight:600;}
 
-/* BUTTON */
 .btn{
 padding:10px 14px;
 border:none;
@@ -141,12 +140,6 @@ color:#fff;
 cursor:pointer;
 font-size:13px;
 margin-left:8px;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(59,130,246,0.25);
 }
 
 /* CARDS */
@@ -161,12 +154,6 @@ background:rgba(255,255,255,0.04);
 padding:22px;
 border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#3b82f6;
 }
 
 .number{
@@ -184,10 +171,7 @@ border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse;}
 
 th,td{
 padding:12px;
@@ -197,12 +181,8 @@ color:#cbd5e1;
 border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-.delete{
-color:#ef4444;
-cursor:pointer;
-}
+.delete{color:#ef4444;cursor:pointer;}
 
-/* LIVE DOT */
 .dot{
 width:8px;height:8px;
 background:#22c55e;
@@ -218,7 +198,6 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-/* MOBILE */
 @media(max-width:900px){
 .sidebar{display:none;}
 .main{margin-left:0;padding:18px;}
@@ -229,12 +208,21 @@ animation:pulse 1.5s infinite;
 
 <body>
 
-<!-- 🔒 LOGIN SCREEN -->
+<!-- 🔐 LOGIN -->
 <div class="login-screen" id="loginScreen">
 <div class="login-box">
-<h3>🔐 SWISA SECURE LOGIN</h3>
-<input type="password" id="pass" placeholder="Enter Admin Password">
-<button onclick="login()">Unlock Dashboard</button>
+
+<h3>🔐 Admin Login</h3>
+
+<div style="position:relative;">
+<input type="password" id="pass" placeholder="Enter Password">
+<span class="eye" onclick="togglePass()">👁</span>
+</div>
+
+<div class="error" id="error">You entered wrong password</div>
+
+<button onclick="login()">Login</button>
+
 </div>
 </div>
 
@@ -252,7 +240,7 @@ animation:pulse 1.5s infinite;
 <div class="main">
 
 <div class="topbar">
-<div class="title">📊 Premium Lead Control Panel</div>
+<div class="title">📊 Secure Lead Dashboard</div>
 <div>
 <button class="btn" onclick="exportCSV()">📥 Export</button>
 <button class="btn" onclick="loadLeads()">🔄 Refresh</button>
@@ -280,7 +268,7 @@ animation:pulse 1.5s infinite;
 
 <div class="table">
 
-<div id="loading">Connecting Secure System...</div>
+<div id="loading">Connecting...</div>
 
 <table id="table" style="display:none;">
 <thead>
@@ -315,28 +303,25 @@ const db = getFirestore(app);
 
 let leads = [];
 
-/* 🔒 LOGIN SYSTEM */
+/* 🔐 LOGIN */
 window.login = function(){
 const pass = document.getElementById("pass").value;
 
-if(pass.trim() === "SAAALIMasad85"){
-sessionStorage.setItem("swisa_auth","true");
+if(pass === "SAAALIMasad85"){
 document.getElementById("loginScreen").style.display="none";
 loadLeads();
 }else{
-alert("❌ Wrong Password");
+document.getElementById("error").style.display="block";
 }
 }
 
-/* 🚫 BLOCK DIRECT ACCESS */
-window.onload = function(){
-if(sessionStorage.getItem("swisa_auth")==="true"){
-document.getElementById("loginScreen").style.display="none";
-loadLeads();
-}
+/* 👁 PASSWORD TOGGLE */
+window.togglePass = function(){
+const input = document.getElementById("pass");
+input.type = input.type === "password" ? "text" : "password";
 }
 
-/* LOAD LEADS */
+/* LOAD */
 function loadLeads(){
 onSnapshot(collection(db,"leads"),(snap)=>{
 leads = snap.docs.map(d=>({id:d.id,...d.data()}));
@@ -348,7 +333,6 @@ window.loadLeads = loadLeads;
 
 /* RENDER */
 function render(){
-
 document.getElementById("total").innerText = leads.length;
 
 let todayCount=0;
