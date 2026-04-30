@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -80,7 +81,7 @@ background:radial-gradient(circle at top,#0b1220,#020617);
 font-size:56px;
 line-height:1.2;
 opacity:0;
-animation:floatIn 1s ease forwards;
+animation:floatIn 0.9s ease forwards;
 }
 
 .hero p{
@@ -89,7 +90,7 @@ color:#94a3b8;
 max-width:700px;
 line-height:1.6;
 opacity:0;
-animation:floatIn 1.2s ease forwards;
+animation:floatIn 1.1s ease forwards;
 }
 
 .badge{
@@ -101,7 +102,7 @@ border-radius:20px;
 font-size:12px;
 margin-bottom:15px;
 opacity:0;
-animation:floatIn 0.8s ease forwards;
+animation:floatIn 0.7s ease forwards;
 }
 
 /* ================= FORM ================= */
@@ -111,13 +112,13 @@ padding:22px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 border-radius:16px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 display:inline-block;
 transition:0.3s;
 }
 
 .lead-box:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
 }
 
 input{
@@ -130,6 +131,11 @@ background:#020617;
 color:#fff;
 outline:none;
 border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
+}
+
+input:focus{
+border-color:#3b82f6;
 }
 
 /* ================= BUTTON ================= */
@@ -252,6 +258,7 @@ background:rgba(255,255,255,0.04);
 border-radius:18px;
 opacity:0;
 transform:translateY(40px);
+transition:0.6s ease;
 }
 
 .cta.show{
@@ -278,14 +285,8 @@ transform:scale(1.1);
 
 /* ================= ANIMATION ================= */
 @keyframes floatIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
-from{
-opacity:0;
-transform:translateY(20px);
-}
+to{opacity:1;transform:translateY(0);}
+from{opacity:0;transform:translateY(20px);}
 }
 
 /* MOBILE */
@@ -296,11 +297,11 @@ section{padding:70px 20px}
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
@@ -313,7 +314,6 @@ section{padding:70px 20px}
 </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
 <div>
 
@@ -334,7 +334,6 @@ section{padding:70px 20px}
 </div>
 </div>
 
-<!-- STATS -->
 <section>
 <div class="container">
 <h2>📊 Performance Snapshot</h2>
@@ -348,10 +347,9 @@ section{padding:70px 20px}
 </div>
 </section>
 
-<!-- CTA -->
 <section>
 <div class="container">
-<div class="cta reveal">
+<div class="cta">
 <h2>🚀 Ready to Launch</h2>
 <p class="sub">Start generating leads instantly.</p>
 <button class="btn" onclick="document.querySelector('.lead-box').scrollIntoView()">Activate</button>
@@ -361,13 +359,12 @@ section{padding:70px 20px}
 
 <a class="whatsapp" href="https://wa.me/919811084530">💬</a>
 
-<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-apiKey:"AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
+apiKey:"YOUR_KEY",
 authDomain:"swisa-associates1.firebaseapp.com",
 projectId:"swisa-associates1"
 };
@@ -381,29 +378,25 @@ const phone=document.getElementById("phone").value.trim();
 
 if(!name||!phone){alert("Fill all fields");return;}
 
-await addDoc(collection(db,"leads"),{
-name,phone,time:new Date()
-});
+await addDoc(collection(db,"leads"),{name,phone,time:new Date()});
 
 window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})`;
 }
 </script>
 
-<!-- ANIMATION -->
 <script>
-
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
 if(e.isIntersecting)e.target.classList.add("show");
 });
 },{threshold:0.2});
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+document.querySelectorAll(".cta").forEach(el=>observer.observe(el));
 
 function animateNum(el){
 const target=+el.dataset.target;
 let c=0;
-const step=target/120;
+const step=target/100;
 
 const t=setInterval(()=>{
 c+=step;
@@ -426,7 +419,6 @@ animateNum(n);
 }
 });
 });
-
 </script>
 
 </body>
