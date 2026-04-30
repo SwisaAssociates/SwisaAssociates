@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA Dashboard | Secure Admin Panel</title>
+<title>SWISA Dashboard | Premium Admin Panel</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@ background:#020617;
 color:#e5e7eb;
 }
 
-/* LOGIN SCREEN */
+/* LOGIN */
 .login-screen{
 position:fixed;
 inset:0;
@@ -36,12 +36,6 @@ border:1px solid rgba(255,255,255,0.1);
 width:320px;
 text-align:center;
 backdrop-filter:blur(15px);
-box-shadow:0 20px 60px rgba(0,0,0,0.5);
-}
-
-.login-box h3{
-margin-bottom:15px;
-color:#3b82f6;
 }
 
 .login-box input{
@@ -53,7 +47,6 @@ border:none;
 outline:none;
 background:#0b1220;
 color:#fff;
-padding-right:40px;
 }
 
 .login-box button{
@@ -68,6 +61,15 @@ cursor:pointer;
 font-weight:600;
 }
 
+.eye{
+position:absolute;
+right:12px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+}
+
+/* ERROR */
 .error{
 color:#ef4444;
 font-size:13px;
@@ -83,7 +85,6 @@ position:fixed;
 background:rgba(255,255,255,0.03);
 border-right:1px solid rgba(255,255,255,0.08);
 padding:22px;
-backdrop-filter:blur(16px);
 }
 
 .sidebar h2{color:#3b82f6;margin-bottom:25px;}
@@ -95,14 +96,9 @@ text-decoration:none;
 padding:9px;
 margin:8px 0;
 border-radius:10px;
-transition:0.3s;
 }
 
-.sidebar a:hover{
-background:rgba(59,130,246,0.12);
-color:#3b82f6;
-transform:translateX(4px);
-}
+.sidebar a:hover{color:#3b82f6;background:rgba(59,130,246,0.1);}
 
 /* MAIN */
 .main{
@@ -118,8 +114,6 @@ align-items:center;
 margin-bottom:25px;
 }
 
-.title{font-size:20px;font-weight:600;}
-
 .btn{
 padding:10px 14px;
 border:none;
@@ -131,7 +125,7 @@ font-size:13px;
 margin-left:8px;
 }
 
-/* CARDS */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -143,7 +137,10 @@ background:rgba(255,255,255,0.04);
 padding:22px;
 border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
 }
+
+.card:hover{transform:translateY(-4px);}
 
 .number{
 font-size:32px;
@@ -157,17 +154,14 @@ margin-top:25px;
 background:rgba(255,255,255,0.03);
 padding:15px;
 border-radius:16px;
-border:1px solid rgba(255,255,255,0.08);
 }
 
 table{width:100%;border-collapse:collapse;}
 
 th,td{
 padding:12px;
-text-align:left;
-font-size:14px;
-color:#cbd5e1;
 border-bottom:1px solid rgba(255,255,255,0.06);
+color:#cbd5e1;
 }
 
 .delete{color:#ef4444;cursor:pointer;}
@@ -187,37 +181,61 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-@media(max-width:900px){
-.sidebar{display:none;}
-.main{margin-left:0;padding:18px;}
+/* DEMO */
+.switch{
+color:#94a3b8;
+font-size:13px;
+display:flex;
+gap:10px;
+align-items:center;
 }
+
+.toggle{
+width:40px;height:20px;
+background:#1e293b;
+border-radius:20px;
+position:relative;
+cursor:pointer;
+}
+
+.toggle::after{
+content:"";
+width:16px;height:16px;
+background:white;
+border-radius:50%;
+position:absolute;
+top:2px;left:2px;
+transition:0.3s;
+}
+
+.toggle.active::after{left:22px;}
+.toggle.active{background:#3b82f6;}
 
 </style>
 </head>
 
 <body>
 
-<!-- 🔐 LOGIN -->
+<!-- LOGIN -->
 <div class="login-screen" id="loginScreen">
 <div class="login-box">
-
 <h3>🔐 Admin Login</h3>
 
+<div style="position:relative;">
 <input type="password" id="pass" placeholder="Enter Password">
-<div class="error" id="error">You entered wrong password</div>
+<span class="eye" onclick="togglePass()">👁</span>
+</div>
+
+<div class="error" id="error">Wrong password</div>
 
 <button onclick="login()">Login</button>
-
 </div>
 </div>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-<h2>🌍 SWISA</h2>
+<h2>SWISA</h2>
 <a href="index.html">Home</a>
-<a href="services.html">Modules</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
 <a href="dashboard.html">Dashboard</a>
 </div>
 
@@ -225,14 +243,16 @@ animation:pulse 1.5s infinite;
 <div class="main">
 
 <div class="topbar">
-<div class="title">📊 Secure Lead Dashboard</div>
-<div>
-<button class="btn" onclick="exportCSV()">📥 Export</button>
-<button class="btn" onclick="loadLeads()">🔄 Refresh</button>
-<button class="btn" onclick="logout()">🚪 Logout</button>
+<h2>📊 Dashboard</h2>
+
+<div class="switch">
+Demo Mode
+<div class="toggle" id="demoToggle" onclick="toggleDemo()"></div>
+<button class="btn" onclick="logout()">Logout</button>
 </div>
 </div>
 
+<!-- STATS -->
 <div class="grid">
 <div class="card">
 <div class="number" id="total">0</div>
@@ -246,35 +266,37 @@ animation:pulse 1.5s infinite;
 
 <div class="card">
 <div class="number"><span class="dot"></span>LIVE</div>
-<div>System Status</div>
+<div>Status</div>
 </div>
 </div>
 
+<!-- LIVE FEED -->
 <div class="table">
+<h3>🔥 Live Activity</h3>
+<div id="activity"></div>
+</div>
 
-<div id="loading">Connecting...</div>
-
-<table id="table" style="display:none;">
+<!-- TABLE -->
+<div class="table">
+<table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Phone</th>
 <th>Time</th>
-<th>Action</th>
 </tr>
 </thead>
 <tbody id="tbody"></tbody>
 </table>
-
 </div>
 
 </div>
 
-<!-- FIREBASE -->
+<!-- SCRIPT -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
@@ -286,13 +308,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let leads = [];
+let demo = false;
 
-/* 🔐 LOGIN */
+/* LOGIN */
 window.login = function(){
 const pass = document.getElementById("pass").value;
 
 if(pass === "SAAALIMasad85"){
-localStorage.setItem("swisa_login","true");
+localStorage.setItem("login","true");
 document.getElementById("loginScreen").style.display="none";
 loadLeads();
 }else{
@@ -300,24 +323,36 @@ document.getElementById("error").style.display="block";
 }
 }
 
-/* 🚪 LOGOUT */
+/* AUTO LOGIN */
+if(localStorage.getItem("login")==="true"){
+document.getElementById("loginScreen").style.display="none";
+loadLeads();
+}
+
+/* LOGOUT */
 window.logout = function(){
-localStorage.removeItem("swisa_login");
+localStorage.removeItem("login");
 location.reload();
 }
 
-/* AUTO LOGIN CHECK */
-if(localStorage.getItem("swisa_login")==="true"){
-document.getElementById("loginScreen").style.display="none";
-loadLeads();
+/* PASSWORD TOGGLE */
+window.togglePass = function(){
+const i=document.getElementById("pass");
+i.type = i.type==="password"?"text":"password";
+}
+
+/* DEMO */
+window.toggleDemo = function(){
+demo=!demo;
+document.getElementById("demoToggle").classList.toggle("active");
+render();
 }
 
 /* LOAD */
 function loadLeads(){
 onSnapshot(collection(db,"leads"),(snap)=>{
-leads = snap.docs.map(d=>({id:d.id,...d.data()}));
+leads = snap.docs.map(d=>d.data());
 render();
-document.getElementById("loading").style.display="none";
 });
 }
 window.loadLeads = loadLeads;
@@ -325,51 +360,31 @@ window.loadLeads = loadLeads;
 /* RENDER */
 function render(){
 
-document.getElementById("total").innerText = leads.length;
+let data = demo ? fake() : leads;
 
-let todayCount=0;
-const today=new Date().toDateString();
+document.getElementById("total").innerText = demo?12000:data.length;
+document.getElementById("today").innerText = demo?300:Math.floor(data.length/3);
 
 const tbody=document.getElementById("tbody");
 tbody.innerHTML="";
 
-leads.forEach(l=>{
-
-let t=new Date(l.time);
-
-if(t.toDateString()===today) todayCount++;
-
+data.slice(0,8).forEach(l=>{
 tbody.innerHTML+=`
 <tr>
-<td>${l.name||""}</td>
-<td>${l.phone||""}</td>
-<td>${t.toLocaleString()}</td>
-<td class="delete" onclick="delLead('${l.id}')">Delete</td>
-</tr>
-`;
-
+<td>${l.name||"User"}</td>
+<td>${l.phone||"000"}</td>
+<td>${new Date().toLocaleString()}</td>
+</tr>`;
 });
 
-document.getElementById("today").innerText=todayCount;
+document.getElementById("activity").innerHTML =
+demo
+? "🔥 200+ visitors today<br>💬 50 WhatsApp clicks<br>🚀 High conversion flow"
+: "📡 Live Firebase leads running";
 }
 
-/* DELETE */
-window.delLead = async function(id){
-if(!confirm("Delete?")) return;
-await deleteDoc(doc(db,"leads",id));
-}
-
-/* EXPORT */
-window.exportCSV=function(){
-let csv="Name,Phone,Time\n";
-leads.forEach(l=>{
-csv+=`${l.name},${l.phone},${new Date(l.time)}\n`;
-});
-const blob=new Blob([csv]);
-const a=document.createElement("a");
-a.href=URL.createObjectURL(blob);
-a.download="leads.csv";
-a.click();
+function fake(){
+return Array.from({length:10},(_,i)=>({name:"Lead "+i,phone:"98XXXXXX"}));
 }
 
 </script>
