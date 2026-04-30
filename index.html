@@ -4,100 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SWISA System | Lead Generation Engine for Immigration Agencies</title>
-
-<meta name="description" content="SWISA System is a high-conversion SaaS-style lead generation engine for immigration and overseas job agencies. Turn traffic into WhatsApp leads automatically.">
+<title>SWISA System | Convert Traffic Into WhatsApp Leads</title>
+<meta name="description" content="Turn your website visitors into real WhatsApp leads with SWISA System. Built for immigration & overseas job agencies.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
-}
+/* BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:#020617;color:#e5e7eb;overflow-x:hidden}
+html{scroll-behavior:smooth}
 
-body{
-background:#020617;
-color:#e5e7eb;
-overflow-x:hidden;
-}
-
-/* ================= NAV ================= */
+/* NAV */
 .navbar{
-position:fixed;
-top:0;
-width:100%;
-padding:15px 50px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(2,6,23,0.75);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-z-index:999;
+position:fixed;top:0;width:100%;padding:15px 50px;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(2,6,23,0.75);backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.08);z-index:999;
 }
+.navbar a{color:#94a3b8;text-decoration:none;margin:0 12px;font-size:14px}
+.navbar a:hover{color:#3b82f6}
 
-.navbar a{
-color:#94a3b8;
-text-decoration:none;
-margin:0 12px;
-font-size:14px;
-transition:0.3s;
-}
-
-.navbar a:hover{
-color:#3b82f6;
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:0 20px;
+height:100vh;display:flex;align-items:center;justify-content:center;
+text-align:center;padding:0 20px;
 background:radial-gradient(circle at top,#0b1220,#020617);
 }
 
 .hero h1{
-font-size:56px;
-line-height:1.2;
-animation:fadeUp 0.8s ease;
+font-size:56px;line-height:1.2;
 }
 
+.hero span{color:#3b82f6}
+
 .hero p{
-margin-top:15px;
-color:#94a3b8;
-max-width:700px;
-line-height:1.6;
+margin-top:15px;color:#94a3b8;max-width:700px;line-height:1.6;
 }
 
 .badge{
-display:inline-block;
-padding:6px 14px;
-background:rgba(59,130,246,0.15);
-color:#3b82f6;
-border-radius:20px;
-font-size:12px;
-margin-bottom:15px;
+display:inline-block;padding:6px 14px;
+background:rgba(59,130,246,0.15);color:#3b82f6;
+border-radius:20px;font-size:12px;margin-bottom:15px;
 }
 
-/* BUTTONS */
-.btn{
+/* PREMIUM FORM */
+.lead-box{
+margin-top:25px;padding:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:14px;
+backdrop-filter:blur(10px);
 display:inline-block;
-margin-top:25px;
-padding:14px 24px;
-border-radius:10px;
-background:linear-gradient(135deg,#3b82f6,#6366f1);
-color:#fff;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
+}
+
+input{
+padding:12px;border-radius:8px;border:none;
+margin:6px;width:220px;background:#020617;color:#fff;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;margin-top:15px;padding:14px 24px;
+border-radius:10px;background:linear-gradient(135deg,#3b82f6,#6366f1);
+color:#fff;text-decoration:none;font-weight:600;border:none;
+cursor:pointer;transition:0.3s;position:relative;overflow:hidden;
 }
 
 .btn:hover{
@@ -105,116 +77,71 @@ transform:translateY(-4px);
 box-shadow:0 10px 30px rgba(59,130,246,0.3);
 }
 
-/* ================= SECTIONS ================= */
-section{
-padding:100px 60px;
+.btn::after{
+content:"";position:absolute;top:0;left:-100%;
+width:100%;height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+transition:0.5s;
 }
+.btn:hover::after{left:100%}
 
-.container{
-max-width:1100px;
-margin:auto;
-}
+/* SECTIONS */
+section{padding:100px 60px}
+.container{max-width:1100px;margin:auto}
+h2{font-size:38px;margin-bottom:10px}
+.sub{color:#94a3b8;margin-bottom:40px}
 
-h2{
-font-size:38px;
-margin-bottom:10px;
-}
-
-.sub{
-color:#94a3b8;
-margin-bottom:40px;
-line-height:1.6;
-}
-
-/* ================= GRID ================= */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 background:rgba(255,255,255,0.04);
-padding:25px;
-border-radius:16px;
+padding:25px;border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
-opacity:0;
-transform:translateY(40px);
+opacity:0;transform:translateY(40px);
 }
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-8px);border-color:#3b82f6}
 
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#3b82f6;
-}
-
-/* ================= STATS ================= */
+/* STATS */
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
-
 .stat{
-text-align:center;
-background:rgba(255,255,255,0.04);
-padding:30px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,0.08);
+text-align:center;background:rgba(255,255,255,0.04);
+padding:30px;border-radius:16px;
 }
+.num{font-size:40px;font-weight:700;color:#3b82f6}
 
-.num{
-font-size:40px;
-font-weight:700;
-color:#3b82f6;
-}
-
-/* ================= CTA ================= */
+/* CTA */
 .cta{
-text-align:center;
-padding:80px;
+text-align:center;padding:80px;
 background:rgba(255,255,255,0.04);
 border-radius:18px;
-border:1px solid rgba(255,255,255,0.08);
-opacity:0;
-transform:translateY(40px);
+opacity:0;transform:translateY(40px);
 }
+.cta.show{opacity:1;transform:translateY(0)}
 
-.cta.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* ================= FLOAT WHATSAPP ================= */
+/* WHATSAPP */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 16px;
-border-radius:50px;
-color:#fff;
-text-decoration:none;
-font-weight:600;
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
+position:fixed;bottom:20px;right:20px;
+background:#25D366;padding:14px;border-radius:50%;
+color:#fff;text-decoration:none;
 }
 
 /* MOBILE */
 @media(max-width:900px){
-.hero h1{font-size:34px;}
-section{padding:70px 20px;}
-.navbar{padding:14px 20px;}
+.hero h1{font-size:34px}
+section{padding:70px 20px}
+.navbar{padding:14px 20px}
 }
 
 </style>
@@ -238,16 +165,33 @@ section{padding:70px 20px;}
 <!-- HERO -->
 <div class="hero">
 <div>
+
 <div class="badge">🔥 HIGH-CONVERSION SAAS LEAD ENGINE</div>
 
-<h1>Turn Visitors Into WhatsApp Leads</h1>
+<h1>
+Convert Website Traffic <br>
+Into <span>Real WhatsApp Clients</span>
+</h1>
 
 <p>
-A complete SaaS-style system for immigration & overseas job agencies that converts website traffic into real client inquiries automatically.
+Turn visitors into high-quality immigration leads automatically using a proven system built for agencies that want real growth.
 </p>
 
-<a class="btn" href="dashboard.html">📊 Open Dashboard</a>
+<div class="lead-box">
+<input id="name" placeholder="Your Name">
+<input id="phone" placeholder="WhatsApp Number">
+<br>
+<button class="btn" onclick="sendLead()">🚀 Get Instant Access</button>
 <a class="btn" href="sell.html">💰 View Pricing</a>
+
+<p style="font-size:12px;color:#94a3b8;margin-top:10px;">
+⚡ Instant setup • No technical skills needed
+</p>
+</div>
+
+<p style="color:#f87171;margin-top:10px;">
+⚠️ Limited onboarding slots this month
+</p>
 
 </div>
 </div>
@@ -255,16 +199,13 @@ A complete SaaS-style system for immigration & overseas job agencies that conver
 <!-- PROBLEM -->
 <section>
 <div class="container">
-
 <h2>❌ Problem</h2>
-<p class="sub">Most agencies lose 90% of traffic because their website has no conversion system.</p>
+<p class="sub">Most agencies lose 90% of traffic due to no conversion system.</p>
 
 <div class="grid">
-
 <div class="card reveal">No WhatsApp funnel system</div>
 <div class="card reveal">No lead tracking dashboard</div>
 <div class="card reveal">No conversion structure</div>
-
 </div>
 
 </div>
@@ -273,16 +214,13 @@ A complete SaaS-style system for immigration & overseas job agencies that conver
 <!-- SOLUTION -->
 <section>
 <div class="container">
-
 <h2>✅ Solution</h2>
-<p class="sub">SWISA System converts traffic into real leads automatically.</p>
+<p class="sub">SWISA converts traffic into real leads automatically.</p>
 
 <div class="grid">
-
 <div class="card reveal">⚡ WhatsApp automation flow</div>
 <div class="card reveal">📊 Real-time dashboard</div>
 <div class="card reveal">🎯 Conversion-focused UI</div>
-
 </div>
 
 </div>
@@ -291,26 +229,12 @@ A complete SaaS-style system for immigration & overseas job agencies that conver
 <!-- STATS -->
 <section>
 <div class="container">
-
 <h2>📊 Performance Snapshot</h2>
 
 <div class="stats">
-
-<div class="stat">
-<div class="num">1,580+</div>
-<p>Leads Generated</p>
-</div>
-
-<div class="stat">
-<div class="num">72%</div>
-<p>Conversion Rate</p>
-</div>
-
-<div class="stat">
-<div class="num">₹5L+</div>
-<p>Pipeline Value</p>
-</div>
-
+<div class="stat"><div class="num">1,580+</div><p>Leads Generated</p></div>
+<div class="stat"><div class="num">72%</div><p>Conversion Rate</p></div>
+<div class="stat"><div class="num">₹5L+</div><p>Pipeline Value</p></div>
 </div>
 
 </div>
@@ -319,25 +243,48 @@ A complete SaaS-style system for immigration & overseas job agencies that conver
 <!-- CTA -->
 <section>
 <div class="container">
-
 <div class="cta reveal">
-
 <h2>🚀 Ready to Deploy System</h2>
-<p class="sub">Start generating WhatsApp leads from your website instantly.</p>
-
-<a class="btn" href="contact.html">💬 Activate System</a>
-
+<p class="sub">Start generating WhatsApp leads instantly.</p>
+<button class="btn" onclick="document.querySelector('.lead-box').scrollIntoView()">Activate System</button>
 </div>
-
 </div>
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/919811084530">💬</a>
+<a class="whatsapp" href="https://wa.me/919811084530?text=Hi%20I%20want%20SWISA">💬</a>
 
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey:"AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
+authDomain:"swisa-associates1.firebaseapp.com",
+projectId:"swisa-associates1",
+storageBucket:"swisa-associates1.firebasestorage.app",
+messagingSenderId:"730305882663",
+appId:"1:730305882663:web:bfc45f64ee34b78836fc02"
+};
+
+const app=initializeApp(firebaseConfig);
+const db=getFirestore(app);
+
+window.sendLead=async function(){
+const name=document.getElementById("name").value.trim();
+const phone=document.getElementById("phone").value.trim();
+
+if(!name||!phone){alert("Fill all fields");return;}
+
+await addDoc(collection(db,"leads"),{name,phone,time:new Date()});
+
+window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})`;
+}
+</script>
+
+<!-- ANIMATION -->
 <script>
-
-/* REVEAL ANIMATION */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -349,7 +296,6 @@ entry.target.classList.add("show");
 document.querySelectorAll(".reveal").forEach(el=>{
 observer.observe(el);
 });
-
 </script>
 
 </body>
