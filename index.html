@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SWISA System | Convert Traffic Into WhatsApp Leads</title>
-<meta name="description" content="Turn your website visitors into real WhatsApp leads with SWISA System. Built for immigration & overseas job agencies.">
+<meta name="description" content="Turn visitors into WhatsApp leads with SWISA System. Built for immigration agencies.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* BASE */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 body{background:#020617;color:#e5e7eb;overflow-x:hidden}
 html{scroll-behavior:smooth}
@@ -20,36 +19,41 @@ html{scroll-behavior:smooth}
 .navbar{
 position:fixed;top:0;width:100%;padding:15px 50px;
 display:flex;justify-content:space-between;align-items:center;
-background:rgba(2,6,23,0.75);backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,0.08);z-index:999;
+background:rgba(2,6,23,0.75);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:999;
 }
-.navbar a{color:#94a3b8;text-decoration:none;margin:0 12px;font-size:14px}
+.navbar a{color:#94a3b8;text-decoration:none;margin:0 12px;font-size:14px;transition:0.3s}
 .navbar a:hover{color:#3b82f6}
 
 /* HERO */
 .hero{
-height:100vh;display:flex;align-items:center;justify-content:center;
-text-align:center;padding:0 20px;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
 background:radial-gradient(circle at top,#0b1220,#020617);
 }
 
 .hero h1{
-font-size:56px;line-height:1.2;
+font-size:56px;
+line-height:1.2;
 animation:fadeUp 1s ease;
 }
 
 .hero span{color:#3b82f6}
 
-.hero p{
-margin-top:15px;color:#94a3b8;max-width:700px;line-height:1.6;
-}
+.hero p{margin-top:15px;color:#94a3b8;max-width:700px;line-height:1.6}
 
-/* BADGE */
 .badge{
 display:inline-block;padding:6px 14px;
-background:rgba(59,130,246,0.15);color:#3b82f6;
+background:rgba(59,130,246,0.15);
+color:#3b82f6;
 border-radius:20px;font-size:12px;margin-bottom:15px;
-animation:fadeUp 1s ease;
+animation:fadeUp 0.8s ease;
 }
 
 /* FORM */
@@ -58,23 +62,27 @@ margin-top:25px;padding:20px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 border-radius:14px;
-backdrop-filter:blur(10px);
 display:inline-block;
-animation:fadeUp 1.2s ease;
+backdrop-filter:blur(10px);
+transition:0.3s;
 }
+.lead-box:hover{transform:translateY(-3px)}
 
 input{
 padding:12px;border-radius:8px;border:none;
-margin:6px;width:220px;background:#020617;color:#fff;
-outline:none;
+margin:6px;width:220px;background:#020617;color:#fff;outline:none;
 }
 
 /* BUTTON */
 .btn{
 display:inline-block;margin-top:15px;padding:14px 24px;
-border-radius:10px;background:linear-gradient(135deg,#3b82f6,#6366f1);
+border-radius:10px;
+background:linear-gradient(135deg,#3b82f6,#6366f1);
 color:#fff;text-decoration:none;font-weight:600;border:none;
-cursor:pointer;transition:0.3s;position:relative;overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+position:relative;
+overflow:hidden;
 }
 
 .btn:hover{
@@ -83,7 +91,9 @@ box-shadow:0 10px 30px rgba(59,130,246,0.4);
 }
 
 .btn::after{
-content:"";position:absolute;top:0;left:-100%;
+content:"";
+position:absolute;
+top:0;left:-100%;
 width:100%;height:100%;
 background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
 transition:0.5s;
@@ -106,10 +116,12 @@ gap:20px;
 /* CARD */
 .card{
 background:rgba(255,255,255,0.04);
-padding:25px;border-radius:16px;
+padding:25px;
+border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
-opacity:0;transform:translateY(40px);
+opacity:0;
+transform:translateY(40px);
 }
 .card.show{opacity:1;transform:translateY(0)}
 .card:hover{
@@ -125,15 +137,13 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 .stat{
-text-align:center;background:rgba(255,255,255,0.04);
-padding:30px;border-radius:16px;
+text-align:center;
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:16px;
 transition:0.3s;
 }
-.stat:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 30px rgba(59,130,246,0.2);
-}
-
+.stat:hover{transform:translateY(-6px)}
 .num{
 font-size:40px;
 font-weight:700;
@@ -142,25 +152,30 @@ color:#3b82f6;
 
 /* CTA */
 .cta{
-text-align:center;padding:80px;
+text-align:center;
+padding:80px;
 background:rgba(255,255,255,0.04);
 border-radius:18px;
-opacity:0;transform:translateY(40px);
+opacity:0;
+transform:translateY(40px);
 }
 .cta.show{opacity:1;transform:translateY(0)}
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;padding:14px;border-radius:50%;
-color:#fff;text-decoration:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px;
+border-radius:50%;
+color:#fff;
+text-decoration:none;
 transition:0.3s;
 }
-.whatsapp:hover{
-transform:scale(1.1);
-}
+.whatsapp:hover{transform:scale(1.1)}
 
-/* ANIMATION */
+/* ANIMATIONS */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(20px)}
 to{opacity:1;transform:translateY(0)}
@@ -178,7 +193,6 @@ section{padding:70px 20px}
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
 <div>
@@ -195,75 +209,32 @@ section{padding:70px 20px}
 <div class="hero">
 <div>
 
-<div class="badge">🔥 HIGH-CONVERSION SAAS LEAD ENGINE</div>
+<div class="badge">🔥 HIGH-CONVERSION SYSTEM</div>
 
-<h1>
-Convert Website Traffic <br>
-Into <span>Real WhatsApp Clients</span>
-</h1>
+<h1>Convert Website Traffic <br> Into <span>Real WhatsApp Clients</span></h1>
 
-<p>
-Turn visitors into high-quality immigration leads automatically using a proven system built for agencies that want real growth.
-</p>
+<p>Turn visitors into high-quality leads automatically using a SaaS-grade system built for agencies.</p>
 
 <div class="lead-box">
 <input id="name" placeholder="Your Name">
 <input id="phone" placeholder="WhatsApp Number">
 <br>
 <button class="btn" onclick="sendLead()">🚀 Get Instant Access</button>
-<a class="btn" href="sell.html">💰 View Pricing</a>
-
-<p style="font-size:12px;color:#94a3b8;margin-top:10px;">
-⚡ Instant setup • No technical skills needed
-</p>
-</div>
-
-<p style="color:#f87171;margin-top:10px;">
-⚠️ Limited onboarding slots this month
-</p>
-
-</div>
-</div>
-
-<!-- PROBLEM -->
-<section>
-<div class="container">
-<h2>❌ Problem</h2>
-<p class="sub">Most agencies lose 90% of traffic due to no conversion system.</p>
-
-<div class="grid">
-<div class="card reveal">No WhatsApp funnel system</div>
-<div class="card reveal">No lead tracking dashboard</div>
-<div class="card reveal">No conversion structure</div>
+<a class="btn" href="sell.html">💰 Pricing</a>
 </div>
 
 </div>
-</section>
-
-<!-- SOLUTION -->
-<section>
-<div class="container">
-<h2>✅ Solution</h2>
-<p class="sub">SWISA converts traffic into real leads automatically.</p>
-
-<div class="grid">
-<div class="card reveal">⚡ WhatsApp automation flow</div>
-<div class="card reveal">📊 Real-time dashboard</div>
-<div class="card reveal">🎯 Conversion-focused UI</div>
 </div>
-
-</div>
-</section>
 
 <!-- STATS -->
 <section>
 <div class="container">
-<h2>📊 Performance Snapshot</h2>
+<h2>📊 Performance</h2>
 
 <div class="stats">
-<div class="stat"><div class="num" data-target="1580">0</div><p>Leads Generated</p></div>
-<div class="stat"><div class="num" data-target="72">0</div><p>Conversion Rate %</p></div>
-<div class="stat"><div class="num" data-target="500000">0</div><p>Pipeline Value ₹</p></div>
+<div class="stat"><div class="num" data-target="1580">0</div><p>Leads</p></div>
+<div class="stat"><div class="num" data-target="72">0</div><p>Conversion %</p></div>
+<div class="stat"><div class="num" data-target="500000">0</div><p>Pipeline ₹</p></div>
 </div>
 
 </div>
@@ -273,15 +244,14 @@ Turn visitors into high-quality immigration leads automatically using a proven s
 <section>
 <div class="container">
 <div class="cta reveal">
-<h2>🚀 Ready to Deploy System</h2>
-<p class="sub">Start generating WhatsApp leads instantly.</p>
-<button class="btn" onclick="document.querySelector('.lead-box').scrollIntoView()">Activate System</button>
+<h2>🚀 Ready?</h2>
+<p class="sub">Start generating leads instantly.</p>
+<button class="btn" onclick="document.querySelector('.lead-box').scrollIntoView()">Activate</button>
 </div>
 </div>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/919811084530?text=Hi%20I%20want%20SWISA">💬</a>
+<a class="whatsapp" href="https://wa.me/919811084530">💬</a>
 
 <!-- FIREBASE -->
 <script type="module">
@@ -298,57 +268,64 @@ const app=initializeApp(firebaseConfig);
 const db=getFirestore(app);
 
 window.sendLead=async function(){
+
 const name=document.getElementById("name").value.trim();
 const phone=document.getElementById("phone").value.trim();
 
 if(!name||!phone){alert("Fill all fields");return;}
 
+try{
 await addDoc(collection(db,"leads"),{name,phone,time:new Date()});
-
 window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})`;
+}catch(e){
+alert("Firebase error");
+console.log(e);
+}
+
 }
 </script>
 
-<!-- ANIMATIONS -->
+<!-- ANIMATION -->
 <script>
-// reveal
+
 const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("show");}
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add("show");
 });
-},{threshold:0.15});
+},{threshold:0.2});
+
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-// number animation
+// number animation (fixed)
 const nums=document.querySelectorAll(".num");
-let started=false;
 
-window.addEventListener("scroll",()=>{
-if(started) return;
+function animate(num){
+const target=+num.dataset.target;
+let c=0;
+const step=Math.ceil(target/100);
 
-nums.forEach(num=>{
-const rect=num.getBoundingClientRect();
-if(rect.top < window.innerHeight){
-started=true;
-
-const update=()=>{
-const target=+num.getAttribute("data-target");
-let count=+num.innerText;
-
-let inc=target/100;
-
-if(count<target){
-num.innerText=Math.floor(count+inc);
-setTimeout(update,20);
-}else{
+const t=setInterval(()=>{
+c+=step;
+if(c>=target){
 num.innerText=target.toLocaleString();
+clearInterval(t);
+}else{
+num.innerText=c.toLocaleString();
 }
-};
+},20);
+}
 
-update();
+let run=false;
+window.addEventListener("scroll",()=>{
+if(run) return;
+nums.forEach(n=>{
+if(n.getBoundingClientRect().top<window.innerHeight){
+run=true;
+animate(n);
 }
 });
 });
+
 </script>
 
 </body>
