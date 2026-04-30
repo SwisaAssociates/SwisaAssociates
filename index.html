@@ -35,6 +35,7 @@ background:radial-gradient(circle at top,#0b1220,#020617);
 
 .hero h1{
 font-size:56px;line-height:1.2;
+animation:fadeUp 1s ease;
 }
 
 .hero span{color:#3b82f6}
@@ -43,13 +44,15 @@ font-size:56px;line-height:1.2;
 margin-top:15px;color:#94a3b8;max-width:700px;line-height:1.6;
 }
 
+/* BADGE */
 .badge{
 display:inline-block;padding:6px 14px;
 background:rgba(59,130,246,0.15);color:#3b82f6;
 border-radius:20px;font-size:12px;margin-bottom:15px;
+animation:fadeUp 1s ease;
 }
 
-/* PREMIUM FORM */
+/* FORM */
 .lead-box{
 margin-top:25px;padding:20px;
 background:rgba(255,255,255,0.05);
@@ -57,11 +60,13 @@ border:1px solid rgba(255,255,255,0.1);
 border-radius:14px;
 backdrop-filter:blur(10px);
 display:inline-block;
+animation:fadeUp 1.2s ease;
 }
 
 input{
 padding:12px;border-radius:8px;border:none;
 margin:6px;width:220px;background:#020617;color:#fff;
+outline:none;
 }
 
 /* BUTTON */
@@ -73,8 +78,8 @@ cursor:pointer;transition:0.3s;position:relative;overflow:hidden;
 }
 
 .btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(59,130,246,0.3);
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 10px 30px rgba(59,130,246,0.4);
 }
 
 .btn::after{
@@ -107,7 +112,11 @@ transition:0.3s;
 opacity:0;transform:translateY(40px);
 }
 .card.show{opacity:1;transform:translateY(0)}
-.card:hover{transform:translateY(-8px);border-color:#3b82f6}
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+border-color:#3b82f6;
+box-shadow:0 15px 40px rgba(59,130,246,0.2);
+}
 
 /* STATS */
 .stats{
@@ -118,8 +127,18 @@ gap:20px;
 .stat{
 text-align:center;background:rgba(255,255,255,0.04);
 padding:30px;border-radius:16px;
+transition:0.3s;
 }
-.num{font-size:40px;font-weight:700;color:#3b82f6}
+.stat:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(59,130,246,0.2);
+}
+
+.num{
+font-size:40px;
+font-weight:700;
+color:#3b82f6;
+}
 
 /* CTA */
 .cta{
@@ -135,6 +154,16 @@ opacity:0;transform:translateY(40px);
 position:fixed;bottom:20px;right:20px;
 background:#25D366;padding:14px;border-radius:50%;
 color:#fff;text-decoration:none;
+transition:0.3s;
+}
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 /* MOBILE */
@@ -232,9 +261,9 @@ Turn visitors into high-quality immigration leads automatically using a proven s
 <h2>📊 Performance Snapshot</h2>
 
 <div class="stats">
-<div class="stat"><div class="num">1,580+</div><p>Leads Generated</p></div>
-<div class="stat"><div class="num">72%</div><p>Conversion Rate</p></div>
-<div class="stat"><div class="num">₹5L+</div><p>Pipeline Value</p></div>
+<div class="stat"><div class="num" data-target="1580">0</div><p>Leads Generated</p></div>
+<div class="stat"><div class="num" data-target="72">0</div><p>Conversion Rate %</p></div>
+<div class="stat"><div class="num" data-target="500000">0</div><p>Pipeline Value ₹</p></div>
 </div>
 
 </div>
@@ -262,10 +291,7 @@ import { getFirestore, addDoc, collection } from "https://www.gstatic.com/fireba
 const firebaseConfig = {
 apiKey:"AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
 authDomain:"swisa-associates1.firebaseapp.com",
-projectId:"swisa-associates1",
-storageBucket:"swisa-associates1.firebasestorage.app",
-messagingSenderId:"730305882663",
-appId:"1:730305882663:web:bfc45f64ee34b78836fc02"
+projectId:"swisa-associates1"
 };
 
 const app=initializeApp(firebaseConfig);
@@ -283,18 +309,45 @@ window.location.href=`https://wa.me/919811084530?text=Hi I am ${name} (${phone})
 }
 </script>
 
-<!-- ANIMATION -->
+<!-- ANIMATIONS -->
 <script>
+// reveal
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+if(entry.isIntersecting){entry.target.classList.add("show");}
 });
 },{threshold:0.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
+// number animation
+const nums=document.querySelectorAll(".num");
+let started=false;
+
+window.addEventListener("scroll",()=>{
+if(started) return;
+
+nums.forEach(num=>{
+const rect=num.getBoundingClientRect();
+if(rect.top < window.innerHeight){
+started=true;
+
+const update=()=>{
+const target=+num.getAttribute("data-target");
+let count=+num.innerText;
+
+let inc=target/100;
+
+if(count<target){
+num.innerText=Math.floor(count+inc);
+setTimeout(update,20);
+}else{
+num.innerText=target.toLocaleString();
+}
+};
+
+update();
+}
+});
 });
 </script>
 
