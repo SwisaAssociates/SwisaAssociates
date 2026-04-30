@@ -68,22 +68,11 @@ cursor:pointer;
 font-weight:600;
 }
 
-/* ERROR TEXT */
 .error{
 color:#ef4444;
 font-size:13px;
 margin-top:8px;
 display:none;
-}
-
-/* EYE ICON */
-.eye{
-position:absolute;
-right:12px;
-top:62%;
-transform:translateY(-50%);
-cursor:pointer;
-color:#94a3b8;
 }
 
 /* SIDEBAR */
@@ -214,11 +203,7 @@ animation:pulse 1.5s infinite;
 
 <h3>🔐 Admin Login</h3>
 
-<div style="position:relative;">
 <input type="password" id="pass" placeholder="Enter Password">
-<span class="eye" onclick="togglePass()">👁</span>
-</div>
-
 <div class="error" id="error">You entered wrong password</div>
 
 <button onclick="login()">Login</button>
@@ -244,18 +229,18 @@ animation:pulse 1.5s infinite;
 <div>
 <button class="btn" onclick="exportCSV()">📥 Export</button>
 <button class="btn" onclick="loadLeads()">🔄 Refresh</button>
+<button class="btn" onclick="logout()">🚪 Logout</button>
 </div>
 </div>
 
 <div class="grid">
-
 <div class="card">
-<div class="number" id="total">1168</div>
+<div class="number" id="total">0</div>
 <div>Total Leads</div>
 </div>
 
 <div class="card">
-<div class="number" id="today">123</div>
+<div class="number" id="today">0</div>
 <div>Today Leads</div>
 </div>
 
@@ -263,7 +248,6 @@ animation:pulse 1.5s infinite;
 <div class="number"><span class="dot"></span>LIVE</div>
 <div>System Status</div>
 </div>
-
 </div>
 
 <div class="table">
@@ -308,6 +292,7 @@ window.login = function(){
 const pass = document.getElementById("pass").value;
 
 if(pass === "SAAALIMasad85"){
+localStorage.setItem("swisa_login","true");
 document.getElementById("loginScreen").style.display="none";
 loadLeads();
 }else{
@@ -315,10 +300,16 @@ document.getElementById("error").style.display="block";
 }
 }
 
-/* 👁 PASSWORD TOGGLE */
-window.togglePass = function(){
-const input = document.getElementById("pass");
-input.type = input.type === "password" ? "text" : "password";
+/* 🚪 LOGOUT */
+window.logout = function(){
+localStorage.removeItem("swisa_login");
+location.reload();
+}
+
+/* AUTO LOGIN CHECK */
+if(localStorage.getItem("swisa_login")==="true"){
+document.getElementById("loginScreen").style.display="none";
+loadLeads();
 }
 
 /* LOAD */
@@ -333,6 +324,7 @@ window.loadLeads = loadLeads;
 
 /* RENDER */
 function render(){
+
 document.getElementById("total").innerText = leads.length;
 
 let todayCount=0;
