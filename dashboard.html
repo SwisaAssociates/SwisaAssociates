@@ -10,7 +10,13 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+/* ================= BASE ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
 
 body{
 background:#020617;
@@ -18,7 +24,7 @@ color:#e5e7eb;
 overflow-x:hidden;
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
 .sidebar{
 width:240px;
 height:100vh;
@@ -50,13 +56,13 @@ color:#3b82f6;
 transform:translateX(4px);
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 .main{
 margin-left:260px;
 padding:30px;
 }
 
-/* TOPBAR */
+/* ================= TOPBAR ================= */
 .topbar{
 display:flex;
 justify-content:space-between;
@@ -86,7 +92,7 @@ transform:translateY(-3px);
 box-shadow:0 10px 25px rgba(59,130,246,0.25);
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -118,7 +124,7 @@ font-size:13px;
 margin-top:5px;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 .table{
 margin-top:25px;
 background:rgba(255,255,255,0.03);
@@ -127,7 +133,10 @@ border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-table{width:100%;border-collapse:collapse;}
+table{
+width:100%;
+border-collapse:collapse;
+}
 
 th,td{
 padding:12px;
@@ -144,9 +153,10 @@ color:#ef4444;
 cursor:pointer;
 }
 
-/* LIVE DOT */
+/* ================= LIVE DOT ================= */
 .dot{
-width:8px;height:8px;
+width:8px;
+height:8px;
 background:#22c55e;
 border-radius:50%;
 display:inline-block;
@@ -160,14 +170,14 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-/* STATES */
+/* ================= STATES ================= */
 .empty,.loader{
 text-align:center;
 padding:25px;
 color:#94a3b8;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:900px){
 .sidebar{display:none;}
 .main{margin-left:0;padding:18px;}
@@ -178,6 +188,7 @@ color:#94a3b8;
 
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
 <h2>🌍 SWISA</h2>
 <a href="index.html">Home</a>
@@ -187,16 +198,20 @@ color:#94a3b8;
 <a href="dashboard.html">Dashboard</a>
 </div>
 
+<!-- MAIN -->
 <div class="main">
 
+<!-- TOPBAR -->
 <div class="topbar">
 <div class="title">📊 Live Lead Dashboard</div>
+
 <div>
 <button class="btn" onclick="exportCSV()">📥 Export</button>
 <button class="btn" onclick="loadLeads()">🔄 Refresh</button>
 </div>
 </div>
 
+<!-- STATS -->
 <div class="grid">
 
 <div class="card">
@@ -216,9 +231,10 @@ color:#94a3b8;
 
 </div>
 
+<!-- TABLE -->
 <div class="table">
 
-<div id="loading" class="loader">Connecting to database...</div>
+<div id="loading" class="loader">Connecting to Firebase...</div>
 
 <table id="table" style="display:none;">
 <thead>
@@ -233,13 +249,14 @@ color:#94a3b8;
 </table>
 
 <div id="empty" class="empty" style="display:none;">
-No leads yet — system is ready 🚀
+No leads yet — system ready 🚀
 </div>
 
 </div>
 
 </div>
 
+<!-- FIREBASE -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -251,10 +268,14 @@ deleteDoc,
 doc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+/* 🔥 YOUR FIREBASE CONFIG */
 const firebaseConfig = {
-apiKey: "PUT_YOUR_API_KEY_HERE",
+apiKey: "AIzaSyC1KD3II4xpP2V1MY4M2-EelW4pvUBsacU",
 authDomain: "swisa-associates1.firebaseapp.com",
-projectId: "swisa-associates1"
+projectId: "swisa-associates1",
+storageBucket: "swisa-associates1.firebasestorage.app",
+messagingSenderId: "730305882663",
+appId: "1:730305882663:web:bfc45f64ee34b78836fc02"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -262,6 +283,7 @@ const db = getFirestore(app);
 
 let leads = [];
 
+/* LOAD LEADS */
 function loadLeads(){
 
 onSnapshot(collection(db,"leads"),(snap)=>{
@@ -287,6 +309,7 @@ render();
 
 window.loadLeads = loadLeads;
 
+/* RENDER */
 function render(){
 
 document.getElementById("total").innerText = leads.length;
@@ -299,14 +322,19 @@ tbody.innerHTML = "";
 
 leads.forEach(l=>{
 
-let t = l.time?.toDate ? l.time.toDate() : new Date(l.time);
+let t;
+try{
+t = l.time?.toDate ? l.time.toDate() : new Date(l.time);
+}catch{
+t = new Date();
+}
 
 if(t.toDateString() === today) todayCount++;
 
 tbody.innerHTML += `
 <tr>
-<td>${l.name}</td>
-<td>${l.phone}</td>
+<td>${l.name || "N/A"}</td>
+<td>${l.phone || "N/A"}</td>
 <td>${t.toLocaleString()}</td>
 <td class="delete" onclick="delLead('${l.id}')">Delete</td>
 </tr>
@@ -317,18 +345,20 @@ tbody.innerHTML += `
 document.getElementById("today").innerText = todayCount;
 }
 
+/* DELETE */
 window.delLead = async function(id){
 if(!confirm("Delete this lead?")) return;
 await deleteDoc(doc(db,"leads",id));
 }
 
+/* EXPORT */
 window.exportCSV = function(){
 
 let csv="Name,Phone,Time\n";
 
 leads.forEach(l=>{
 let t = l.time?.toDate ? l.time.toDate() : new Date(l.time);
-csv+=`${l.name},${l.phone},${t}\n`;
+csv+=`${l.name || ""},${l.phone || ""},${t}\n`;
 });
 
 const blob=new Blob([csv],{type:"text/csv"});
@@ -339,6 +369,7 @@ a.click();
 
 }
 
+/* INIT */
 loadLeads();
 
 </script>
