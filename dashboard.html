@@ -10,14 +10,15 @@
 
 <style>
 
-/* ================= BASE ================= */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:#020617;color:#e5e7eb;overflow-x:hidden;}
 
-/* ================= LAYOUT ================= */
-.wrapper{display:flex;}
+body{
+background:#020617;
+color:#e5e7eb;
+overflow-x:hidden;
+}
 
-/* ================= SIDEBAR ================= */
+/* SIDEBAR */
 .sidebar{
 width:240px;
 height:100vh;
@@ -31,7 +32,6 @@ backdrop-filter:blur(16px);
 .sidebar h2{
 color:#3b82f6;
 margin-bottom:25px;
-font-size:18px;
 }
 
 .sidebar a{
@@ -41,8 +41,7 @@ text-decoration:none;
 padding:9px;
 margin:8px 0;
 border-radius:10px;
-font-size:14px;
-transition:0.25s;
+transition:0.3s;
 }
 
 .sidebar a:hover{
@@ -51,13 +50,13 @@ color:#3b82f6;
 transform:translateX(4px);
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 .main{
 margin-left:260px;
 padding:30px;
 }
 
-/* ================= TOPBAR ================= */
+/* TOPBAR */
 .topbar{
 display:flex;
 justify-content:space-between;
@@ -87,7 +86,7 @@ transform:translateY(-3px);
 box-shadow:0 10px 25px rgba(59,130,246,0.25);
 }
 
-/* ================= STATS ================= */
+/* CARDS */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -119,7 +118,7 @@ font-size:13px;
 margin-top:5px;
 }
 
-/* ================= TABLE ================= */
+/* TABLE */
 .table{
 margin-top:25px;
 background:rgba(255,255,255,0.03);
@@ -128,10 +127,7 @@ border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse;}
 
 th,td{
 padding:12px;
@@ -148,7 +144,7 @@ color:#ef4444;
 cursor:pointer;
 }
 
-/* ================= LIVE DOT ================= */
+/* LIVE DOT */
 .dot{
 width:8px;height:8px;
 background:#22c55e;
@@ -164,24 +160,17 @@ animation:pulse 1.5s infinite;
 100%{opacity:1;}
 }
 
-/* ================= EMPTY STATE ================= */
-.empty{
+/* STATES */
+.empty,.loader{
 text-align:center;
-padding:30px;
+padding:25px;
 color:#94a3b8;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media(max-width:900px){
 .sidebar{display:none;}
 .main{margin-left:0;padding:18px;}
-}
-
-/* ================= LOADING ================= */
-.loader{
-text-align:center;
-padding:20px;
-color:#94a3b8;
 }
 
 </style>
@@ -189,9 +178,6 @@ color:#94a3b8;
 
 <body>
 
-<div class="wrapper">
-
-<!-- SIDEBAR -->
 <div class="sidebar">
 <h2>🌍 SWISA</h2>
 <a href="index.html">Home</a>
@@ -201,20 +187,16 @@ color:#94a3b8;
 <a href="dashboard.html">Dashboard</a>
 </div>
 
-<!-- MAIN -->
 <div class="main">
 
-<!-- TOP -->
 <div class="topbar">
 <div class="title">📊 Live Lead Dashboard</div>
-
 <div>
 <button class="btn" onclick="exportCSV()">📥 Export</button>
 <button class="btn" onclick="loadLeads()">🔄 Refresh</button>
 </div>
 </div>
 
-<!-- STATS -->
 <div class="grid">
 
 <div class="card">
@@ -234,10 +216,9 @@ color:#94a3b8;
 
 </div>
 
-<!-- TABLE -->
 <div class="table">
 
-<div id="loading" class="loader">Loading leads...</div>
+<div id="loading" class="loader">Connecting to database...</div>
 
 <table id="table" style="display:none;">
 <thead>
@@ -252,15 +233,13 @@ color:#94a3b8;
 </table>
 
 <div id="empty" class="empty" style="display:none;">
-No leads found yet 🚀
+No leads yet — system is ready 🚀
 </div>
 
 </div>
 
 </div>
-</div>
 
-<!-- FIREBASE -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -273,9 +252,9 @@ doc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-apiKey:"YOUR_API_KEY",
-authDomain:"swisa-associates1.firebaseapp.com",
-projectId:"swisa-associates1"
+apiKey: "PUT_YOUR_API_KEY_HERE",
+authDomain: "swisa-associates1.firebaseapp.com",
+projectId: "swisa-associates1"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -283,7 +262,6 @@ const db = getFirestore(app);
 
 let leads = [];
 
-/* REALTIME */
 function loadLeads(){
 
 onSnapshot(collection(db,"leads"),(snap)=>{
@@ -309,7 +287,6 @@ render();
 
 window.loadLeads = loadLeads;
 
-/* RENDER */
 function render(){
 
 document.getElementById("total").innerText = leads.length;
@@ -340,13 +317,11 @@ tbody.innerHTML += `
 document.getElementById("today").innerText = todayCount;
 }
 
-/* DELETE */
 window.delLead = async function(id){
-if(!confirm("Delete this lead permanently?")) return;
+if(!confirm("Delete this lead?")) return;
 await deleteDoc(doc(db,"leads",id));
 }
 
-/* EXPORT */
 window.exportCSV = function(){
 
 let csv="Name,Phone,Time\n";
@@ -364,7 +339,6 @@ a.click();
 
 }
 
-/* INIT */
 loadLeads();
 
 </script>
