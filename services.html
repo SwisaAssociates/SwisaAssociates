@@ -12,6 +12,7 @@
 
 <style>
 
+/* BASE */
 *{
 margin:0;
 padding:0;
@@ -25,7 +26,7 @@ color:#e5e7eb;
 overflow-x:hidden;
 }
 
-/* NAV */
+/* NAV (UNIFIED PREMIUM VERSION) */
 .navbar{
 position:fixed;
 top:0;
@@ -40,17 +41,37 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 z-index:999;
 }
 
+.navbar b{
+color:#3b82f6;
+letter-spacing:0.5px;
+}
+
 .navbar a{
 margin:0 10px;
-color:#fff;
+color:#94a3b8;
 text-decoration:none;
-opacity:0.75;
 font-size:14px;
+transition:0.3s;
+position:relative;
+}
+
+.navbar a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0%;
+height:2px;
+background:#3b82f6;
+transition:0.3s;
 }
 
 .navbar a:hover{
-opacity:1;
-color:#3b82f6;
+color:#fff;
+}
+
+.navbar a:hover::after{
+width:100%;
 }
 
 /* HERO */
@@ -68,23 +89,23 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,rgba(0,0,0,0.9),rgba(0,0,0,0.4)),
+background:linear-gradient(120deg,rgba(0,0,0,0.85),rgba(0,0,0,0.35)),
 url("photo2.avif") center/cover;
 z-index:-1;
-filter:brightness(0.6);
+filter:brightness(0.7);
 }
 
 .hero h1{
 font-size:52px;
 line-height:1.2;
+animation:fadeUp 0.8s ease;
 }
 
 .hero p{
 color:#94a3b8;
 margin-top:12px;
 max-width:700px;
-margin-left:auto;
-margin-right:auto;
+margin:auto;
 }
 
 /* SECTION */
@@ -108,22 +129,23 @@ margin-bottom:40px;
 line-height:1.7;
 }
 
-/* MODULE GRID (SAAS STYLE) */
+/* MODULE GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-/* MODULE CARD (IMPORTANT STYLE DIFFERENCE) */
+/* MODULE CARD (UPGRADED FEEL) */
 .module{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 padding:28px;
 border-radius:16px;
-transition:0.3s;
+transition:0.35s ease;
 position:relative;
 overflow:hidden;
+transform:translateY(0);
 }
 
 .module::before{
@@ -137,9 +159,9 @@ background:linear-gradient(90deg,#3b82f6,#6366f1);
 }
 
 .module:hover{
-transform:translateY(-8px);
+transform:translateY(-10px) scale(1.02);
 border-color:#3b82f6;
-background:rgba(255,255,255,0.07);
+box-shadow:0 18px 45px rgba(59,130,246,0.15);
 }
 
 .tag{
@@ -152,7 +174,7 @@ color:#3b82f6;
 margin-bottom:10px;
 }
 
-/* SYSTEM FLOW SECTION */
+/* FLOW */
 .flow{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -165,15 +187,14 @@ background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:16px;
 border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
 }
 
-@media(max-width:900px){
-.flow{grid-template-columns:1fr;}
-.hero h1{font-size:32px;}
-section{padding:80px 20px;}
+.box:hover{
+transform:translateY(-6px);
+border-color:#3b82f6;
 }
 
-/* PROCESS STEPS */
 .steps{
 display:flex;
 flex-direction:column;
@@ -187,6 +208,11 @@ padding:14px 18px;
 border-radius:10px;
 border-left:3px solid #3b82f6;
 color:#cbd5e1;
+transition:0.3s;
+}
+
+.step:hover{
+transform:translateX(5px);
 }
 
 /* CTA */
@@ -197,6 +223,11 @@ padding:60px;
 background:rgba(59,130,246,0.08);
 border:1px solid rgba(59,130,246,0.25);
 border-radius:18px;
+transition:0.3s;
+}
+
+.cta:hover{
+transform:scale(1.01);
 }
 
 .btn{
@@ -211,7 +242,10 @@ font-weight:600;
 transition:0.3s;
 }
 
-.btn:hover{transform:translateY(-4px);}
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(59,130,246,0.3);
+}
 
 /* FOOTER */
 footer{
@@ -222,19 +256,36 @@ border-top:1px solid rgba(255,255,255,0.08);
 margin-top:40px;
 }
 
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.flow{grid-template-columns:1fr;}
+.hero h1{font-size:32px;}
+section{padding:80px 20px;}
+.navbar{padding:14px 20px;}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAV (FIXED + COMPLETE) -->
 <div class="navbar">
 <div><b>🌍 SWISA SYSTEM</b></div>
+
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Modules</a>
 <a href="about.html">About</a>
 <a href="contact.html">Access</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="sell.html">Pricing</a>
 </div>
 </div>
 
@@ -292,7 +343,7 @@ Direct click-to-chat system for instant lead capture.
 </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- FLOW -->
 <section>
 <div class="container">
 
@@ -304,7 +355,7 @@ Direct click-to-chat system for instant lead capture.
 <h3>📊 User Journey</h3>
 <div class="steps">
 <div class="step">1. Visitor lands on page</div>
-<div class="step">2. Trust + offer triggered</div>
+<div class="step">2. Trust + offer triggers</div>
 <div class="step">3. Click WhatsApp CTA</div>
 <div class="step">4. Lead captured instantly</div>
 </div>
@@ -314,9 +365,9 @@ Direct click-to-chat system for instant lead capture.
 <h3>💡 Business Outcome</h3>
 <div class="steps">
 <div class="step">✔ Higher inquiry rate</div>
-<div class="step">✔ Less dependency on ads</div>
+<div class="step">✔ Reduced ad dependency</div>
 <div class="step">✔ Automated lead flow</div>
-<div class="step">✔ Faster client conversion</div>
+<div class="step">✔ Faster conversions</div>
 </div>
 </div>
 
@@ -331,10 +382,7 @@ Direct click-to-chat system for instant lead capture.
 
 <div class="cta">
 <h2>🚀 Ready to Activate System?</h2>
-<p style="color:#94a3b8;margin-top:10px;">
-Deploy full SWISA SYSTEM and start capturing leads immediately.
-</p>
-
+<p class="sub">Deploy full SWISA SYSTEM and start capturing leads instantly.</p>
 <a href="contact.html" class="btn">💬 Get Access</a>
 </div>
 
